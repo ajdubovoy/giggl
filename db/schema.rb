@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_093422) do
+ActiveRecord::Schema.define(version: 2018_08_21_132615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "name"
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
     t.datetime "updated_at", null: false
     t.string "other_bands"
     t.string "url"
+    t.string "name"
     t.index ["genre_id"], name: "index_gigs_on_genre_id"
     t.index ["organizer_type", "organizer_id"], name: "index_gigs_on_organizer_type_and_organizer_id"
   end
@@ -82,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
     t.bigint "gig_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "subject"
     t.index ["gig_id"], name: "index_reviews_on_gig_id"
     t.index ["receiver_type", "receiver_id"], name: "index_reviews_on_receiver_type_and_receiver_id"
     t.index ["sender_type", "sender_id"], name: "index_reviews_on_sender_type_and_sender_id"
@@ -109,6 +112,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
