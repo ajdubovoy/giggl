@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   def band_bookings
     bands = self.bands
-    bookings_map = bands.map { |band| band.bookings_organized }
+    bookings_map = bands.map { |band| band.bookings_all }
     return bookings.map.flatten
   end
 
