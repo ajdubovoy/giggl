@@ -23,6 +23,6 @@ class BandsController < ApplicationController
 
   private
   def band_params
-    params.permit(:band).require(:bio, :website, :soundcloud, :spotify, :bandcamp, :facebook, :instagram, :twitter, :youtube, :vimeo, :name, :user_id)
+    params.require(:band).permit(:bio, :website, :soundcloud, :spotify, :bandcamp, :facebook, :instagram, :twitter, :youtube, :vimeo, :name, :user_id)
   end
 end
