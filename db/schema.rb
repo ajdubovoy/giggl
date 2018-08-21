@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_084939) do
+ActiveRecord::Schema.define(version: 2018_08_21_090515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bands", force: :cascade do |t|
+    t.text "bio"
+    t.string "website"
+    t.string "soundcloud"
+    t.string "spotify"
+    t.string "bandcamp"
+    t.string "facebook"
+    t.string "instagram"
+    t.string "twitter"
+    t.string "youtube"
+    t.string "vimeo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_bands_on_user_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "profile_type"
+    t.bigint "profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_type", "profile_id"], name: "index_photos_on_profile_type_and_profile_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,5 +65,6 @@ ActiveRecord::Schema.define(version: 2018_08_21_084939) do
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
+  add_foreign_key "bands", "users"
   add_foreign_key "venues", "users"
 end
