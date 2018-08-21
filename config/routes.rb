@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :bands, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create]
     resources :bookings, only: :create
-    resources :gigs, only: :create
+    resources :gigs, only: :create # polymorphic
   end
 
   # Bookings
@@ -25,8 +25,7 @@ Rails.application.routes.draw do
   # Venues
   resources :venues, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create]
-    resources :bookings, only: :create
-    resources :gigs, only: :create
+    resources :gigs, only: :create # polymorphic
   end
 
 end
