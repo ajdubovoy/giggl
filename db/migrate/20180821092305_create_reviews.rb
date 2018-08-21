@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.integer :professionalism
       t.integer :quality
       t.integer :turnout
-      t.references :send, polymorphic: true
+      t.references :sender, polymorphic: true
       t.references :receiver, polymorphic: true
       t.references :gig, foreign_key: true
 
