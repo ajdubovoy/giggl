@@ -9,15 +9,16 @@ Rails.application.routes.draw do
   # Bands
   resources :bands, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create]
-    resources :bookings, only: :create
-    resources :gigs, only: :create
+    resources :gigs, only: :create # polymorphic
   end
 
   # Bookings
   resources :bookings, only: [:index, :show]
 
   # Gigs
-  resources :gigs, only: [:index, :show, :new]
+  resources :gigs, only: [:index, :show, :new] do
+    resources :bookings, only: :create
+  end
 
   # Search
   get '/search', to: 'search#index', as: 'search'
@@ -25,8 +26,7 @@ Rails.application.routes.draw do
   # Venues
   resources :venues, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create]
-    resources :bookings, only: :create
-    resources :gigs, only: :create
+    resources :gigs, only: :create # polymorphic
   end
 
 end
