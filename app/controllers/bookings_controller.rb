@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:gig_id)
+    params.require(:booking).permit(:band_id)
   end
 
   def save_with_error(booking)
@@ -22,12 +22,12 @@ class BookingsController < ApplicationController
   end
 
   def band
-    band_params = params.require(:band).permit(:id)
-    band_id = band_params[:id]
-    Band.find(band_id)
+    Band.find(booking_params[:band_id])
   end
 
   def gig
-    Gig.find(booking_params[:gig_id])
+    gig_params = params.require(:band).permit(:id)
+    gig_id = gig_params[:id]
+    Gig.find(gig_id)
   end
 end
