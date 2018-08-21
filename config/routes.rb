@@ -9,13 +9,15 @@ Rails.application.routes.draw do
   # Bands
   resources :bands, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create]
+    resources :bookings, only: :create
+    resources :gigs, only: :create
   end
 
   # Bookings
   resources :bookings, only: [:index, :show]
 
   # Gigs
-  resources :gigs, only: [:index, :show, :new, :create]
+  resources :gigs, only: [:index, :show, :new]
 
   # Search
   get '/search', to: 'search#index', as: 'search'
@@ -23,6 +25,8 @@ Rails.application.routes.draw do
   # Venues
   resources :venues, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create]
+    resources :bookings, only: :create
+    resources :gigs, only: :create
   end
 
 end
