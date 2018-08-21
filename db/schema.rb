@@ -43,10 +43,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
-    t.bigint "band_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["band_id"], name: "index_genres_on_band_id"
   end
 
   create_table "gigs", force: :cascade do |t|
@@ -77,8 +75,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
     t.integer "professionalism"
     t.integer "quality"
     t.integer "turnout"
-    t.string "send_type"
-    t.bigint "send_id"
+    t.string "sender_type"
+    t.bigint "sender_id"
     t.string "receiver_type"
     t.bigint "receiver_id"
     t.bigint "gig_id"
@@ -86,7 +84,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
     t.datetime "updated_at", null: false
     t.index ["gig_id"], name: "index_reviews_on_gig_id"
     t.index ["receiver_type", "receiver_id"], name: "index_reviews_on_receiver_type_and_receiver_id"
-    t.index ["send_type", "send_id"], name: "index_reviews_on_send_type_and_send_id"
+    t.index ["sender_type", "sender_id"], name: "index_reviews_on_sender_type_and_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -117,7 +115,6 @@ ActiveRecord::Schema.define(version: 2018_08_21_093422) do
   add_foreign_key "bands", "users"
   add_foreign_key "bookings", "bands"
   add_foreign_key "bookings", "gigs"
-  add_foreign_key "genres", "bands"
   add_foreign_key "gigs", "genres"
   add_foreign_key "reviews", "gigs"
   add_foreign_key "venues", "users"
