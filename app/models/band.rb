@@ -5,6 +5,8 @@ class Band < ApplicationRecord
   has_many :photos
   has_many :bookings
   has_many :gigs
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def bookings_played # just to clarify
     self.bookings
