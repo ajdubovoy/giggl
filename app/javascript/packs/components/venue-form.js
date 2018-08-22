@@ -1,6 +1,3 @@
-/**
- * Surely there's some improvements to make, comments/help always appreciated :3
- */
 
 function init() {
   // Generate li foreach fieldset
