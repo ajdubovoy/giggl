@@ -30,13 +30,14 @@
 <%= form_for(@gig) do |f| %>
  <h3>Post a gig</h3>
   <%= f.text_field :name, placeholder: "Name", class: "form-item" %>
-  <%= f.text_field :datetime, placeholder: "Date", id: "gig-date", class: "form-item gig-date" %>
+  <%= f.text_field :date, placeholder: "Date", id: "gig-date", class: "form-item gig-date" %>
+  <%= f.text_field :time, placeholder: "Time", id: "gig-time", class: "form-item gig-time" %>
   <%= f.text_field :address, placeholder: "Address", class: "form-item" %>
   <%= f.text_area :description, placeholder: "Description", class: "form-item" %>
   <%= f.text_area :other_bands, placeholder: "Other artists", class: "form-item" %>
-  <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item"})%>
-  <%= f.select(:genre_id, @organizers.collect { |organizer| [organizer.name, organizer.id] }, {}, { class: "form-item"})%>
-  <%= f.select :paid, [['Paid', true], ['Unpaid', false]], {}, { class: "form-item" } %>
+  <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item form-item-drop"})%>
+  <%= f.select(:genre_id, @organizers.collect { |organizer| [organizer.name, organizer.id] }, {}, { class: "form-item form-item-drop"})%>
+  <%= f.select :paid, [['Paid', true], ['Unpaid', false]], {}, { class: "form-item form-item-drop" } %>
   <%= f.text_field :url, placeholder: "Link", class: "form-item" %>
   <%= f.submit class: 'form-button' %>
 <% end %>

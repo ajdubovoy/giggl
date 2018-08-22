@@ -37,7 +37,13 @@
   transition: all .2s ease;
   // flex: 0 0 100%; /* fg: 0, fs: 0, fb: 100% */
   min-width: 100%;
-}
+  padding-left: 10px;
+ }
+
+ .form-item-drop {
+   padding: 10px;
+   font-family: Lato; 
+ }
 
 .form-button {
   cursor: pointer;
