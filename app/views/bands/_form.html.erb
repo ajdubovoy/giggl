@@ -1,29 +1,22 @@
-Band creation - 
-    Add photos
-    Add bio
-    Add genre
-    Add artist website
-    Add music links
-        Soundcloud
-        Spotify
-        Bandcamp
-    Add social media links
-        Facebook
-        Instagram	
-        Bandsintown/Songkick	
-    Add video links
-        Youtube
-        Vimeo
+
 
 <div class="container">
 <div class="row-form">
 <%= form_for(@band) do |f| %>
-  <%= f.text_field :name, placeholder: "Name" %>
-  <%= f.text_area :description, placeholder: "Bio" %>
-  <%= f.text_field :genre, placeholder: "Genre" %>
-  <%= f.text_field :website, placeholder: "Website" %>
-
-  <%= f.submit %>
+ <h2>Band info</h1>
+  <%= f.text_field :name, placeholder: "Name", class: "form-item" %>
+  <%= f.text_area :bio, placeholder: "Bio", class: "form-item" %>
+  <%#= f.text_field :genre, placeholder: "Genre", class: "form-item" %>
+  <%= f.text_field :website, placeholder: "Website", class: "form-item" %>
+  <h2>Music Links</h2>
+  <%= f.text_field :spotify, placeholder: "Spotify", class: "form-item" %>
+  <%= f.text_field :bandcamp, placeholder: "Bandcamp", class: "form-item" %>
+  <h2>Social Media</h2>
+  <%= f.text_field :facebook, placeholder: "facebook", class: "form-item" %>
+  <%= f.text_field :instagram, placeholder: "instagram", class: "form-item" %>
+  <h2>Video</h2>
+  <%= f.text_field :youtube, placeholder: "youtube", class: "form-item" %>
+  <%= f.submit class: 'form-button' %>
 <% end %>
 </div>
 </div>

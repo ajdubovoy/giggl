@@ -1,12 +1,12 @@
 <divs class="container">
 <div class="row-form">
 <%= form_for(@venue) do |f| %>
-  <%= f.text_field :name, placeholder: "Name", html: {class: "form-item full-width"} %>
-  <%= f.text_field :address, placeholder: "Address", html: {class: "form-item full-width"} %>>
-  <%= f.telephone_field :telephone, placeholder: "Telephone", html: {class: "form-item full-width"} %>
-  <%= f.text_area :description, placeholder: "Enter a description", html: {class: "form-item full-width"} %>
-  <%= f.text_field :website, placeholder: "Website", html: {class: "form-item"} %>
-  <%= f.submit %>
+  <%= f.text_field :name, placeholder: "Name", class: "form-item full-width" %>
+  <%= f.text_field :address, placeholder: "Address", class: "form-item full-width" %>
+  <%= f.text_field :telephone, placeholder: "Telephone", class: "form-item full-width" %>
+  <%= f.text_area :description, placeholder: "Enter a description", class: "form-item full-width" %>
+  <%= f.text_field :website, placeholder: "Website", class: "form-item" %>
+  <%= f.submit class: "form-button"%>
 <% end %>
 </div>
 </div>
