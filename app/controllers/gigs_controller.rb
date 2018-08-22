@@ -55,8 +55,10 @@ class GigsController < ApplicationController
   end
 
   def save_with_error(gig)
-    if gig.save
-      redirect_to gig_path(gig)
+    if gig.save && organizer.class == Venue
+      redirect_to venue_gig_path(gig)
+    elsif gig.save && organizer.class == Band
+      redirect_to band_gig_path(gig)
     else
       render :new
     end
