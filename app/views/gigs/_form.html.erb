@@ -30,6 +30,7 @@
 <%= form_for(@gig) do |f| %>
  <h3>Post a gig</h3>
   <%= f.text_field :name, placeholder: "Name", class: "form-item" %>
+  <%= f.text_field :datetime, placeholder: "Date", id: "gig-date", class: "form-item gig-date" %>
   <%= f.text_field :address, placeholder: "Address", class: "form-item" %>
   <%= f.text_area :description, placeholder: "Description", class: "form-item" %>
   <%= f.text_area :other_bands, placeholder: "Other artists", class: "form-item" %>
