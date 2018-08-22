@@ -6,7 +6,7 @@
  <h3>Band info</h3>
   <%= f.text_field :name, placeholder: "Name", class: "form-item" %>
   <%= f.text_area :bio, placeholder: "Bio", class: "form-item" %>
-  <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item"})%>
+  <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item form-item-drop"})%>
   <%#= f.text_field :genre, placeholder: "Genre", class: "form-item" %>
   <%= f.text_field :website, placeholder: "Website", class: "form-item" %>
   <h3>Music Links</h3>
