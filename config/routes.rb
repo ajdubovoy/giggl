@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   # Venues
   resources :venues, only: [:index, :show, :new, :create] do
-    resources :reviews, only: [:index, :show, :new, :create]
+    resources :reviews, only: [:index, :show, :new, :create], module: "venues"
     resources :gigs, only: :create # polymorphic
   end
 
