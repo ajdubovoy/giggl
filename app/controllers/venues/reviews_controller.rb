@@ -1,6 +1,8 @@
-class ReviewsController < ApplicationController
+class Venues::ReviewsController < ApplicationController
+  before_action :find_venue
+
   def index
-    @reviews = Review.all
+    @reviews = Review.where(venue: @venue)
   end
 
   def show
@@ -23,6 +25,11 @@ class ReviewsController < ApplicationController
 
   private
 
+  def find_venue
+    venue_params = params.require(:venue).permit(:id)
+    @venue = Venue.find(venue_params[:id])
+  end
+
   def review_params
     params.require(:review).permit(:content, :professionalism, :quality, :turnout, :subject)
   end
@@ -34,27 +41,5 @@ class ReviewsController < ApplicationController
 
   def gig
     return booking.gig
-  end
-  
-   def sender
-    player = booking.band
-    organizer = booking.gig.organizer
-
-    if current_user.bands.include? player
-      return player
-    else
-      return organizer
-    end
-  end
-
-  def receiver
-    player = booking.band
-    organizer = booking.gig.organizer
-
-    if current_user.venues.include? organizer || current_user.bands.include? organizer
-      return organizer
-    else
-      return player
-    end
   end
 end
