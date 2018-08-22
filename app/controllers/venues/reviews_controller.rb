@@ -2,7 +2,7 @@ class Venues::ReviewsController < ApplicationController
   before_action :find_venue
 
   def index
-    @reviews = Review.where(venue: @venue)
+    @reviews = Review.where(receiver: @venue)
   end
 
   def show
@@ -10,17 +10,14 @@ class Venues::ReviewsController < ApplicationController
   end
 
   def new
-    @review = Review.new
+    @review = Review.new(receiver: @venue)
   end
 
   def create
     @review = Review.new(review_params)
-    @review.gig = gig
-    if @review.save
-      redirect_to review_path(@review)
-    else
-      render :new
-    end
+    @review.receiver = @venue
+    @review.sender = Band.find(review_params[:sender_id])
+    save_with_error(@review)
   end
 
   private
@@ -31,15 +28,14 @@ class Venues::ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:content, :professionalism, :quality, :turnout, :subject)
+    params.require(:review).permit(:content, :professionalism, :quality, :turnout, :subject, :sender_id)
   end
 
-  def booking
-    booking_params = params.require(:booking).permit(:id)
-    return Booking.find(booking_params[:id])
-  end
-
-  def gig
-    return booking.gig
+  def save_with_error(review)
+    if review.save
+      redirect_to venue_review_path(review)
+    else
+      render :new
+    end
   end
 end
