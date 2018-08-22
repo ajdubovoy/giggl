@@ -1,6 +1,7 @@
 class VenuesController < ApplicationController
   def index
     @venues = Venue.all
+    @markers = generate_map(@venues)
   end
 
   def show
@@ -25,5 +26,15 @@ class VenuesController < ApplicationController
   
   def venue_params
     params.require(:venue).permit(:address, :telephone, :email, :description, :website, :name)
+  end
+
+  def generate_map(venues)
+    venues.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/venues/map_box", locals: { venue: venue }) }
+      }
+    end
   end
 end
