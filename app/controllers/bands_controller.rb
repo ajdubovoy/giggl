@@ -10,12 +10,13 @@ class BandsController < ApplicationController
 
   def new
     @band = Band.new
+    @genres = Genre.all.sort_by { |genre| genre.name }
   end
 
   def create
     @band = Band.new(band_params)
     @band.user = current_user
-    @band.genre = Genre.find(band_params[:genre_id])
+    @band.genre = Genre.find(band_params[:genre_id]) if  band_params[:genre_id].present?
     if @band.save
       redirect_to band_path(@band)
     else

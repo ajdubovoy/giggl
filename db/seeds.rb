@@ -35,5 +35,3 @@ band4 = Band.create(bio: "A combination of soul, funk, and alternative stylings,
 band4.genre = genres.sample
 band4.user = users.sample
 bands = Band.all
-
-
