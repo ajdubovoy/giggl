@@ -9,6 +9,7 @@ class GigsController < ApplicationController
   end
 
   def new
+    @organizers = (current_user.gigs + current_user.venues).sort_by { |e| e.name }
     @gig = Gig.new(gig_params)
     @gig = genre
   end
