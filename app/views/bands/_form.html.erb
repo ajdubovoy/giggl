@@ -3,18 +3,19 @@
 <div class="container">
 <div class="row-form">
 <%= form_for(@band) do |f| %>
- <h2>Band info</h1>
+ <h3>Band info</h3>
   <%= f.text_field :name, placeholder: "Name", class: "form-item" %>
   <%= f.text_area :bio, placeholder: "Bio", class: "form-item" %>
+  <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item"})%>
   <%#= f.text_field :genre, placeholder: "Genre", class: "form-item" %>
   <%= f.text_field :website, placeholder: "Website", class: "form-item" %>
-  <h2>Music Links</h2>
+  <h3>Music Links</h3>
   <%= f.text_field :spotify, placeholder: "Spotify", class: "form-item" %>
   <%= f.text_field :bandcamp, placeholder: "Bandcamp", class: "form-item" %>
-  <h2>Social Media</h2>
+  <h3>Social Media</h3>
   <%= f.text_field :facebook, placeholder: "facebook", class: "form-item" %>
   <%= f.text_field :instagram, placeholder: "instagram", class: "form-item" %>
-  <h2>Video</h2>
+  <h3>Video</h3>
   <%= f.text_field :youtube, placeholder: "youtube", class: "form-item" %>
   <%= f.submit class: 'form-button' %>
 <% end %>
