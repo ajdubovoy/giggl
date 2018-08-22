@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # Bands
   resources :bands, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create], module: "bands"
-    resources :gigs, only: [:new, :create], module: "venues" # polymorphic
+    resources :gigs, only: [:new, :create], module: "bands" # polymorphic
   end
 
   # Bookings
