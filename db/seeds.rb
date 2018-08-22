@@ -38,8 +38,8 @@ band4.user = users.sample
 bands = Band.all
 
 venue1 = Venue.create(name: "Dirty Dicks", adress: "202 Bishopsgate, London EC2M 4NR", telephone: "+44 20 7283 5888", email: "dirty@dicks.com", description: "3-floor pub with wood panelling", website: "http://www.dirtydicks.co.uk", user: User.all.sample)
-venue2 = Venue.create(name: "Tarantino's Bar", adress: "Brunnenstraße 163, Berlin", telephone: "+49 30 40500355" email: "tarantino@feet.com", description: "footwear optional", website: "http://tarantinos-bar.de", user: User.all.sample)
-venue3 = Venue.create(name: "Le Titty Twister", adress: "5 Rue de Berri, 75008 Paris", telephone: "+33 1 45 62 50 23" email: "titties@doubleD.com", description: "sun's out", website: "http://www.letittytwister.com", user: User.all.sample)
-venue4 = Venue.create(name: "Donau115", adress: "Donaustraße 115, 12043 Berlin", telephone: "+49 0179 1809168" email: "alex@rules.com", description: "the gitmeister played there", website: "http://donau115.de", user: User.all.sample)
+venue2 = Venue.create(name: "Tarantino's Bar", adress: "Brunnenstraße 163, Berlin", telephone: "+49 30 40500355", email: "tarantino@feet.com", description: "footwear optional", website: "http://tarantinos-bar.de", user: User.all.sample)
+venue3 = Venue.create(name: "Le Titty Twister", adress: "5 Rue de Berri, 75008 Paris", telephone: "+33 1 45 62 50 23", email: "titties@doubleD.com", description: "sun's out", website: "http://www.letittytwister.com", user: User.all.sample)
+venue4 = Venue.create(name: "Donau115", adress: "Donaustraße 115, 12043 Berlin", telephone: "+49 0179 1809168", email: "alex@rules.com", description: "the gitmeister played there", website: "http://donau115.de", user: User.all.sample)
 venues = Venue.all
 
