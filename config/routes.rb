@@ -9,14 +9,14 @@ Rails.application.routes.draw do
   # Bands
   resources :bands, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create], module: "bands"
-    resources :gigs, only: :create # polymorphic
+    resources :gigs, only: [:new, :create], module: "venues" # polymorphic
   end
 
   # Bookings
-  resources :bookings, only: [:index, :show]
+  resources :bookings, only: [:index, :show, :new]
 
   # Gigs
-  resources :gigs, only: [:index, :show, :new] do
+  resources :gigs, only: [:index, :show] do
     resources :bookings, only: :create
   end
 
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   # Venues
   resources :venues, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :show, :new, :create], module: "venues"
-    resources :gigs, only: :create # polymorphic
+    resources :gigs, only: [:new, :create], module: "venues" # polymorphic
   end
 
 end
