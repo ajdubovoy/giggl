@@ -18,7 +18,7 @@ psychedelic = Genre.create(name:"psychedelic")
 genres = Genre.all
 
 user1 = User.create(email: "emily@emily.com", password: "123456789", name: "Emily Rhodes")
-user2 = User.create(email: "iain@haha.com", password: "123456789", name: "Iain Russel")
+user2 = User.create(email: "someoneelse@haha.com", password: "123456789", name: "Night Club Killer")
 user3 = User.create(email: "oriane@oriane.com", password: "123456789", name: "Oriane Millet")
 user4 = User.create(email: "alex@alex.com", password: "123456789", name: "Alexander Dubovoy")
 users = User.all
