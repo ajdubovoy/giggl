@@ -36,7 +36,7 @@
   <%= f.text_area :description, placeholder: "Description", class: "form-item" %>
   <%= f.text_area :other_bands, placeholder: "Other artists", class: "form-item" %>
   <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item form-item-drop"})%>
-  <%= f.select(:genre_id, @organizers.collect { |organizer| [organizer.name, organizer.id] }, {}, { class: "form-item form-item-drop"})%>
+  <%= f.select(:organizer_id, @organizers.collect { |organizer| [organizer.name, organizer.id] }, {}, { class: "form-item form-item-drop"})%>
   <%= f.select :paid, [['Paid', true], ['Unpaid', false]], {}, { class: "form-item form-item-drop" } %>
   <%= f.text_field :url, placeholder: "Link", class: "form-item" %>
   <%= f.submit class: 'form-button' %>
