@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   def index
     @bands = Band.all
+    generate_map(@bands)
   end
 
   def show
@@ -24,7 +25,18 @@ class BandsController < ApplicationController
   end
 
   private
+
   def band_params
     params.require(:band).permit(:bio, :website, :soundcloud, :spotify, :bandcamp, :facebook, :instagram, :twitter, :youtube, :vimeo, :name, :genre_id)
+  end
+
+  def generate_map(bands)
+    bands.map do |band|
+      {
+        lat: band.latitude,
+        lng: band.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/bands/map_box", locals: { band: band }) }
+      }
+    end
   end
 end
