@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_21_132615) do
+ActiveRecord::Schema.define(version: 2018_08_22_085612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_132615) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "name"
+    t.bigint "genre_id"
+    t.index ["genre_id"], name: "index_bands_on_genre_id"
     t.index ["user_id"], name: "index_bands_on_user_id"
   end
 
@@ -60,6 +62,8 @@ ActiveRecord::Schema.define(version: 2018_08_21_132615) do
     t.string "other_bands"
     t.string "url"
     t.string "name"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["genre_id"], name: "index_gigs_on_genre_id"
     t.index ["organizer_type", "organizer_id"], name: "index_gigs_on_organizer_type_and_organizer_id"
   end
@@ -113,9 +117,12 @@ ActiveRecord::Schema.define(version: 2018_08_21_132615) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
+  add_foreign_key "bands", "genres"
   add_foreign_key "bands", "users"
   add_foreign_key "bookings", "bands"
   add_foreign_key "bookings", "gigs"
