@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   # Bands
   resources :bands, only: [:index, :show, :new, :create] do
-    resources :reviews, only: [:index, :show, :new, :create]
+    resources :reviews, only: [:index, :show, :new, :create], module: "bands"
     resources :gigs, only: :create # polymorphic
   end
 

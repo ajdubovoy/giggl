@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_122330) do
+ActiveRecord::Schema.define(version: 2018_08_22_133403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2018_08_22_122330) do
   end
 
   create_table "gigs", force: :cascade do |t|
-    t.datetime "datetime"
     t.string "address"
     t.bigint "genre_id"
     t.boolean "paid"
