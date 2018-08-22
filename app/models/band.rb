@@ -1,6 +1,6 @@
 class Band < ApplicationRecord
   belongs_to :user
-  belong_to :genre
+  belongs_to :genre
   has_many :reviews
   has_many :photos
   has_many :bookings

@@ -14,6 +14,7 @@ class BandsController < ApplicationController
   def create
     @band = Band.new(band_params)
     @band.user = current_user
+    @band.genre = Genre.find(band_params[:genre_id])
     if @band.save
       redirect_to band_path(@band)
     else
@@ -23,6 +24,6 @@ class BandsController < ApplicationController
 
   private
   def band_params
-    params.require(:band).permit(:bio, :website, :soundcloud, :spotify, :bandcamp, :facebook, :instagram, :twitter, :youtube, :vimeo, :name)
+    params.require(:band).permit(:bio, :website, :soundcloud, :spotify, :bandcamp, :facebook, :instagram, :twitter, :youtube, :vimeo, :name, :genre_id)
   end
 end
