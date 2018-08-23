@@ -1,2 +1,9 @@
 Search Page
 Add filters
+
+<% @gigs.each do |gig| %>
+  <h1 class="gig gig-name"><%= @gig.name %></h1>
+  <p class="gig gig-bio-index"><%= @gig.description %></p>
+  <p class="gig gig-genre-index"><%= @gig.address %></p>
+
+<% end %>
