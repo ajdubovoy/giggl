@@ -13,8 +13,8 @@
   width: 1000px;
   display: flex;
   background: #FDFEFF;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   padding: 20px;  
 
 }
@@ -22,6 +22,10 @@
 .band-text {
   width: 50%;
   padding: 5px;
+}
+
+.band-text-index {
+  width: 50%;
 }
 
 .band-info {
@@ -51,10 +55,6 @@
 
 .bio {
   font-size: 18px;
-}
-
-.band {
-  font-weight: 300;
 }
 
 .band-name {
