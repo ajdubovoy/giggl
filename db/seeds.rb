@@ -24,7 +24,7 @@ user3 = User.create!(email: "oriane@oriane.com", password: "123456789", name: "O
 user4 = User.create!(email: "alex@alex.com", password: "123456789", name: "Alexander Dubovoy")
 users = User.all
 
-bandurls = "https://images.pexels.com/photos/756239/pexels-photo-756239.jpeg?cs=srgb&dl=band-concert-festival-756239.jpg&fm=jpg, https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?cs=srgb&dl=adult-artist-artists-210887.jpg&fm=jpg, https://images.pexels.com/photos/157642/girl-guitar-photo-people-157642.jpeg?cs=srgb&dl=beautiful-black-and-white-classical-guitar-157642.jpg&fm=jpg, https://images.pexels.com/photos/1327426/pexels-photo-1327426.jpeg?cs=srgb&dl=artist-band-drummer-1327426.jpg&fm=jpg"
+bandurls = ["https://images.pexels.com/photos/756239/pexels-photo-756239.jpeg?cs=srgb&dl=band-concert-festival-756239.jpg&fm=jpg, https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?cs=srgb&dl=adult-artist-artists-210887.jpg&fm=jpg, https://images.pexels.com/photos/157642/girl-guitar-photo-people-157642.jpeg?cs=srgb&dl=beautiful-black-and-white-classical-guitar-157642.jpg&fm=jpg, https://images.pexels.com/photos/1327426/pexels-photo-1327426.jpeg?cs=srgb&dl=artist-band-drummer-1327426.jpg&fm=jpg"]
 
 band1 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "Mistar Anderson", address: "Berlin")
 band1.genre = genres.sample
@@ -48,7 +48,7 @@ band4.remote_photo_url = bandurls.sample
 band4.save!
 bands = Band.all
 
-venueurls = "https://images.pexels.com/photos/1267265/pexels-photo-1267265.jpeg?cs=srgb&dl=adult-bar-beer-1267265.jpg&fm=jpg, https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=alcohol-architecture-bar-260922.jpg&fm=jpg, https://images.pexels.com/photos/769153/pexels-photo-769153.jpeg?cs=srgb&dl=business-chairs-city-769153.jpg&fm=jpg, https://images.pexels.com/photos/1154189/pexels-photo-1154189.jpeg?cs=srgb&dl=celebration-concert-crowd-1154189.jpg&fm=jpg"
+venueurls = ["https://images.pexels.com/photos/1267265/pexels-photo-1267265.jpeg?cs=srgb&dl=adult-bar-beer-1267265.jpg&fm=jpg, https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=alcohol-architecture-bar-260922.jpg&fm=jpg, https://images.pexels.com/photos/769153/pexels-photo-769153.jpeg?cs=srgb&dl=business-chairs-city-769153.jpg&fm=jpg, https://images.pexels.com/photos/1154189/pexels-photo-1154189.jpeg?cs=srgb&dl=celebration-concert-crowd-1154189.jpg&fm=jpg"]
 
 venue1 = Venue.new(name: "Dirty Dicks", address: "202 Bishopsgate, London EC2M 4NR", telephone: "+44 20 7283 5888", email: "dirty@dicks.com", description: "3-floor pub with wood panelling", website: "http://www.dirtydicks.co.uk", user: User.all.sample)
 venue1.remote_photo_url = venueurls.sample
@@ -65,7 +65,7 @@ venue4.save!
 venues = Venue.all
 
 
-gigurls = "https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?cs=srgb&dl=applause-audience-band-196652.jpg&fm=jpg, https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?cs=srgb&dl=audience-band-bright-1047442.jpg&fm=jpg, https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?cs=srgb&dl=applause-audience-band-167636.jpg&fm=jpg, https://images.pexels.com/photos/342520/pexels-photo-342520.jpeg?cs=srgb&dl=adults-audience-band-342520.jpg&fm=jpg"
+gigurls = ["https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?cs=srgb&dl=applause-audience-band-196652.jpg&fm=jpg, https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?cs=srgb&dl=audience-band-bright-1047442.jpg&fm=jpg, https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?cs=srgb&dl=applause-audience-band-167636.jpg&fm=jpg, https://images.pexels.com/photos/342520/pexels-photo-342520.jpeg?cs=srgb&dl=adults-audience-band-342520.jpg&fm=jpg"]
 
 gig1 = Gig.new(address: "London", paid: true, description: "Tuesdays at Dirty Dicks is bringing you live music - to our new Side Stage. We are also featuring $1 off Pacifico, Modelo, and Ballast Point!", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Dirty Dicks", date: '09/09/18', time: '20:30')
 gig1.genre = genres.sample
