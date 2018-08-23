@@ -19,7 +19,7 @@ class GigsController < ApplicationController
     @gig.genre = genre
     @gig.organizer = organizer # can be band or venue
     @gig.address = @gig.organizer.address if (@gig.organizer.class == Venue && gig_params[:address].blank?) # Sets address to venue if none specified and organizer is a venue
-
+    raise
     save_with_error @gig
   end
 

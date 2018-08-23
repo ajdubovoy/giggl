@@ -18,8 +18,7 @@ class Venues::GigsController < ApplicationController
   private
 
   def find_venue
-    venue_params = params.require(:venue).permit(:id)
-    @venue = Venue.find(venue_params[:id])
+    @venue = Venue.find(params[:venue_id])
   end
 
   def gig_params
