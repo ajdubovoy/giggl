@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+  
+  Gig.destroy_all
   Venue.destroy_all
   Band.destroy_all
   Genre.destroy_all
   User.destroy_all
-  Gig.destroy_all
 
 rock = Genre.create!(name:"rock")
 funk = Genre.create!(name:"funk")
@@ -32,6 +32,11 @@ band2 = Band.new(bio: "A combination of soul, funk, and alternative stylings, em
 band2.genre = genres.sample
 band2.user = users.sample
 band2.save!
+band3 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "TATTAT", address: "Berlin")
+band3.genre = genres.sample
+band3.user = users.sample
+band3.save!
+band4 = Band.create(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "Stephen King", address: "Berlin")
 band3 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "Booty & the kidd", address: "Berlin")
 band3.genre = genres.sample
 band3.user = users.sample
@@ -65,7 +70,3 @@ gig4.genre = genres.sample
 gig4.organizer = bands.sample
 gig4.save!
 gigs = Gig.all
-
-
-
-
