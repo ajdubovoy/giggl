@@ -1,0 +1,50 @@
+.container-gig-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  flex-wrap: wrap;
+}
+
+.row-gig-index {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  flex-direction: column;
+  background: #FDFEFF;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 1000px;
+  margin: 30px;
+ }
+
+
+.gig-music-links  .gig-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  border: 1px solid black;
+
+}
+
+.gig-bio-index {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.gig-genre-index {
+  font-weight: 400;
+}
+
+.gig-photos .gig-card {
+  border: 1px solid black;
+
+}
+
+.gig-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.gig-genre-index {
+  margin-bottom: 10px;
+}
