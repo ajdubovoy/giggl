@@ -29,4 +29,16 @@ Rails.application.routes.draw do
     resources :gigs, only: [:new, :create], module: "venues" # polymorphic
   end
 
+  # Conversations
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply, :restore, :mark_as_read
+    end
+    collection do
+      delete :empty_trash
+    end
+  end
+
+  # Messages
+  resources :messages, only: [:new, :create]
 end
