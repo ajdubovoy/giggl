@@ -1,1 +1,22 @@
-All venues
+  <% @venues.each do |venue| %>
+<div class="container">
+    <div class="container-venue-index">
+      <div class="row-venue-index">
+        <div class="venue-text-index">
+          <div class="venue-info-index">
+          <h1 class="venue-name-index"><%= venue.name %></h1>
+          <p class="venue-address-index"><%= venue.address %></p>
+          <p class="venue-telephone-index"><%= venue.telephone %></p>
+          <br>
+          <p class="venue-description-index"><%= venue.description%></p>
+          <br>
+          <p class="venue-website-index"><%= venue.website%></p>
+          </div>
+        </div>
+
+      <div class="band-photos band-card">
+      </div>
+    </div>
+  </div>
+</div>
+  <% end %>

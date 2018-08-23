@@ -1,25 +1,25 @@
 <% @bands.each do |band| %>
   <div class="container-band-index">
-    <div class="row-band-index band-card">
-    <div class="band-text-index">
-       <div class="band-info-index band-card">
-      <h1 class="band band-name"><%= band.name %></h1>
-      <p class="band band-bio-index"><%= band.bio %></p>
-      <p class="band band-genre-index"><%= band.genre.name.capitalize %></p>
-
-      <div class="band-icons">
-        <a href="http://<%=band.website%>"><i class="far fa-envelope"></i></a>
-        <a href="http://<%=band.spotify%>"><i class="fab fa-spotify"></i></a>
-        <a href="http://<%=band.bandcamp%>"><i class="fab fa-bandcamp"></i></a>
-        <a href="http://<%=band.facebook%>"><i class="fab fa-facebook"></i></a>
-        <a href="http://<%=band.instagram%>"><i class="fab fa-instagram"></i></a>
-        <a href="http://<%=band.youtube%>"><i class="fab fa-youtube"></i></a>
+    <div class="row-band-index">
+      <div class="band-text-index">
+        <div class="band-info-index">
+          <h1 class="band-name"><%= band.name %></h1>
+          <p class="band-bio-index"><%= band.bio %></p>
+          <p class="band-genre-index"><%= band.genre.name.capitalize %></p>
+  
+          <div class="band-icons">
+            <a href="http://<%=band.website%>"><i class="far fa-envelope"></i></a>
+            <a href="http://<%=band.spotify%>"><i class="fab fa-spotify"></i></a>
+            <a href="http://<%=band.bandcamp%>"><i class="fab fa-bandcamp"></i></a>
+            <a href="http://<%=band.facebook%>"><i class="fab fa-facebook"></i></a>
+            <a href="http://<%=band.instagram%>"><i class="fab fa-instagram"></i></a>
+            <a href="http://<%=band.youtube%>"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
       </div>
+  
+      <div class="band-photos band-card">
       </div>
-    </div>
-
-    <div class="band-photos band-card">
-    </div>
     </div>
   </div>
 <% end %>
