@@ -1,4 +1,12 @@
 class BookingsController < ApplicationController
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.band = band
@@ -26,8 +34,6 @@ class BookingsController < ApplicationController
   end
 
   def gig
-    gig_params = params.require(:band).permit(:id)
-    gig_id = gig_params[:id]
-    Gig.find(gig_id)
+    Gig.find(params[:gig_id])
   end
 end

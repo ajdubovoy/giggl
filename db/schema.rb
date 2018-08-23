@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_22_134241) do
+ActiveRecord::Schema.define(version: 2018_08_22_135345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,11 +145,9 @@ ActiveRecord::Schema.define(version: 2018_08_22_134241) do
     t.bigint "sender_id"
     t.string "receiver_type"
     t.bigint "receiver_id"
-    t.bigint "gig_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "subject"
-    t.index ["gig_id"], name: "index_reviews_on_gig_id"
     t.index ["receiver_type", "receiver_id"], name: "index_reviews_on_receiver_type_and_receiver_id"
     t.index ["sender_type", "sender_id"], name: "index_reviews_on_sender_type_and_sender_id"
   end
@@ -190,6 +188,5 @@ ActiveRecord::Schema.define(version: 2018_08_22_134241) do
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
-  add_foreign_key "reviews", "gigs"
   add_foreign_key "venues", "users"
 end

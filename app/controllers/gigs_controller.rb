@@ -8,7 +8,7 @@ class GigsController < ApplicationController
     @gig = Gig.find(params[:id])
   end
 
-  def new
+  def new # Will be used with a drop-down menu for organizer, unlike on venue and band pages that will auto-populate
     @gig = Gig.new
     @genres = Genre.all.sort_by { |genre| genre.name }
     @organizers = (current_user.bands + current_user.venues).sort_by { |e| e.name }
@@ -18,7 +18,8 @@ class GigsController < ApplicationController
     @gig = Gig.new(gig_params)
     @gig.genre = genre
     @gig.organizer = organizer # can be band or venue
-
+    @gig.address = @gig.organizer.address if (@gig.organizer.class == Venue && gig_params[:address].blank?) # Sets address to venue if none specified and organizer is a venue
+    
     save_with_error @gig
   end
 
@@ -35,18 +36,15 @@ class GigsController < ApplicationController
   end
 
   def organizer
-    # finds organizer despite polymorphism
-    if params[:band].present?
-      id = params[:band][:id]
-      return Band.find(id)
-    elsif params[:venue].present?
-      id = params[:venue][:id]
-      return Venue.find(id)
+    if gig_params[:organizer_type] == "Band"
+      return Band.find(gig_params[:organizer_id])
+    else
+      return Venue.find(gig_params[:organizer_id])
     end
   end
 
   def gig_params
-    params.require(:gig).permit(:datetime, :address, :paid, :other_bands, :url, :name, :genre_id)
+    params.require(:gig).permit(:date, :time, :address, :paid, :other_bands, :url, :name, :genre_id, :organizer_id, :organizer_type)
   end
 
   def genre
@@ -55,10 +53,8 @@ class GigsController < ApplicationController
   end
 
   def save_with_error(gig)
-    if gig.save && organizer.class == Venue
-      redirect_to venue_gig_path(gig)
-    elsif gig.save && organizer.class == Band
-      redirect_to band_gig_path(gig)
+    if gig.save
+      redirect_to gig_path(gig)
     else
       render :new
     end
