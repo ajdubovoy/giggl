@@ -1,12 +1,22 @@
-Individual Band Page
+<div class="container">
+  <div class="row-band">
+    
+    <div class="band-info">
+    <p><%= @band.name %></p>
+    <p><%= @band.bio %></p>
+    <p><%= @band.genre.name %></p>
+    <p><%= @band.website %></p>
+    </div>
 
-"bio"
-"website"
-"soundcloud"
-"spotify"
-"bandcamp"
-"facebook"
-"instagram"
-"twitter"
-"youtube"
-"vimeo"
+    <div class="band-music-links">
+    <p><%= @band.spotify %></p>
+    <p><%= @band.bandcamp %></p>
+    </div>
+
+    <div class="band-social-media">
+    <p><%= @band.facebook %></p>
+    <p><%= @band.instagram %></p>
+    <p><%= @band.youtube %></p>
+    </div>
+  </div>
+</div>
