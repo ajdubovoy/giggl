@@ -1,38 +1,76 @@
-.container {
+.container-band {
   display: flex;
   align-items:  center;
   justify-content: center;
-  height: 100%;
+  height: 90vh;
 }
-
+//Row sizing
 .row-band {
   // background: linear-gradient(#8CA6DB, #B993D6);
+  // border: 1px solid black;
   flex-wrap: wrap;
   height: 560px; 
-  width: 100%;
+  width: 1000px;
   display: flex;
-  padding: 25px 0;
-  justify-content: center;
-  align-items: center;
+  background: #FDFEFF;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;  
+
+}
+//Basic layout
+.band-text {
+  width: 50%;
+  padding: 5px;
 }
 
 .band-info {
   padding: 30px;
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
+  // border: 1px solid black;
+  height: 60%;
+  border-bottom: 1px solid rgb(223, 223, 223);
 }
 
 .band-music-links {
-  padding: 30px;
-  border: 1px solid black;
-  height: 200px;
-  width: 75%;
+  font-size: 15px;
+  // border: 1px solid black;
+  margin: 20px;
+  height: 40%;
 }
 
 .band-social-media {
-  padding: 20px;
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
+  // border: 1px solid black;
+  margin: 20px;
+ }
+.band-photos {
+  // border: 1px solid black;
+  width: 50%;  
+}
+
+//Font sizing
+
+.bio {
+  font-size: 18px;
+}
+
+.band {
+  font-weight: 300;
+}
+
+.band-name {
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.band-bio {
+  margin-bottom: 18px;
+}
+
+.band-bandcamp {
+  margin-bottom: 20px;
+}
+
+.band-photos {
+  margin: 30px;
 }
