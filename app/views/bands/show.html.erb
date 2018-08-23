@@ -1,3 +1,4 @@
+
 <div class="container-band">
   <div class="row-band">
     <div class="band-text">
@@ -6,18 +7,39 @@
       <p class="band band-bio"><%= @band.bio %></p>
       <p class="band band-genre"><%= @band.genre.name %></p>
       </div>
-
       <div class="band-music-links">
-      <p class="band band-website"><%= @band.website %></p>
-      <p class="band band-spotify"><%= @band.spotify %></p>
-      <p class="band band-bandcamp"><%= @band.bandcamp %></p>
-
-      <p class="band band-facebook"><%= @band.facebook %></p>
-      <p class="band band-instagram"><%= @band.instagram %></p>
-      <p class="band band-youtube"><%= @band.youtube %></p>
+        <p class="band band-website">
+          <a <%= link_to @band.website do %>
+            <i class="far fa-envelope"></i> - <%= @band.website %></a>
+          <% end %>
+        </p>
+        <p class="band band-spotify">
+          <a <%= link_to @band.spotify do %>
+            <i class="fab fa-spotify"></i> - <%= @band.spotify %></a>
+          <% end %>
+        </p>
+        <p class="band band-bandcamp">
+          <a <%= link_to @band.bandcamp do %>
+            <i class="fab fa-bandcamp"></i> - <%= @band.bandcamp %></a>
+          <% end %>
+        </p>
+        <p class="band band-facebook">
+          <a <%= link_to @band.facebook do %>
+            <i class="fab fa-facebook"></i> - <%= @band.facebook %></a>
+          <% end %>
+        </p>
+        <p class="band band-instagram">
+          <a <%= link_to @band.instagram do %>
+            <i class="fab fa-instagram"></i> - <%= @band.instagram %></a>
+          <% end %>
+        </p>
+        <p class="band band-youtube">
+          <a <%= link_to @band.youtube do %>
+            <i class="fab fa-youtube"></i> - <%= @band.youtube %></a>
+          <% end %>
+        </p>
       </div>
     </div>
-
     <div class="band-photos">
     </div>
   </div>
