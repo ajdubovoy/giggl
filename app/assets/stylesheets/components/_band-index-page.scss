@@ -1,0 +1,47 @@
+.container-band-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.row-band-index {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  flex-direction: column;
+  background: #FDFEFF;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  padding: 30px;  
+ }
+
+
+.band-music-links  .band-card {
+  display: flex;
+  flex-wrap: wrap;
+
+  border: 1px solid black;
+
+}
+
+.band-bio-index {
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.band-genre-index {
+  font-weight: 400;
+}
+
+.band-photos .band-card {
+  border: 1px solid black;
+
+}
+
+.band-icons a {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.band-genre-index {
+  margin-bottom: 10px;
+}

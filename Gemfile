@@ -17,6 +17,14 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# Messages
+gem 'mailboxer'
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
+gem 'gravatar_image_tag'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+
 # Maps
 gem "geocoder"
 
