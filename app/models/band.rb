@@ -1,4 +1,5 @@
 class Band < ApplicationRecord
+  acts_as_messageable
   belongs_to :user
   belongs_to :genre
   has_many :reviews
@@ -20,5 +21,9 @@ class Band < ApplicationRecord
 
   def bookings_all
     bookings_played + bookings_organized
+  end
+
+  def mailboxer_email(object)
+    email
   end
 end
