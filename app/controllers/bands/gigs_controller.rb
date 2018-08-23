@@ -18,8 +18,7 @@ class Bands::GigsController < ApplicationController
   private
 
   def find_band
-    band_params = params.require(:band).permit(:id)
-    @band = Band.find(band_params[:id])
+    @band = Band.find(params[:band_id])
   end
 
   def gig_params
