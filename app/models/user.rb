@@ -38,7 +38,7 @@ class User < ApplicationRecord
   def venue_gigs # Gigs where venue is the organizer
     venues = self.venues
     gigs_map = venues.map { |venue| venue.gigs }
-    return bookings_map.flatten
+    return gigs_map.flatten
   end
 
   def mailboxer_email(object)
