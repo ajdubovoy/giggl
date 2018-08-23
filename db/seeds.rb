@@ -5,12 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+  
+  Gig.destroy_all
   Venue.destroy_all
   Band.destroy_all
   Genre.destroy_all
   User.destroy_all
-  Gig.destroy_all
 
 rock = Genre.create!(name:"rock")
 funk = Genre.create!(name:"funk")
