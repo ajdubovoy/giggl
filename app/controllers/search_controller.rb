@@ -4,7 +4,7 @@ class SearchController < ApplicationController
 
     # Location filter
     if params[:location].present?
-      @gigs = Gig.near(params[:location]
+      @gigs = Gig.near(params[:location])
     end
   end
 end
