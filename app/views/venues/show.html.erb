@@ -1,8 +1,14 @@
-Individual venue page
-
-"address"
-"telephone"
-"email"
-"description"
-"website"
-"user_id"
+<div class="container">
+  <div class="row-venue">
+    <div class="venue-contact-info">
+    <p><%= @venue.name %></p>
+    <p><%= @venue.address %></p>
+    <p><%= @venue.telephone%></p>
+    </div>
+    
+    <div class="venue-extra info">
+    <p><%= @venue.description %></p>
+    <p><%= @venue.website %></p>
+    </div>
+  </div>
+</div>
