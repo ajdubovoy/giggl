@@ -1,12 +1,13 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  acts_as_messageable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :bands
   has_many :venues
 
-  def bookings    
+  def bookings
     return venue_bookings + band_bookings
   end
 
@@ -38,5 +39,9 @@ class User < ApplicationRecord
     venues = self.venues
     gigs_map = venues.map { |venue| venue.gigs }
     return bookings_map.flatten
+  end
+
+  def mailboxer_email(object)
+    email
   end
 end
