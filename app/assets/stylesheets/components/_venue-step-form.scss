@@ -8,13 +8,12 @@
 .row-form {
   // background: linear-gradient(#8CA6DB, #B993D6);
   flex-wrap: wrap;
-  width: 360px; 
-  height: 560px; 
   display: flex;
   flex-flow: column;
   padding: 25px 0;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
 }
 
 .new-venue {
@@ -49,8 +48,12 @@
  
  /* Style the form */
 #regForm {
-  background-color: #ffffff;
+  background-color: rgba(252, 252, 252, 0.952);
   min-width: 300px;
+  width: 420px;
+  padding: 30px;
+  height: 560px;
+  border-radius: 3px;
 }
 
 /* Style the input fields */
