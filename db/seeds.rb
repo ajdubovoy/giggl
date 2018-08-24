@@ -22,6 +22,11 @@ rock = Genre.create!(name:"Rock")
 funk = Genre.create!(name:"Funk")
 alternative = Genre.create!(name:"Alternative")
 psychedelic = Genre.create!(name:"Psychedelic")
+reggae = Genre.create!(name:"Reggae")
+metal = Genre.create!(name:"Metal")
+punk = Genre.create!(name:"Punk")
+rnb = Genre.create!(name:"R&B")
+techno = Genre.create!(name:"Techno")
 genres = Genre.all
 
 puts 'Creating users...'
@@ -111,7 +116,7 @@ gig_photo1.remote_photo_url = gigurls.sample
 gig_photo1.profile = gig1
 gig_photo1.save!
 gig1.save!
-gig2 = Gig.new(address: "Kreuzberg, Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "TATTAT EP release show", date: '09/09/18', time: '20:30')
+gig2 = Gig.new(address: "Kreuzberg, Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "Souther EP release show", date: '09/09/18', time: '20:30')
 gig2.genre = genres.sample
 gig2.organizer = band1
 gig_photo2 = Photo.new
