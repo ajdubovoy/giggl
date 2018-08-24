@@ -1,23 +1,22 @@
-Search Page
-Add filters
-
 <div class="container-gig-index">
-<% @gigs.each do |gig| %>
-    <div class="row-gig-index gig-card">
-    <div class="gig-text-index">
-       <div class="gig-info-index gig-card">
-      <h1 class="gig gig-name"><%= gig.name %></h1>
-      <p class="gig gig-bio-index"><%= gig.description %></p>
-      <p class="gig gig-genre-index"><%= gig.address %></p>
+  <%= render "search/search_box" %>
+  
+  <% @gigs.each do |gig| %>
+      <div class="row-gig-index gig-card">
+      <div class="gig-text-index">
+         <div class="gig-info-index gig-card">
+        <h1 class="gig gig-name"><%= gig.name %></h1>
+        <p class="gig gig-bio-index"><%= gig.description %></p>
+        <p class="gig gig-genre-index"><%= gig.address %></p>
 
-      <div class="gig-icons">
-        <a href="http://<%=gig.url%>"><i class="fab fa-facebook"></i></a>
+        <div class="gig-icons">
+          <a href="http://<%=gig.url%>"><i class="fab fa-facebook"></i></a>
+        </div>
+        </div>
+      </div>
+
+      <div class="gig-photos gig-card">
       </div>
       </div>
-    </div>
-
-    <div class="gig-photos gig-card">
-    </div>
-    </div>
-<% end %>
-  </div>
+  <% end %>
+</div>

@@ -1,0 +1,12 @@
+<div class="search-box">
+    <div class="form-row">
+      <%= form_tag search_path, method: :get do %>
+        <%= text_field_tag :location,
+            params[:location],
+            class: "form-control input-lg",
+            placeholder: "Where?"
+          %>
+        <%= submit_tag "Search", class: "btn btn-lg btn-danger"%>
+      <% end %>
+    </div>
+  </div>
