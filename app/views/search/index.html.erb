@@ -20,7 +20,7 @@
         </div>
         </div>
       <% booking = Booking.new %>
-      <%= form_for(booking, url: gig_bookings_path(gig), method: :post, html: { id: "regForm" }) do |f| %>
+      <%= form_for(booking, url: gig_bookings_path(gig), method: :post, html: { id: "" }) do |f| %>
         <%= f.select(:band_id, @bands.collect { |band| [band.name, band.id] }) %>
         <%= f.submit "Book now", class: "button-book" %>
       <% end %>
