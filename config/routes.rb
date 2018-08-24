@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   # Bookings
-  resources :bookings, only: [:index, :show, :new]
+  resources :bookings, only: [:index, :show]
 
   # Gigs
   resources :gigs, only: [:index, :show, :new, :create] do
