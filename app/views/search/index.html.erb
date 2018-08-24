@@ -1,5 +1,11 @@
 <div class="card-band-index">
   <%= render "search/search_box" %>
+  <div
+    id="map"
+    style="width: 100%;
+    height: 300px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
   <% @gigs.each do |gig| %>
       <div class="row-gig-index gig-card">
       <div class="gig-text-index">
