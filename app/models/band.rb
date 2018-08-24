@@ -5,7 +5,7 @@ class Band < ApplicationRecord
   has_many :reviews
   has_many :photos, as: :profile
   has_many :bookings
-  has_many :gigs
+  has_many :gigs, as: :organizer
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -14,7 +14,7 @@ class Band < ApplicationRecord
   end
 
   def bookings_organized
-    gigs = band.gigs
+    gigs = self.gigs
     bookings_map = gigs.map { |gig| gig.bookings } # will return array of arrays
     return bookings_map.flatten
   end
