@@ -36,10 +36,14 @@
   font-weight: 400;
 }
 
-.gig-photos .gig-card {
-  border: 1px solid black;
-
+.gig-photos.gig-card {
+  box-shadow: 20px;
 }
+
+img {
+  height: 250px;
+}
+
 
 .gig-icons a {
   margin-right: 10px;
