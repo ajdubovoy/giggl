@@ -26,25 +26,29 @@ genres = Genre.all
 
 puts 'Creating users...'
 
-user1 = User.create!(email: "emily@emily.com", password: "123456789", name: "Emily Rhodes")
-user2 = User.create!(email: "someoneelse@haha.com", password: "123456789", name: "Night Club Killer")
-user3 = User.create!(email: "oriane@oriane.com", password: "123456789", name: "Oriane Millet")
-user4 = User.create!(email: "alex@alex.com", password: "123456789", name: "Alexander Dubovoy")
+user1 = User.create(email: "emily@emily.com", password: "123456789", name: "Emily Rhodes")
+user1.save!
+user2 = User.create(email: "someoneelse@haha.com", password: "123456789", name: "Night Club Killer")
+user2.save!
+user3 = User.create(email: "oriane@oriane.com", password: "123456789", name: "Oriane Millet")
+user3.save!
+user4 = User.create(email: "alex@alex.com", password: "123456789", name: "Alexander Dubovoy")
+user4.save!
 users = User.all
 
 puts 'Creating bands...'
 
 bandurls = ["https://images.pexels.com/photos/756239/pexels-photo-756239.jpeg?cs=srgb&dl=band-concert-festival-756239.jpg&fm=jpg", "https://images.pexels.com/photos/210887/pexels-photo-210887.jpeg?cs=srgb&dl=adult-artist-artists-210887.jpg&fm=jpg", "https://images.pexels.com/photos/157642/girl-guitar-photo-people-157642.jpeg?cs=srgb&dl=beautiful-black-and-white-classical-guitar-157642.jpg&fm=jpg", "https://images.pexels.com/photos/1327426/pexels-photo-1327426.jpeg?cs=srgb&dl=artist-band-drummer-1327426.jpg&fm=jpg"]
 
-band1 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "Mistar Anderson", address: "Berlin")
+band1 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "TATTAT", address: "Berlin")
 band1.genre = genres.sample
-band1.user = users.sample
+band1.user = user1
 photo1 = Photo.new
 photo1.remote_photo_url = bandurls.sample
 photo1.profile = band1
 photo1.save!
 band1.save!
-band2 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "TATTAT", address: "Columbus, Ohio")
+band2 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "MojoFlo", address: "Columbus, Ohio")
 band2.genre = genres.sample
 band2.user = users.sample
 photo2 = Photo.new
@@ -52,7 +56,7 @@ photo2.remote_photo_url = bandurls.sample
 photo2.profile = band2
 photo2.save!
 band2.save!
-band3 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "TATTAT", address: "Berlin")
+band3 = Band.new(bio: "A combination of soul, funk, and alternative stylings, embedded in contemporary experimentation", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "Hello Luna", address: "Berlin")
 band3.genre = genres.sample
 band3.user = users.sample
 photo3 = Photo.new
