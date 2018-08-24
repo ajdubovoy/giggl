@@ -3,7 +3,7 @@ class Band < ApplicationRecord
   belongs_to :user
   belongs_to :genre
   has_many :reviews
-  has_many :photos
+  has_many :photos, as: :profile
   has_many :bookings
   has_many :gigs
   geocoded_by :address
