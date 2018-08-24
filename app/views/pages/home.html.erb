@@ -2,3 +2,20 @@
 Automatic side scrolling banner with clickable sections
 Side bar with navigation
 Links?  %>
+
+<div class="home-banner">
+  <h1>Where do you want to play?</h1>
+
+  <div class="search-box">
+    <div class="form-row">
+      <%= form_tag search_path, method: :get do %>
+        <%= text_field_tag :location,
+            params[:location],
+            class: "form-control input-lg",
+            placeholder: "Where?"
+          %>
+        <%= submit_tag "Search", class: "btn btn-lg btn-danger"%>
+      <% end %>
+    </div>
+  </div>
+</div>
