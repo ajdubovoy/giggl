@@ -1,6 +1,6 @@
 <div class="container-gig-index">
   <%= render "search/search_box" %>
-  
+
   <% @gigs.each do |gig| %>
       <div class="row-gig-index gig-card">
       <div class="gig-text-index">
@@ -16,6 +16,7 @@
       </div>
 
       <div class="gig-photos gig-card">
+        <%= cl_image_tag gig.photos.first.photo %>
       </div>
       </div>
   <% end %>
