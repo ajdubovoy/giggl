@@ -8,6 +8,8 @@
   border: none;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   font-family: "Open Sans";
+  margin: 0;
+  top: 0;
 }
 .btn-treehouse:hover {
   opacity: 1;
@@ -16,7 +18,8 @@
   color: white;
 }
 .search-enter {
-  width: 15vw;
+  height: 44px;
+  width: 175px;
   border-radius: 3px;
   font-family: "Open Sans";
   border: none;
@@ -56,4 +59,24 @@
     text-transform: uppercase;
     font-display: 'Lato';
   }
+}
+
+// Algolia
+
+.algolia-places{
+  white-space:nowrap;
+  width: 100%;
+  padding: 0;
+  display: inline !important;
+}
+
+.ap-input{
+  white-space:nowrap;
+}
+.ap-icon-pin{
+  display: none;
+}
+
+.ap-icon-clear{
+  display: none
 }

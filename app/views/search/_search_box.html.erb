@@ -1,6 +1,6 @@
 <div class="search-box">
     <div class="form-row">
-      <%= form_tag search_path, method: :get do %>
+      <%= form_tag search_path, method: :get, id: "search-box" do %>
         <%= text_field_tag :location,
             params[:location],
             class: "search-enter",
@@ -10,3 +10,10 @@
       <% end %>
     </div>
   </div>
+
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+<script>
+  var placesAutocomplete = places({
+    container: document.querySelector('#location')
+  });
+</script>
