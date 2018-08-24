@@ -1,24 +1,36 @@
 .btn-treehouse {
   color: white;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-weight: bold;
-  background: #6AD58B;
+  padding: 11px 15px;
+  border-radius: 3px;
+  background: #a0f;
   transition: background 0.3s ease;
-  width: 150px
-
+  width: 100px;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  font-family: "Open Sans";
 }
 .btn-treehouse:hover {
   opacity: 1;
-  background: #3ac162;
+  background: #5400ac;
   text-decoration: none;
   color: white;
 }
 .search-enter {
-  width: 40vw;
+  width: 15vw;
+  border-radius: 3px;
+  font-family: "Open Sans";
+  border: none;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+  opacity: 0.8;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  &:focus{
+    width: 40vw;
+    opacity: 1;
+  }
 }
 .search-box {
   margin: 20px;
+  border-radius: 3px;
 }
 
 .home-banner-content {
