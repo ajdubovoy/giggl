@@ -1,1 +1,66 @@
-Individual booking page
+<div class="card-band-index">
+  <h1 style="color: white;">Confirmed gig!</h1>
+  <div class="row-gig-index gig-card">
+    <div class="gig-text-index">
+       <div class="gig-info-index gig-card">
+      <h1 class="gig gig-name">Gig: <%= @gig.name %></h1>
+      <p class="gig gig-bio-index">Organized by <%= @gig.organizer.name %></p>
+      <p class="gig gig-bio-index"><%= @gig.description %></p>
+      <p class="gig gig-genre-index"><%= @gig.address %></p>
+
+      <div class="gig-icons">
+        <a href="http://<%=@gig.url%>"><i class="fab fa-facebook"></i></a>
+      </div>
+      </div>
+    </div>
+
+    <div class="gig-photos gig-card">
+      <%= cl_image_tag @gig.photos.first.photo %>
+    </div>
+    </div>
+
+  <div class="row-band">
+    <div class="band-text">
+      <div class="band-info">
+      <h1 class="band band-name">Band Playing: <%= @band.name %></h1>
+      <p class="band band-bio"><%= @band.bio %></p>
+      <p class="band band-genre"><%= @band.genre.name.capitalize %></p>
+      </div>
+      <div class="band-music-links">
+        <p class="band band-website">
+          <a <%= link_to @band.website do %>
+            <i class="far fa-envelope"></i> - <%= @band.website %></a>
+          <% end %>
+        </p>
+        <p class="band band-spotify">
+          <a <%= link_to @band.spotify do %>
+            <i class="fab fa-spotify"></i> - <%= @band.spotify %></a>
+          <% end %>
+        </p>
+        <p class="band band-bandcamp">
+          <a <%= link_to @band.bandcamp do %>
+            <i class="fab fa-bandcamp"></i> - <%= @band.bandcamp %></a>
+          <% end %>
+        </p>
+        <p class="band band-facebook">
+          <a <%= link_to @band.facebook do %>
+            <i class="fab fa-facebook"></i> - <%= @band.facebook %></a>
+          <% end %>
+        </p>
+        <p class="band band-instagram">
+          <a <%= link_to @band.instagram do %>
+            <i class="fab fa-instagram"></i> - <%= @band.instagram %></a>
+          <% end %>
+        </p>
+        <p class="band band-youtube">
+          <a <%= link_to @band.youtube do %>
+            <i class="fab fa-youtube"></i> - <%= @band.youtube %></a>
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="band-photos">
+    </div>
+  </div>
+
+</div>
