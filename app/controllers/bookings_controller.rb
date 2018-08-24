@@ -5,6 +5,9 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @gig = @booking.gig
+    @band = @booking.band
+    @organizer = @gig.organizer
   end
 
   def create
