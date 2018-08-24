@@ -73,25 +73,25 @@ puts 'Creating venues...'
 
 venueurls = ["https://images.pexels.com/photos/1267265/pexels-photo-1267265.jpeg?cs=srgb&dl=adult-bar-beer-1267265.jpg&fm=jpg", "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=alcohol-architecture-bar-260922.jpg&fm=jpg", "https://images.pexels.com/photos/769153/pexels-photo-769153.jpeg?cs=srgb&dl=business-chairs-city-769153.jpg&fm=jpg", "https://images.pexels.com/photos/1154189/pexels-photo-1154189.jpeg?cs=srgb&dl=celebration-concert-crowd-1154189.jpg&fm=jpg"]
 
-venue1 = Venue.new(name: "Dirty Dicks", address: "202 Bishopsgate, London EC2M 4NR", telephone: "+44 20 7283 5888", email: "dirty@dicks.com", description: "3-floor pub with wood panelling", website: "http://www.dirtydicks.co.uk", user: User.all.sample)
+venue1 = Venue.new(name: "Le Wagon Bar", address: "Friedrichain, Berlin", telephone: "+44 20 7283 5888", email: "dirty@dicks.com", description: "3-floor pub with wood panelling", website: "http://www.dirtydicks.co.uk", user: User.all.sample)
 venue_photo1 = Photo.new
 venue_photo1.remote_photo_url = venueurls.sample
 venue_photo1.profile = venue1
 venue_photo1.save!
 venue1.save!
-venue2 = Venue.new(name: "Taranino's Bar", address: "Brunnenstraße 163, Berlin", telephone: "+49 30 40500355", email: "tarantino@feet.com", description: "footwear optional", website: "http://tarantinos-bar.de", user: User.all.sample)
+venue2 = Venue.new(name: "Taranino's Bar", address: "Donaustraße 110, 12043 Berlin", telephone: "+49 30 40500355", email: "tarantino@feet.com", description: "footwear optional", website: "http://tarantinos-bar.de", user: User.all.sample)
 venue_photo2 = Photo.new
 venue_photo2.remote_photo_url = venueurls.sample
 venue_photo2.profile = venue2
 venue_photo2.save!
 venue2.save!
-venue3 = Venue.new(name: "Le Titty Twister", address: "5 Rue de Berri, 75008 Paris", telephone: "+33 1 45 62 50 23", email: "titties@doubleD.com", description: "sun's out", website: "http://www.letittytwister.com", user: User.all.sample)
+venue3 = Venue.new(name: "The Walrus", address: "Donaustraße 200, 12043 Berlin", telephone: "+33 1 45 62 50 23", email: "titties@doubleD.com", description: "sun's out", website: "http://www.letittytwister.com", user: User.all.sample)
 venue_photo3 = Photo.new
 venue_photo3.remote_photo_url = venueurls.sample
 venue_photo3.profile = venue3
 venue_photo3.save!
 venue3.save!
-venue4 = Venue.new(name: "Donau115", address: "Donaustraße 115, 12043 Berlin", telephone: "+49 0179 1809168", email: "alex@rules.com", description: "the gitmeister played there", website: "http://donau115.de", user: User.all.sample)
+venue4 = Venue.new(name: "Baiz", address: "Donaustraße 115, 12043 Berlin", telephone: "+49 0179 1809168", email: "alex@rules.com", description: "the gitmeister played there", website: "http://donau115.de", user: User.all.sample)
 venue_photo4 = Photo.new
 venue_photo4.remote_photo_url = venueurls.sample
 venue_photo4.profile = venue4
@@ -103,7 +103,7 @@ puts 'Creating gigs...'
 
 gigurls = ["https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?cs=srgb&dl=applause-audience-band-196652.jpg&fm=jpg", "https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?cs=srgb&dl=audience-band-bright-1047442.jpg&fm=jpg", "https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?cs=srgb&dl=applause-audience-band-167636.jpg&fm=jpg", "https://images.pexels.com/photos/342520/pexels-photo-342520.jpeg?cs=srgb&dl=adults-audience-band-342520.jpg&fm=jpg"]
 
-gig1 = Gig.new(address: "London", paid: true, description: "Tuesdays at Dirty Dicks is bringing you live music - to our new Side Stage. We are also featuring $1 off Pacifico, Modelo, and Ballast Point!", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Dirty Dicks", date: '09/09/18', time: '20:30')
+gig1 = Gig.new(address: "Friedrichain, Berlin", paid: true, description: "Bringing you live music to our new Side Stage", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Thursdays @ Le Wagon", date: '09/09/18', time: '20:30')
 gig1.genre = genres.sample
 gig1.organizer = venue1
 gig_photo1 = Photo.new
@@ -111,7 +111,7 @@ gig_photo1.remote_photo_url = gigurls.sample
 gig_photo1.profile = gig1
 gig_photo1.save!
 gig1.save!
-gig2 = Gig.new(address: "Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "TATTAT EP release show", date: '09/09/18', time: '20:30')
+gig2 = Gig.new(address: "Kreuzberg, Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "TATTAT EP release show", date: '09/09/18', time: '20:30')
 gig2.genre = genres.sample
 gig2.organizer = band1
 gig_photo2 = Photo.new
@@ -119,7 +119,7 @@ gig_photo2.remote_photo_url = gigurls.sample
 gig_photo2.profile = gig2
 gig_photo2.save!
 gig2.save!
-gig3 = Gig.new(address: "Donaustraße 115, 12043 Berlin", paid: true, description: "Live music act wanted saturday pm", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Dirty Dicks", date: '09/09/18', time: '20:30')
+gig3 = Gig.new(address: "Donaustraße 115, 12043 Berlin", paid: true, description: "Live music act wanted saturday pm", other_bands: "MoJoFlo", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Baiz", date: '09/09/18', time: '20:30')
 gig3.genre = genres.sample
 gig3.organizer = venue4
 gig_photo3 = Photo.new
@@ -127,7 +127,7 @@ gig_photo3.remote_photo_url = gigurls.sample
 gig_photo3.profile = gig3
 gig_photo3.save!
 gig3.save!
-gig4 = Gig.new(address: "Columbus", paid: false, description: "Come play a house show with us", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "House show @ Misfit Manor", date: '09/09/18', time: '20:30')
+gig4 = Gig.new(address: "Pankow, Berlin", paid: false, description: "Come play a house show with us", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "House show @ Misfit Manor", date: '09/09/18', time: '20:30')
 gig4.genre = genres.sample
 gig4.organizer = bands.sample
 gig_photo4 = Photo.new
