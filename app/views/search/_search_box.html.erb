@@ -1,4 +1,4 @@
-<div class="search-box">
+<div class="search-box form-inline">
     <div class="form-row">
       <%= form_tag search_path, method: :get do %>
         <%= text_field_tag :location,
@@ -6,7 +6,7 @@
             class: "form-control input-lg",
             placeholder: "Where?"
           %>
-        <%= submit_tag "Search", class: "btn btn-lg btn-danger"%>
+        <%= submit_tag "Search", class: "btn-treehouse"%>
       <% end %>
     </div>
   </div>
