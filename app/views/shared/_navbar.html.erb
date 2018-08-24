@@ -7,6 +7,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <%= link_to "New band", new_band_path, class: "navbar-item navbar-link" %>
       <%= link_to "Search", search_path, class: "navbar-item navbar-link" %>
       <%= link_to "My Account", account_path, class: "navbar-item navbar-link" %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "navbar-item navbar-link"%>
