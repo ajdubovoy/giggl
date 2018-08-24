@@ -1,7 +1,13 @@
 // Specific CSS for your home-page
 .home-banner{
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 25px;
+  height: 75vh;
+
+  .home-banner-content{
+  }
 
   h1{
     color: white;
