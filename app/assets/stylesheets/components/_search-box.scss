@@ -5,10 +5,43 @@
   font-weight: bold;
   background: #6AD58B;
   transition: background 0.3s ease;
+  width: 150px
+
 }
 .btn-treehouse:hover {
   opacity: 1;
   background: #3ac162;
   text-decoration: none;
   color: white;
+}
+.search-enter {
+  width: 40vw;
+}
+.search-box {
+  margin: 20px;
+}
+
+.home-banner-content {
+  text-align: center;
+}
+.home-banner-content h1 {
+  text-transform: uppercase;
+}
+.home-banner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  height: 75vh;
+
+  .home-banner-content{
+  }
+
+  h1{
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    font-size: 75px;
+    text-transform: uppercase;
+    font-display: 'Lato';
+  }
 }

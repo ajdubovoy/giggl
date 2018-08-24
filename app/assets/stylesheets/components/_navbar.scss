@@ -8,11 +8,12 @@
   width: 100%;
   text-transform: uppercase;
   font-family: Lato;
-  font-size: 16px;
+  font-size: 20px;
 }
 .navbar-header {
-  font-size: 18px;
+  font-size: 22px;
   padding-left: 100px;
+  font-weight: bold;
 }
 
 // /* User Avatar */
@@ -40,9 +41,10 @@
 .navbar-link {
   font-family: Lato;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 16px;
   transition: color 0.5s;
   text-decoration: none;
+  font-weight: bold;
 }
 .navbar-link:hover {
   color: $red;

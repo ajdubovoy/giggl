@@ -8,16 +8,16 @@
         <p class="gig gig-bio-index"><%= gig.description %></p>
         <p class="gig gig-genre-index"><%= gig.address %></p>
 
-      <% booking = Booking.new %>
-      <%= form_for(booking, url: gig_bookings_path(gig), method: :post, html: { id: "regForm" }) do |f| %>
-        <%= f.select(:band_id, @bands.collect { |band| [band.name, band.id] }, class: "form-item form-item-drop", oninput: "this.className += ''") %>
-        <%= f.submit "Book now" %>
-      <% end %>
 
         <div class="gig-icons">
           <a href="http://<%=gig.url%>"><i class="fab fa-facebook"></i></a>
         </div>
         </div>
+      <% booking = Booking.new %>
+      <%= form_for(booking, url: gig_bookings_path(gig), method: :post, html: { id: "regForm" }) do |f| %>
+        <%= f.select(:band_id, @bands.collect { |band| [band.name, band.id] }) %>
+        <%= f.submit "Book now", class: "button-book" %>
+      <% end %>
       </div>
 
       <div class="gig-photos gig-card">
