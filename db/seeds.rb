@@ -108,7 +108,7 @@ puts 'Creating gigs...'
 
 gigurls = ["https://images.pexels.com/photos/196652/pexels-photo-196652.jpeg?cs=srgb&dl=applause-audience-band-196652.jpg&fm=jpg", "https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?cs=srgb&dl=audience-band-bright-1047442.jpg&fm=jpg", "https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?cs=srgb&dl=applause-audience-band-167636.jpg&fm=jpg", "https://images.pexels.com/photos/342520/pexels-photo-342520.jpeg?cs=srgb&dl=adults-audience-band-342520.jpg&fm=jpg"]
 
-gig1 = Gig.new(address: "Friedrichain, Berlin", paid: true, description: "Bringing you live music to our new Side Stage", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Thursdays @ Le Wagon", date: '09/09/18', time: '20:30')
+gig1 = Gig.new(address: "Friedrichain, Berlin", paid: true, description: "Bringing you live music to our new Side Stage", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Thursdays @ Le Wagon", date: '2019-09-09', time: '20:30')
 gig1.genre = genres.sample
 gig1.organizer = venue1
 gig_photo1 = Photo.new
@@ -116,7 +116,7 @@ gig_photo1.remote_photo_url = gigurls.sample
 gig_photo1.profile = gig1
 gig_photo1.save!
 gig1.save!
-gig2 = Gig.new(address: "Kreuzberg, Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "Souther EP release show", date: '09/09/18', time: '20:30')
+gig2 = Gig.new(address: "Kreuzberg, Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "Souther EP release show", date: '2019-09-09', time: '20:30')
 gig2.genre = genres.sample
 gig2.organizer = band1
 gig_photo2 = Photo.new
@@ -124,7 +124,7 @@ gig_photo2.remote_photo_url = gigurls.sample
 gig_photo2.profile = gig2
 gig_photo2.save!
 gig2.save!
-gig3 = Gig.new(address: "Donaustraße 115, 12043 Berlin", paid: true, description: "Live music act wanted saturday pm", other_bands: "MoJoFlo", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Baiz", date: '09/09/18', time: '20:30')
+gig3 = Gig.new(address: "Donaustraße 115, 12043 Berlin", paid: true, description: "Live music act wanted saturday pm", other_bands: "MoJoFlo", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Baiz", date: '2019-09-09', time: '20:30')
 gig3.genre = genres.sample
 gig3.organizer = venue4
 gig_photo3 = Photo.new
@@ -132,7 +132,7 @@ gig_photo3.remote_photo_url = gigurls.sample
 gig_photo3.profile = gig3
 gig_photo3.save!
 gig3.save!
-gig4 = Gig.new(address: "Pankow, Berlin", paid: false, description: "Come play a house show with us", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "House show @ Misfit Manor", date: '09/09/18', time: '20:30')
+gig4 = Gig.new(address: "Pankow, Berlin", paid: false, description: "Come play a house show with us", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "House show @ Misfit Manor", date: '2019-09-09', time: '20:30')
 gig4.genre = genres.sample
 gig4.organizer = bands.sample
 gig_photo4 = Photo.new
