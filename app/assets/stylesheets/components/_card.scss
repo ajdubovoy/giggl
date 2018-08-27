@@ -7,14 +7,8 @@
   background-color: #FDFEFF;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   padding: 30px;
-  color: black;
   margin: 10px;
-}
-
-.card-booking{
-  position: absolute;
-  top: 50px;
-  right: 10px;
+  border-radius: 3px;
 }
 
 .card-category {
@@ -44,14 +38,11 @@
   right: 0;
   width: 100%;
   z-index: 2;
-  background: black;
+  background-color: $purple;
   opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
-}
-
-.card-band-icons a {
-  margin-right: 10px;
-  font-size: 18px;
+  border-radius: 3px;
+  transition: opacity 500ms ease;
+  &:hover {
+    opacity: 0.3;
+  }
 }
