@@ -1,4 +1,6 @@
 class SearchController < ApplicationController
+  skip_before_action :authenticate_user!
+
   def index
     @gigs = Gig.all
     @bands = Band.where(user: current_user)

@@ -1,11 +1,13 @@
 .search-enter {
-  width: 75% !important;
   opacity: 0.8 ;
   transition: width 0.3s ease, opacity 0.3s ease !important;
   &:focus{
-    width: 100% !important;
     opacity: 1 !important;
   }
+}
+
+.search-box{
+  text-align: center;
 }
 
 // Algolia
@@ -22,11 +24,11 @@
   white-space:nowrap;
 }
 .ap-icon-pin{
-  display: none;
+  color: $purple;
 }
 
 .ap-icon-clear{
-  display: none
+  color: $purple;
 }
 
 .ap-dropdown-menu{
