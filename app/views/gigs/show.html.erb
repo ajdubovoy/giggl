@@ -20,11 +20,11 @@
           <p><strong>Genre:</strong> <%= @gig.genre.name %></p>
           <p><strong>Description:</strong> <%= @gig.description %></p>
           <p><strong>Also playing:</strong> <%= @gig.other_bands %></p>
-          <% if @gig.paid %>
+          <p><% if @gig.paid %>
             <strong>Paid:</strong> <i class="fas fa-money-bill-alt"></i>
           <% else %>
             <strong>Paid:</strong> <i class="fas fa-times"></i>
-          <% end %>
+          <% end %></p>
         </div>
         <div class="card-links">
           <%= link_to @gig.url, class: "btn btn-primary" do %>
