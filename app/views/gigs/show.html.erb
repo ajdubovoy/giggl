@@ -20,11 +20,11 @@
           <p><strong>Genre:</strong> <%= @gig.genre.name %></p>
           <p><strong>Description:</strong> <%= @gig.description %></p>
           <p><strong>Also playing:</strong> <%= @gig.other_bands %></p>
-          <% if @gig.paid %>
+          <p><% if @gig.paid %>
             <strong>Paid:</strong> <i class="fas fa-money-bill-alt"></i>
           <% else %>
             <strong>Paid:</strong> <i class="fas fa-times"></i>
-          <% end %>
+          <% end %></p>
         </div>
         <div class="card-links">
           <%= link_to @gig.url, class: "btn btn-primary" do %>
@@ -33,6 +33,17 @@
                     <%= link_to "View organizer", venue_path(@gig.organizer), class: 'btn btn-primary' %>
                   <% else %>
                     <%= link_to "View organizer", band_path(@gig.organizer), class: 'btn btn-primary' %>
+                  <% end %>
+                  <% if current_user.nil? %>
+                    <%= link_to t(".sign_in", default: "Login to book"), new_user_session_path, class: "btn btn-primary" %>
+                  <% else %>
+                  <div class="form-inline">
+                    <% booking = Booking.new %>
+                    <%= form_for(booking, url: gig_bookings_path(@gig), method: :post) do |f| %>
+                      <%= f.select(:band_id, @bands.collect { |band| [band.name, band.id] }, class: "form-control") %>
+                      <%= f.submit "Book now", class: "btn btn-primary" %>
+                      <% end %>
+                      </div>
                   <% end %>
           <% end %>
         </div>
