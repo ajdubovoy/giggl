@@ -18,12 +18,9 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= javascript_include_tag 'application' %>
-    <div class="content">
-    <%= yield %>
-    <video autoplay loop id="Video" muted plays-inline>
-      <source src='<%= video_url 'background.mov' %>' type="video/mp4">
-    </video>
+        <%= javascript_include_tag 'application' %>
+    <div class="container">
+        <%= yield %>
     </div>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>

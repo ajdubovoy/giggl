@@ -1,63 +1,10 @@
-.btn-treehouse {
-  color: white;
-  padding: 11px 15px;
-  border-radius: 3px;
-  background: #a0f;
-  transition: background 0.3s ease;
-  width: 100px;
-  border: none;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  font-family: "Open Sans";
-  margin: 0;
-  top: 0;
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #5400ac;
-  text-decoration: none;
-  color: white;
-}
 .search-enter {
-  height: 44px;
-  width: 175px;
-  border-radius: 3px;
-  font-family: "Open Sans";
-  border: none;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  opacity: 0.8;
-  transition: width 0.3s ease, opacity 0.3s ease;
+  width: 75% !important;
+  opacity: 0.8 ;
+  transition: width 0.3s ease, opacity 0.3s ease !important;
   &:focus{
-    width: 40vw;
-    opacity: 1;
-  }
-}
-.search-box {
-  margin: 20px;
-  border-radius: 3px;
-}
-
-.home-banner-content {
-  text-align: center;
-}
-.home-banner-content h1 {
-  text-transform: uppercase;
-}
-.home-banner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  height: 75vh;
-
-  .home-banner-content{
-  }
-
-  h1{
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-    font-size: 75px;
-    text-transform: uppercase;
-    font-display: 'Lato';
+    width: 100% !important;
+    opacity: 1 !important;
   }
 }
 
@@ -68,6 +15,7 @@
   width: 100%;
   padding: 0;
   display: inline !important;
+  font-family: $body-font;
 }
 
 .ap-input{
@@ -86,5 +34,5 @@
 }
 
 .ap-cursor{
-  background-color: #dad5ff
+  background-color: $light-purple;
 }
