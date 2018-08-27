@@ -1,17 +1,15 @@
 <div class="row">
   <div class="search-box form-inline">
-    <div class="col-sm-12 col-md-8">
-      <%= form_tag search_path, method: :get, id: "search-box" do %>
-        <%= text_field_tag :location,
-            params[:location],
-            class: "search-enter form-control form-control-lg input-lg",
-            placeholder: "Where?"
-          %>
-        </div>
-      <div class="col-sm-12 col-md-4">
-        <%= submit_tag "Search", class: "btn btn-primary btn-lg"%>
-      </div>
-    <% end %>
+    <%= form_tag search_path, method: :get, id: "search-box" do %>
+      <%= text_field_tag :location,
+          params[:location],
+          class: "search-enter form-control form-control-lg input-lg",
+          placeholder: "Where?"
+        %>
+      <%= button_tag class: "btn btn-primary btn-lg" do %>
+        <i class="fa fa-search"></i>
+      <% end %>
+  <% end %>
   </div>
 </div>
 
