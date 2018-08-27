@@ -5,7 +5,7 @@
     data-markers="<%= @markers.to_json %>"
   ></div>
 <div class="card-band-index" id="gig-search">
-  <%= render "search/search_box" %>
+  <%= render "search/search_box", big: "", big2: '' %>
   <% @gigs.each do |gig| %>
       <div class="row-gig-index gig-card">
       <div class="gig-text-index">

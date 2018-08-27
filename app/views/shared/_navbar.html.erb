@@ -6,7 +6,7 @@
 
    <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <div class="nav-search" id="nav-search" style="display: none;"><%= render "search/search_box" %></div>
+    <div class="nav-search" id="nav-search" style="display: none;"><%= render "search/search_box", big: '', big2: '' %></div>
 
     <%= link_to '#', class: "navbar-wagon-item navbar-wagon-link", id: "search-toggle", onclick: "const search = document.querySelector('#nav-search');if (search.style.display === 'none') {search.style.display = 'block';} else {search.style.display = 'none';}" do %>
       <i class="fa fa-search"></i>
