@@ -1,72 +1,72 @@
-.container-venue {
-  display: flex;
-  align-items:  center;
-  justify-content: center;
-  height: 90vh;
-}
-//Row sizing
-.row-venue {
-  // background: linear-gradient(#8CA6DB, #B993D6);
-  // border: 1px solid black;
-  flex-wrap: wrap;
-  height: 560px; 
-  width: 1000px;
-  display: flex;
-  background: #FDFEFF;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  padding: 20px;  
+// .container-venue {
+//   display: flex;
+//   align-items:  center;
+//   justify-content: center;
+//   height: 90vh;
+// }
+// //Row sizing
+// .row-venue {
+//   // background: linear-gradient(#8CA6DB, #B993D6);
+//   // border: 1px solid black;
+//   flex-wrap: wrap;
+//   height: 560px;
+//   width: 1000px;
+//   display: flex;
+//   background: #FDFEFF;
+//   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+//   padding: 20px;
 
-}
-//Basic layout
-.venue-text {
-  width: 50%;
-  padding: 5px;
-}
+// }
+// //Basic layout
+// .venue-text {
+//   width: 50%;
+//   padding: 5px;
+// }
 
-.venue-text-index {
-  width: 50%;
-}
+// .venue-text-index {
+//   width: 50%;
+// }
 
-.venue-info {
-  padding: 30px;
-  // border: 1px solid black;
-  height: 60%;
-  border-bottom: 1px solid rgb(223, 223, 223);
-}
+// .venue-info {
+//   padding: 30px;
+//   // border: 1px solid black;
+//   height: 60%;
+//   border-bottom: 1px solid rgb(223, 223, 223);
+// }
 
-.venue-music-links {
-  font-size: 15px;
-  // border: 1px solid black;
-  margin: 20px;
-  height: 40%;
-}
+// .venue-music-links {
+//   font-size: 15px;
+//   // border: 1px solid black;
+//   margin: 20px;
+//   height: 40%;
+// }
 
-.venue-social-media {
-  // border: 1px solid black;
-  margin: 20px;
- }
-.venue-photos {
-  // border: 1px solid black;
-  width: 50%;  
-}
+// .venue-social-media {
+//   // border: 1px solid black;
+//   margin: 20px;
+//  }
+// .venue-photos {
+//   // border: 1px solid black;
+//   width: 50%;
+// }
 
-//Font sizing
+// //Font sizing
 
-.bio {
-  font-size: 18px;
-}
+// .bio {
+//   font-size: 18px;
+// }
 
-.venue-name {
-  margin-bottom: 18px;
-  text-transform: uppercase;
-  font-weight: 400;
-}
+// .venue-name {
+//   margin-bottom: 18px;
+//   text-transform: uppercase;
+//   font-weight: 400;
+// }
 
-.venue-bio {
-  margin-bottom: 18px;
-}
+// .venue-bio {
+//   margin-bottom: 18px;
+// }
 
 
-.venue-photos {
-  margin: 30px;
-}
+// .venue-photos {
+//   margin: 30px;
+// }

@@ -1,11 +1,11 @@
-.card-band {
+.show-card {
   display: flex;
   align-items:  center;
   justify-content: center;
   height: 90vh;
 }
 //Row sizing
-.row-band {
+.show-content {
   // background: linear-gradient(#8CA6DB, #B993D6);
   // border: 1px solid black;
   flex-wrap: wrap;
@@ -41,33 +41,11 @@
   height: 40%;
 }
 
-.band-social-media {
-  // border: 1px solid black;
-  margin: 20px;
- }
-.band-photos {
-  // border: 1px solid black;
-  width: 50%;
-}
-
 //Font sizing
-
-.bio {
-  font-size: 18px;
-}
-
 .band-name {
   margin-bottom: 18px;
   text-transform: uppercase;
   font-weight: 400;
-}
-
-.band-bio {
-  margin-bottom: 18px;
-}
-
-.band-bandcamp {
-  margin-bottom: 20px;
 }
 
 .band-photos {
