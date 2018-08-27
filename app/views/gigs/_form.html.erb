@@ -5,19 +5,19 @@
 
 <!-- One "tab" for each step in the form: -->
 <div class="tab">Description:
-  <%= f.text_field :name, placeholder: "Name", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :address, placeholder: "Address", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_area :description, placeholder: "Description", class: "form-item full-width", oninput: "this.className += ''"  %>
-    <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item form-item-drop", oninput: "this.className += ''"})%>
+  <%= f.text_field :name, placeholder: "Name", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :address, placeholder: "Address", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_area :description, placeholder: "Description", class: "form-control", oninput: "this.className += ''"  %>
+    <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-control form-control-drop", oninput: "this.className += ''"})%>
 </div>
 
 <div class="tab">Date:
-  <%= f.text_field :date, placeholder: "Date", id: "gig-date", class: "form-item gig-date", oninput: "this.className += ''" %>
-  <%= f.text_field :time, placeholder: "Time", id: "gig-time", class: "form-item gig-time", oninput: "this.className += ''" %>
+  <%= f.text_field :date, placeholder: "Date", id: "gig-date", class: "form-control gig-date", oninput: "this.className += ''" %>
+  <%= f.text_field :time, placeholder: "Time", id: "gig-time", class: "form-control gig-time", oninput: "this.className += ''" %>
 </div>
 
 <div class="tab">Extra info:
-  <%= f.select(:organizer_id, [], {}, { class: "form-item form-item-drop" }) do %>
+  <%= f.select(:organizer_id, [], {}, { class: "form-control" }) do %>
     <% @organizers.each do |organizer| %>
       <%= content_tag(:option, organizer.name, value: organizer.id, "data-type": organizer.class.to_s) %>
     <% end %>
@@ -34,9 +34,9 @@
     })
   </script>
 
-  <%= f.select :paid, [['Paid', true], ['Unpaid', false]], {}, { class: "form-item form-item-drop" } %>
-  <%= f.text_area :other_bands, placeholder: "Other artists", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :url, placeholder: "Url", class: "form-item full-width", oninput: "this.className += ''"  %>
+  <%= f.select :paid, [['Paid', true], ['Unpaid', false]], {}, { class: "form-control form-control-drop" } %>
+  <%= f.text_area :other_bands, placeholder: "Other artists", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :url, placeholder: "Url", class: "form-control", oninput: "this.className += ''"  %>
 </div>
 
 <div style="overflow:auto;">
