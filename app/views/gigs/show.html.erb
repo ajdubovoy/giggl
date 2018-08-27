@@ -1,20 +1,13 @@
-  <div class="card-gig-index">
-    <div class="row-gig-index gig-card">
-      <div class="gig-text-index">
-       <div class="gig-info-index gig-card">
-        <h1 class="gig gig-name"><%= @gig.name %></h1>
-        <p class="gig gig-bio-index"><%= @gig.description %></p>
-        <p class="gig gig-genre-index"><%= @gig.address %></p>
-
-        <div class="gig-icons">
-          <a href="http://<%=@gig.url%>"><i class="fab fa-facebook"></i></a>
-        </div>
-
-      </div>
+<div class="col-xs-12 col-sm-12">
+  <div class="card">
+    <div class="card-category"><%= @gig.address %></div>
+    <div class="card-description">
+      <h2><%= @gig.name %></h2>
+      <p><%= @gig.description %></p>
     </div>
-
-    <div class="gig-photos gig-card">
-      <%= cl_image_tag @gig.photos.first.photo %>
-    </div>
+    <div class="card-links">
+      <a href="http://<%=@gig.url%>"><i class="fab fa-facebook"></i></a>
     </div>
   </div>
+</div>
+
