@@ -1,14 +1,16 @@
 <div class="row">
   <div class="search-box form-inline">
-    <%= form_tag search_path, method: :get, id: "search-box" do %>
+    <%= form_tag search_path, method: :get, id: "search-box", class: "form-inline" do %>
       <%= text_field_tag :location,
           params[:location],
           class: "search-enter form-control form-control-lg input-lg",
           placeholder: "Where?"
         %>
-      <%= button_tag class: "btn btn-primary btn-lg" do %>
-        <i class="fa fa-search"></i>
-      <% end %>
+      <span class="input-group-append">
+        <%= button_tag class: "btn btn-primary btn-lg" do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      </span>
   <% end %>
   </div>
 </div>
