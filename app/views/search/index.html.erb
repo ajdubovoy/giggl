@@ -1,3 +1,12 @@
+<!-- Search -->
+<div class="row">
+  <div class="col-sm-12">
+    <div id="gig-search" style="margin-bottom: 7px">
+      <%= render "search/search_box", big: 'form-control-lg input-lg', big2: 'btn-lg' %>
+  </div>
+</div>
+
+<!-- Map -->
 <div class="row">
   <div class="col-sm-12">
     <div
@@ -5,27 +14,26 @@
       style="width: 100%;
       height: 300px;"
       data-markers="<%= @markers.to_json %>"
+      style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);"
     ></div>
   </div>
 </div>
-<div class="row">
-  <div class="col-sm-12">
-    <div id="gig-search">
-      <%= render "search/search_box", big: "", big2: '' %>
-    </div>
-  </div>
-</div>
+
+<!-- Gig Cards -->
+
 <div class="row">
   <% @gigs.each do |gig| %>
-    <div class="col-sm-12">
-      <div class="card">
-        <div class="card-category"><%= gig.address %></div>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+        <div class="card-category"><%= gig.date %></div>
         <div class="card-description">
           <h2><%= gig.name %></h2>
-          <p><%= gig.description %></p>
+          <p><%= gig.description[0,30] + '...' %><</p>
         </div>
-        <%= link_to gig_path(gig), class: "card-link" %>
+        <%= link_to '', gig_path(gig), class: "card-link" %>
       </div>
     </div>
+
   <% end %>
 </div>

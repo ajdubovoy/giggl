@@ -1,3 +1,4 @@
+import "bootstrap"
 import { initDatePicker } from "../components/datepicker.js";
 import { initTimePicker } from "../components/timepicker.js";
 

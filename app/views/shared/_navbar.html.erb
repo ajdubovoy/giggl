@@ -30,14 +30,16 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <%= link_to "Search", search_path %>
+        <li><%= link_to search_path do %>
+          <i class="fa fa-search"></i>
+        <% end %></li>
 
         <% if user_signed_in? %>
 
           <!-- Links when logged in -->
-          <%= link_to "New band", new_band_path %>
-          <%= link_to "My Account", account_path %>
-          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <li><%= link_to "New band", new_band_path %></li>
+          <li><%= link_to "My Account", account_path %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
 
         <% else %>
           <!-- Login link (when logged out) -->
