@@ -3,8 +3,8 @@ class Band < ApplicationRecord
   belongs_to :user
   belongs_to :genre
   has_many :reviews
-  has_many :photos, as: :profile
   has_many :bookings
+  has_many :photos, as: :profile
   has_many :gigs, as: :organizer
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
