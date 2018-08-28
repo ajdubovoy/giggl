@@ -71,7 +71,7 @@ band4 = Band.new(bio: "crunchy drums layered with decadent melodies and covered 
 band4.genre = genres.sample
 band4.user = users.sample
 photo4 = Photo.new
-photo4.remote_photo_url = bandurls.sample[1]
+photo4.remote_photo_url = bandurls[1]
 photo4.profile = band4
 photo4.save!
 band4.save!
@@ -164,19 +164,20 @@ gig4.save!
 gigs = Gig.all
 
 puts 'Seedings reviews'
-50 times do
+50.times do
   review = Review.new
   review.professionalism = (5 * rand + 1).to_i
   review.quality = (5 * rand + 1).to_i
   review.turnout = (5 * rand + 1).to_i
   coin = (2 * rand + 1).to_i
   if coin == 2
-    review.sender = Band.sample
-    review.receiver = Venue.sample
+    review.sender = Band.all.sample
+    review.receiver = Venue.all.sample
   else
-    review.sender = Venue.sample
-    review.receiver = Band.sample
+    review.sender = Venue.all.sample
+    review.receiver = Band.all.sample
   end
+  review.save!
 end
 
 puts 'Finished!'
