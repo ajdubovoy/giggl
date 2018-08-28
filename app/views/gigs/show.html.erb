@@ -1,5 +1,5 @@
 </div>
-<div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @gig.photos.first.photo %>');">
+<div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @gig.photos.first.photo if @gig.photos.present? %>');">
   <div class="banner-content">
     <h1><%= @gig.name %></h1>
     <h2>Organized by <%= @gig.organizer.name %>
@@ -43,13 +43,7 @@
                     <% if current_user.nil? %>
                       <%= link_to t(".sign_in", default: "Login to book"), new_user_session_path, class: "btn btn-primary" %>
                     <% else %>
-                    <div class="form-inline">
-                      <% booking = Booking.new %>
-                      <%= form_for(booking, url: gig_bookings_path(@gig), method: :post) do |f| %>
-                        <%= f.select(:band_id, @bands.collect { |band| [band.name, band.id] }, class: "form-control") %>
-                        <%= f.submit "Book now", class: "btn btn-primary" %>
-                        <% end %>
-                        </div>
+                    <%= link_to '#', "Message organizer", class: "btn btn-primary" %>
                     <% end %>
             <% end %>
           </div>
