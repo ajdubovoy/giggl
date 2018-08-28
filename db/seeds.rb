@@ -45,7 +45,7 @@ band1 = Band.new(bio: "A combination of soul, funk, and alternative stylings, em
 band1.genre = genres.sample
 band1.user = user1
 photo1 = Photo.new
-photo1.remote_photo_url = bandurls.sample
+photo1.remote_photo_url = bandurls[1]
 photo1.profile = band1
 photo1.save!
 band1.save!
@@ -53,7 +53,7 @@ band2 = Band.new(bio: "A combination of soul, funk, and alternative stylings, em
 band2.genre = genres.sample
 band2.user = users.sample
 photo2 = Photo.new
-photo2.remote_photo_url = bandurls.sample
+photo2.remote_photo_url = bandurls[2]
 photo2.profile = band2
 photo2.save!
 band2.save!
@@ -61,14 +61,14 @@ band3 = Band.new(bio: "A combination of soul, funk, and alternative stylings, em
 band3.genre = genres.sample
 band3.user = users.sample
 photo3 = Photo.new
-photo3.remote_photo_url = bandurls.sample
+photo3.remote_photo_url = bandurls[0]
 photo3.profile = band3
 photo3.save!
 band4 = Band.new(bio: "crunchy drums layered with decadent melodies and covered in overdriven guitars with a nougaty bass center.", website: "www.tattatband.com", spotify: "www.spotify.com", bandcamp: "www.bandcamp.com", facebook: "www.facebook.com/tattatband", instagram: "https://www.instagram.com/tattat_band/?hl=en", twitter: "www.twitter.com", youtube: "www.youtube.com", vimeo: "www.vimeo.com", name: "Stephen King", address: "Berlin")
 band4.genre = genres.sample
 band4.user = users.sample
 photo4 = Photo.new
-photo4.remote_photo_url = bandurls.sample
+photo4.remote_photo_url = bandurls.sample[1]
 photo4.profile = band4
 photo4.save!
 band4.save!
