@@ -167,7 +167,7 @@ gig_photo5.remote_photo_url = gigurls[6]
 gig_photo5.profile = gig5
 gig_photo5.save!
 gig5.save!
-gig6 = Gig.new(address: "San Francisco, California", paid: false, description: "DJ Bassnectar debut in san francisco warehouse", other_bands: "Tauk, Phuturprimitive", url: "https://www.facebook.com/events/1109582902525113/", name: "Bassnectar debut ft. Tauk", date: '2019-21-06', time: '21:30')
+gig6 = Gig.new(address: "San Francisco, California", paid: false, description: "DJ Bassnectar debut in san francisco warehouse", other_bands: "Tauk, Phuturprimitive", url: "https://www.facebook.com/events/1109582902525113/", name: "Bassnectar debut ft. Tauk", date: '2019-06-21', time: '21:30')
 gig6.genre = genres.sample
 gig6.organizer = band4
 gig_photo6 = Photo.new
@@ -176,7 +176,7 @@ gig_photo6.profile = gig6
 gig_photo6.save!
 gig6.save!
 gigs = Gig.all
-gig7 = Gig.new(address: "Brooklyn, NY", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-21-12', time: '21:30')
+gig7 = Gig.new(address: "Brooklyn, NY", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-12-21', time: '21:30')
 gig7.genre = genres.sample
 gig7.organizer = band4
 gig_photo7 = Photo.new
