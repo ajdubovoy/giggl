@@ -10,6 +10,7 @@ puts 'Destroying old seeds...'
 
 Mailboxer::Message.destroy_all
 Mailboxer::Conversation.destroy_all
+Review.destroy_all
 Photo.destroy_all
 Booking.destroy_all
 Gig.destroy_all
@@ -70,7 +71,11 @@ band4 = Band.new(bio: "crunchy drums layered with decadent melodies and covered 
 band4.genre = genres.sample
 band4.user = users.sample
 photo4 = Photo.new
+<<<<<<< HEAD
+photo4.remote_photo_url = bandurls[1]
+=======
 photo4.remote_photo_url = bandurls[3]
+>>>>>>> 4d07ad6d4cebe9139a4bd2ddfc8dc66959f2f2a8
 photo4.profile = band4
 photo4.save!
 band4.save!
@@ -184,6 +189,23 @@ gig_photo7.profile = gig7
 gig_photo7.save!
 gig7.save!
 gigs = Gig.all
+
+puts 'Seedings reviews'
+13.times do
+  review = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentence)
+  review.professionalism = (5 * rand + 1).to_i
+  review.quality = (5 * rand + 1).to_i
+  review.turnout = (5 * rand + 1).to_i
+  coin = (2 * rand + 1).to_i
+  if coin == 2
+    review.sender = Band.all.sample
+    review.receiver = Venue.all.sample
+  else
+    review.sender = Venue.all.sample
+    review.receiver = Band.all.sample
+  end
+  review.save!
+end
 
 booking1 = Booking.new(status:"confirmed")
 booking1.band = band1

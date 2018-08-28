@@ -43,3 +43,46 @@
   </div>
 </div>
 
+<!-- Gigs -->
+<div class="container">
+  <div class="row">
+  <% @gigs.each do |gig| %>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+        <div class="card-category">
+          <p><%= gig.date.strftime('%b %d, %Y') %></p>
+          <p><%= gig.organizer.name %><p>
+          </div>
+        <div class="card-description">
+          <h2><%= gig.name %></h2>
+          <p><%= gig.description[0,40] + '...' %></p>
+        </div>
+        <%= link_to '', gig_path(gig), class: "card-link" %>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="container">
+  <div class="row">
+  <% @reviews.each do |review| %>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); color: black; height: 200px;">
+        <div class="card-description">
+          <h3><%= review.subject %></h3>
+          <p><strong>Professionalism:</strong> <%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
+          <p><strong>Quality:</strong> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
+          <p><strong>Turnout:</strong> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
+          <p><%= review.content %><p>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>

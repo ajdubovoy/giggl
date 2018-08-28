@@ -1,7 +1,7 @@
 class Venue < ApplicationRecord
   acts_as_messageable
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, as: :receiver
   has_many :photos, as: :profile
   has_many :gigs, as: :organizer
   has_many :bookings, through: :gigs
