@@ -8,6 +8,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @gigs = @venue.gigs
   end
 
   def new

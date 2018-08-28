@@ -8,6 +8,7 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
+    @gigs = @band.bookings_organized
   end
 
   def new
