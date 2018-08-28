@@ -1,3 +1,22 @@
+.band-music-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.band-music-links i {
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.spotify-player {
+  margin-bottom: 20px;
+}
+
+.soundcloud-player {
+  margin: 0 22px;
+}
+
+
 // .show-card {
 //   display: flex;
 //   align-items:  center;
@@ -34,12 +53,6 @@
 //   border-bottom: 1px solid rgb(223, 223, 223);
 // }
 
-// .band-music-links {
-//   font-size: 15px;
-//   // border: 1px solid black;
-//   margin: 20px;
-//   height: 40%;
-// }
 
 // //Font sizing
 // .band-name {
