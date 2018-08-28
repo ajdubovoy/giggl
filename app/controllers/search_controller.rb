@@ -2,12 +2,11 @@ class SearchController < ApplicationController
   skip_before_action :authenticate_user!
 
   def index
-    @gigs = Gig.all
-    @bands = Band.where(user: current_user)
-
     # Location filter
     if params[:location].present?
       @gigs = Gig.near(params[:location])
+    else
+      @gigs = Gig.all
     end
 
     @markers = generate_map(@gigs)
