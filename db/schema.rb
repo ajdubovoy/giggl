@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_28_090156) do
+ActiveRecord::Schema.define(version: 2018_08_28_091133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,8 @@ ActiveRecord::Schema.define(version: 2018_08_28_090156) do
     t.string "subject", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "booking_id"
+    t.index ["booking_id"], name: "index_mailboxer_conversations_on_booking_id"
   end
 
   create_table "mailboxer_notifications", id: :serial, force: :cascade do |t|
@@ -187,6 +189,7 @@ ActiveRecord::Schema.define(version: 2018_08_28_090156) do
   add_foreign_key "bookings", "gigs"
   add_foreign_key "gigs", "genres"
   add_foreign_key "mailboxer_conversation_opt_outs", "mailboxer_conversations", column: "conversation_id", name: "mb_opt_outs_on_conversations_id"
+  add_foreign_key "mailboxer_conversations", "bookings"
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "venues", "users"
