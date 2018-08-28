@@ -71,11 +71,7 @@ band4 = Band.new(bio: "crunchy drums layered with decadent melodies and covered 
 band4.genre = genres.sample
 band4.user = users.sample
 photo4 = Photo.new
-<<<<<<< HEAD
 photo4.remote_photo_url = bandurls[1]
-=======
-photo4.remote_photo_url = bandurls[3]
->>>>>>> 4d07ad6d4cebe9139a4bd2ddfc8dc66959f2f2a8
 photo4.profile = band4
 photo4.save!
 band4.save!
