@@ -70,7 +70,7 @@ band4 = Band.new(bio: "crunchy drums layered with decadent melodies and covered 
 band4.genre = genres.sample
 band4.user = users.sample
 photo4 = Photo.new
-photo4.remote_photo_url = bandurls.sample[1]
+photo4.remote_photo_url = bandurls[1]
 photo4.profile = band4
 photo4.save!
 band4.save!
@@ -142,7 +142,6 @@ gig_photo4.remote_photo_url = gigurls[3]
 gig_photo4.profile = gig4
 gig_photo4.save!
 gig4.save!
-gigs = Gig.all
 gig4 = Gig.new(address: "Gneisenaustraße 63, Berlin", paid: false, description: "Open spot for sunday at Funk and Beer fest in Berlin", other_bands: "Tauk", url: "https://www.facebook.com/events/1109582902525113/", name: "Funk and Beer fest", date: '2019-09-09', time: '21:30')
 gig4.genre = genres.sample
 gig4.organizer = band2
@@ -151,7 +150,6 @@ gig_photo4.remote_photo_url = gigurls[4]
 gig_photo4.profile = gig4
 gig_photo4.save!
 gig4.save!
-gigs = Gig.all
 gig4 = Gig.new(address: "Mehringdamm, Berlin", paid: false, description: "Come shred with local bands at the Gnarbeque, organized by Tourist Trap", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "Festival slot for Gnarbeque", date: '2019-09-09', time: '21:30')
 gig4.genre = genres.sample
 gig4.organizer = band4
