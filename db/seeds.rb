@@ -10,6 +10,7 @@ puts 'Destroying old seeds...'
 
 Mailboxer::Message.destroy_all
 Mailboxer::Conversation.destroy_all
+Review.destroy_all
 Photo.destroy_all
 Booking.destroy_all
 Gig.destroy_all
@@ -162,5 +163,20 @@ gig_photo4.save!
 gig4.save!
 gigs = Gig.all
 
+puts 'Seedings reviews'
+50 times do
+  review = Review.new
+  review.professionalism = (5 * rand + 1).to_i
+  review.quality = (5 * rand + 1).to_i
+  review.turnout = (5 * rand + 1).to_i
+  coin = (2 * rand + 1).to_i
+  if coin == 2
+    review.sender = Band.sample
+    review.receiver = Venue.sample
+  else
+    review.sender = Venue.sample
+    review.receiver = Band.sample
+  end
+end
 
 puts 'Finished!'
