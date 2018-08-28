@@ -89,3 +89,25 @@
   <% end %>
   </div>
 </div>
+
+<!-- Reviews -->
+
+<div class="container">
+  <div class="row">
+  <% @reviews.each do |review| %>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); %>');">
+        <div class="card-description">
+          <h3><%= review.subject %></h3>
+          <p><strong>Professionalism:</strong> <%= raw('<i class="fas fa-star"></i>') * review.professionalism %></p>
+          <p><strong>Quality:</strong> <%= raw('<i class="fas fa-star"></i>') * review.quality %></p>
+          <p><strong>Turnout:</strong> <%= raw('<i class="fas fa-star"></i>') * review.turnout %></p>
+          <p><%= review.content %><p>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>
