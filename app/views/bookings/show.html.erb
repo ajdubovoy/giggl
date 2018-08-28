@@ -2,8 +2,8 @@
 
 <div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @gig.photos.first.photo if @gig.photos.present? %>');">
   <div class="banner-content">
-    <h1> Confirmed gig! </h1>
-    <h2>Gig: <%= @gig.name %></h2>
+    <h1> <span class="<%= @booking.status=="confirmed" ? 'booking-status-confirmed' : 'booking-status-pending' %>"><%= @booking.status.capitalize %></span> gig! </h1>
+    <h2><%= @gig.name %></h2>
     <p>Organized by <%= @gig.organizer.name %></p>
   </div>
 </div>
