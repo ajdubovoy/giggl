@@ -1,14 +1,45 @@
+</div>
+<div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @venue.photos.first.photo if @venue.photos.present? %>');">
+  <div class="banner-content">
+    <h1><%= @venue.name %></h1>
+    <h2><%= @venue.description %></h2>
+  </div>
+</div>
+
 <div class="container">
-  <div class="row-venue">
-    <div class="venue-contact-info">
-    <p><%= @venue.name %></p>
-    <p><%= @venue.address %></p>
-    <p><%= @venue.telephone%></p>
-    </div>
-    
-    <div class="venue-extra info">
-    <p><%= @venue.description %></p>
-    <p><%= @venue.website %></p>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="show-card">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+          </div>
+          <div class="col-sm-12 col-md-9">
+            <div class="show-card-description">
+              <h2><%= @venue.name %></h2>
+              <p><strong>Address:</strong> <%= @venue.address %></p>
+              <p><strong>Website:</strong> <%= @venue.website %></p>
+              <p><strong>Phone:</strong> <%= @venue.telephone %></p>
+              <p><strong>Email:</strong> <%= @venue.email %></p>
+            </div>
+          </div>
+        <div class="col-sm-12 col-md-3">
+          <div class="show-card-links text-right">
+            <%= link_to @venue.website, class: "btn btn-primary", target: "_blank" do %>
+              <i class="fab fa-facebook"></i></a>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div
+            id="map"
+            style="width: 100%;
+            height: 300px;"
+            data-markers="<%= @markers.to_json %>"
+            style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);"
+          ></div>
+      </div>
+      </div>
     </div>
   </div>
 </div>
+
