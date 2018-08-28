@@ -9,12 +9,19 @@
   top: 0;
 }
 .banner-small {
-  height: 70vh;
+  min-height: 65vh;
   top: -70px;
   z-index: -1;
   position: relative;
   margin-bottom: -10px;
+  h1{
+    font-size: 75px !important;
+  }
+  p{
+    font-size: 20px !important;
+  }
 }
+
 .banner h1 {
   font-size: 100px;
   font-weight: 500;
