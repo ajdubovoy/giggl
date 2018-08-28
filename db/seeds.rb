@@ -8,6 +8,8 @@
 
 puts 'Destroying old seeds...'
 
+Mailboxer::Message.destroy_all
+Mailboxer::Conversation.destroy_all
 Photo.destroy_all
 Booking.destroy_all
 Gig.destroy_all
