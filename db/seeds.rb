@@ -108,7 +108,7 @@ venues = Venue.all
 puts 'Creating gigs...'
 
 
-gigurls = ["https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/36860774_209579706281108_8083553296352018432_n.jpg?_nc_cat=0&oh=ff9ac773d300da538cf7499a300be14d&oe=5C051BB9", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/28950869_2007931586162226_3688205910200549376_o.jpg?_nc_cat=0&oh=a6df60beb4ef1c678590e279069e0a92&oe=5BF24462", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/38119965_10157689465484447_4285375586056011776_n.png?_nc_cat=0&oh=8b0a1b989e3e351c608a00baa53c4c77&oe=5BF58442", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/13124900_1034401809987532_683886661362216387_n.jpg?_nc_cat=0&oh=83567e54cbd8bdab8b7a1a5e222ee78f&oe=5C33E0DA", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/40101637_318722568879151_2696784603376517120_o.jpg?_nc_cat=0&oh=4b62b9f9199d1d1157a5fbf48ff165e1&oe=5C39135B", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/33042196_646337229035756_125914121697755136_n.jpg?_nc_cat=0&oh=ee294d674c68b9b099de6fbee1ecd29a&oe=5C0015E6"]
+gigurls = ["https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/36860774_209579706281108_8083553296352018432_n.jpg?_nc_cat=0&oh=ff9ac773d300da538cf7499a300be14d&oe=5C051BB9", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/28950869_2007931586162226_3688205910200549376_o.jpg?_nc_cat=0&oh=a6df60beb4ef1c678590e279069e0a92&oe=5BF24462", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/38119965_10157689465484447_4285375586056011776_n.png?_nc_cat=0&oh=8b0a1b989e3e351c608a00baa53c4c77&oe=5BF58442", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/13124900_1034401809987532_683886661362216387_n.jpg?_nc_cat=0&oh=83567e54cbd8bdab8b7a1a5e222ee78f&oe=5C33E0DA", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/40101637_318722568879151_2696784603376517120_o.jpg?_nc_cat=0&oh=4b62b9f9199d1d1157a5fbf48ff165e1&oe=5C39135B", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/33042196_646337229035756_125914121697755136_n.jpg?_nc_cat=0&oh=ee294d674c68b9b099de6fbee1ecd29a&oe=5C0015E6", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/38789165_10150993411979986_3806125298169151488_n.png?_nc_cat=0&oh=da915a4301fe9d9b850ddc87bc5a11d7&oe=5C375F77", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/30581855_10156490837809301_5013406743552589824_n.jpg?_nc_cat=0&oh=1eb60cf959f7748279b46475954c74fa&oe=5C308B5E", "https://ksassets.timeincuk.net/wp/uploads/sites/55/2012/11/LedZeppelinCelebrationDay600Gb130912_0.jpg"]
 
 gig1 = Gig.new(address: "Friedrichshain, Berlin", paid: true, description: "Bringing you live music to our new Side Stage", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Thursdays @ The Walrus", date: '2019-09-09', time: '20:30')
 gig1.genre = genres.sample
@@ -150,7 +150,7 @@ gig_photo4.remote_photo_url = gigurls[4]
 gig_photo4.profile = gig4
 gig_photo4.save!
 gig4.save!
-gig4 = Gig.new(address: "Mehringdamm, Berlin", paid: false, description: "Come shred with local bands at the Gnarbeque, organized by Tourist Trap", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "Festival slot for Gnarbeque", date: '2019-09-09', time: '21:30')
+gig4 = Gig.new(address: "Mehringdamm, Berlin", paid: false, description: "Come shred with local bands at the Gnarbeque, featuring Tourist Trap", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "Festival slot for Gnarbeque", date: '2019-09-09', time: '21:30')
 gig4.genre = genres.sample
 gig4.organizer = band4
 gig_photo4 = Photo.new
@@ -158,7 +158,48 @@ gig_photo4.remote_photo_url = gigurls[5]
 gig_photo4.profile = gig4
 gig_photo4.save!
 gig4.save!
+gig5 = Gig.new(address: "Columbus, Ohio", paid: false, description: "Jam and raise money for refugee job placement", other_bands: "Hello Luna & Electric Orange Peel", url: "https://www.facebook.com/events/1109582902525113/", name: "House show and fundraiser", date: '2019-05-01', time: '21:30')
+gig5.genre = genres.sample
+gig5.organizer = band4
+gig_photo5 = Photo.new
+gig_photo5.remote_photo_url = gigurls[6]
+gig_photo5.profile = gig5
+gig_photo5.save!
+gig5.save!
+gig6 = Gig.new(address: "San Francisco, California", paid: false, description: "DJ Bassnectar debut in san francisco warehouse", other_bands: "Tauk, Phuturprimitive", url: "https://www.facebook.com/events/1109582902525113/", name: "Bassnectar debut ft. Tauk", date: '2019-21-06', time: '21:30')
+gig6.genre = genres.sample
+gig6.organizer = band4
+gig_photo6 = Photo.new
+gig_photo6.remote_photo_url = gigurls[7]
+gig_photo6.profile = gig6
+gig_photo6.save!
+gig6.save!
+gigs = Gig.all
+gig7 = Gig.new(address: "Brooklyn, NY", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-21-12', time: '21:30')
+gig7.genre = genres.sample
+gig7.organizer = band4
+gig_photo7 = Photo.new
+gig_photo7.remote_photo_url = gigurls[8]
+gig_photo7.profile = gig7
+gig_photo7.save!
+gig7.save!
 gigs = Gig.all
 
+booking1 = Booking.new(status:"confirmed")
+booking1.band = band1
+booking1.gig = gig5
+booking1.save!
+
+booking2 = Booking.new(status:"confirmed")
+booking2.band = band1
+booking2.gig = gig6
+booking2.save!
+
+booking3 = Booking.new(status:"confirmed")
+booking3.band = band1
+booking3.gig = gig7
+booking3.save!
+
+bookings = Booking.all
 
 puts 'Finished!'
