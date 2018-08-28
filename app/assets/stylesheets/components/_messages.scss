@@ -4,3 +4,12 @@
   margin-bottom: 1em;
   margin-top: 1em;
 }
+.booking-status{
+  font-weight: 700;
+}
+.booking-status-pending{
+ color: $orange;
+}
+.booking-status-confirmed{
+  color: $green;
+}
