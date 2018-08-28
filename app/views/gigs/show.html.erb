@@ -35,7 +35,7 @@
           <div class="show-card-links text-right">
             <%= link_to @gig.url, class: "btn btn-primary", target: "_blank" do %>
               <i class="fab fa-facebook"></i></a>
-              <% if @gig.organizer.class == "Venue" %>
+              <% if @gig.organizer.class == Venue %>
                       <%= link_to "View organizer", venue_path(@gig.organizer), class: 'btn btn-primary' %>
                     <% else %>
                       <%= link_to "View organizer", band_path(@gig.organizer), class: 'btn btn-primary' %>
