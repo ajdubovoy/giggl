@@ -7,7 +7,6 @@
 
 .banner-home p{
   font-size: 23px;
-  line-height: 10px;
 }
 
 .banner-link{
@@ -108,4 +107,12 @@
     opacity: 0.8;
     font-weight: 200;
   }
+}
+
+.category-text{
+  font-weight: 100;
+  opacity: 0.7;
+  letter-spacing: 5px;
+  font-family: "Roboto";
+  text-transform: uppercase;
 }
