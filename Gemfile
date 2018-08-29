@@ -33,6 +33,11 @@ gem "geocoder"
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 
+# Favicon
+group :development do
+  gem 'rails_real_favicon'
+end
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
