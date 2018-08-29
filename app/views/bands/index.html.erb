@@ -1,25 +1,16 @@
-  <div class="card-band-index">
+
 <% @bands.each do |band| %>
-    <div class="row-band-index">
-      <div class="band-text-index">
-        <div class="band-info-index">
-          <h1 class="band-name"><%= band.name %></h1>
-          <p class="band-bio-index"><%= band.bio %></p>
-          <p class="band-genre-index"><%= band.genre.name.capitalize %></p>
-  
-          <div class="band-icons">
-            <a href="http://<%=band.website%>"><i class="far fa-envelope"></i></a>
-            <a href="http://<%=band.spotify%>"><i class="fab fa-spotify"></i></a>
-            <a href="http://<%=band.bandcamp%>"><i class="fab fa-bandcamp"></i></a>
-            <a href="http://<%=band.facebook%>"><i class="fab fa-facebook"></i></a>
-            <a href="http://<%=band.instagram%>"><i class="fab fa-instagram"></i></a>
-            <a href="http://<%=band.youtube%>"><i class="fab fa-youtube"></i></a>
-          </div>
-        </div>
+  <div class="col-xs-12 col-sm-12">
+    <div class="card">
+      <div class="card-category"><%= band.genre.name.capitalize %></div>
+      <div class="card-description">
+        <h2><%= band.name.upcase %></h2>
+        <p><%= band.bio %></p>
       </div>
-  
-      <div class="band-photos band-card">
-      </div>
+      <a class="card-link" href="#" ></a>
     </div>
+  </div>
 <% end %>
-</div>
+
+
+

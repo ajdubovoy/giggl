@@ -1,22 +1,14 @@
-<div class="venue-container">
-  <% @venues.each do |venue| %>
-    <div class="card-venue-index">
-      <div class="row-venue-index">
-        <div class="venue-text-index">
-          <div class="venue-info-index">
-          <h1 class="venue-name-index"><%= venue.name %></h1>
-          <p class="venue-address-index"><%= venue.address %></p>
-          <p class="venue-telephone-index"><%= venue.telephone %></p>
-          <br>
-          <p class="venue-description-index"><%= venue.description%></p>
-          <br>
-          <p class="venue-website-index"><%= venue.website%></p>
-          </div>
-        </div>
 
-      <div class="band-photos band-card">
+<% @venues.each do |venue| %>
+  <div class="col-xs-12 col-sm-12">
+    <div class="card">
+      <div class="card-category"><%= venue.address %></div>
+      <div class="card-description">
+        <h2><%= venue.name.upcase %></h2>
+        <p><%= venue.description %></p>
       </div>
+      <a class="card-link" href="#" ></a>
     </div>
   </div>
-  <% end %>
-  </div>
+<% end %>
+

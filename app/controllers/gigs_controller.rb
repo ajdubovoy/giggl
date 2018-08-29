@@ -1,4 +1,6 @@
 class GigsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
   def index
     @gigs = Gig.all
     @markers = generate_map(@gigs)
@@ -6,6 +8,8 @@ class GigsController < ApplicationController
 
   def show
     @gig = Gig.find(params[:id])
+    @markers = generate_map([@gig])
+    @bands = Band.where(user: current_user)
   end
 
   def new # Will be used with a drop-down menu for organizer, unlike on venue and band pages that will auto-populate

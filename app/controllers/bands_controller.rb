@@ -1,4 +1,6 @@
 class BandsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+  
   def index
     @bands = Band.all
     generate_map(@bands)
@@ -6,6 +8,8 @@ class BandsController < ApplicationController
 
   def show
     @band = Band.find(params[:id])
+    @gigs = @band.gigs
+    @reviews = @band.reviews
   end
 
   def new

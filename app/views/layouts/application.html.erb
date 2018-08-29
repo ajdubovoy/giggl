@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render 'application/favicon' %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Giggl 🎸 find gigs anywhere</title>
@@ -9,22 +10,31 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application' %>
 
+
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,500,700|Open+Sans:300,400,500,700" rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0">
+    </script>
+
 
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= javascript_include_tag 'application' %>
-    <div class="content">
-    <%= yield %>
-    <video autoplay loop id="Video" muted plays-inline>
-      <source src='<%= video_url 'background.mov' %>' type="video/mp4">
-    </video>
+        <%= javascript_include_tag 'application' %>
+    <div class="container">
+        <%= yield %>
     </div>
     <%= javascript_pack_tag 'application' %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_SERVER_KEY']}&callback=initMap" %>
     <%= javascript_pack_tag "map" %>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

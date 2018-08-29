@@ -1,14 +1,113 @@
-<div class="container">
-  <div class="row-venue">
-    <div class="venue-contact-info">
-    <p><%= @venue.name %></p>
-    <p><%= @venue.address %></p>
-    <p><%= @venue.telephone%></p>
+</div>
+<div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @venue.photos.first.photo if @venue.photos.present? %>');">
+  <div class="container">
+    <div class="row">
+      <div class="banner-content">
+        <p class="category-text">Venue</p>
+        <h1><%= @venue.name %></h1>
+        <p><%= @venue.description %></p>
+        <p><%= @venue.address %></p>
+      </div>
     </div>
-    
-    <div class="venue-extra info">
-    <p><%= @venue.description %></p>
-    <p><%= @venue.website %></p>
+    <div class="row social-links">
+      <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-4">
+          <%= link_to @venue.website, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <div class="website-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <%= link_to @venue.telephone, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+          <div class="website-icon">
+            <i class="fas fa-phone"></i><p class="website-text"><%= @venue.telephone %></p>
+          </div>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <%= link_to @venue.email, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+          <div class="website-icon">
+            <i class="far fa-envelope"></i><p class="website-text"><%= @venue.email %></p>
+          </div>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<!-- Gigs -->
+<div class="container">
+  <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized (<%= @gigs.length %>)</p>
+  </div>
+  <div class="row">
+  <% @gigs.each do |gig| %>
+
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+        <div class="card-category">
+          <p><%= gig.date.strftime('%b %d, %Y') %></p>
+          <p><%= gig.organizer.name %><p>
+          </div>
+        <div class="card-description">
+          <h2><%= gig.name %></h2>
+          <p><%= gig.description[0,40] + '...' %></p>
+        </div>
+        <%= link_to '', gig_path(gig), class: "card-link" %>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>
+
+<!-- Reviews -->
+<div class="container">
+  <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews (<%= @reviews.length %>)</p>
+  </div>
+  <% @reviews.each do |review| %>
+  <div class="row">
+
+    <div class="col-sm-12">
+      <div class="card card-review" style="background: white; color: black;">
+          <div class="row review-line">
+            <div class="col-sm-12 col-md-6">
+              <h3>Reviewed by</h3>
+              <h2><%= review.sender.name %></h2>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Professionalism</h3>
+                <p><%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Quality</h3> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Turnout</h3> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
+            </div>
+          </div>
+          <div class="row review-content">
+            <div class="col-sm-12">
+            <h2><%= review.subject %></h2>
+            <p><%= review.content %><p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 500px;
+  box-shadow: -1px -6px 14px 0px #00000078;"
+  data-markers="<%= @markers.to_json %>"
+  style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1); margin-bottom: 0; margin-top: 20px; padding-bottom: 0;"
+></div>

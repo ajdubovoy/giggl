@@ -1,12 +1,27 @@
-<div class="search-box">
-    <div class="form-row">
-      <%= form_tag search_path, method: :get do %>
-        <%= text_field_tag :location,
-            params[:location],
-            class: "search-enter",
-            placeholder: "Where?"
-          %>
-        <%= submit_tag "Search", class: "btn-treehouse"%>
-      <% end %>
-    </div>
+<div class="row">
+  <div class="search-box form-inline">
+    <%= form_tag search_path, method: :get, id: "search-box", class: "center-block" do %>
+      <%= text_field_tag :location,
+          params[:location],
+          class: "search-enter form-control location #{big}",
+          placeholder: "Where?"
+        %>
+      <span class="input-group-append">
+        <%= button_tag class: "btn btn-primary #{big2}" do %>
+          <i class="fa fa-search"></i>
+        <% end %>
+      </span>
+  <% end %>
   </div>
+</div>
+
+<!-- Algolia Places -->
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.9.0"></script>
+<script>
+  document.querySelectorAll('.location').forEach((div) => {
+    var placesAutocomplete = places({
+    container: div
+  });
+  });
+
+</script>

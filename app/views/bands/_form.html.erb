@@ -5,21 +5,21 @@
 
 <!-- One "tab" for each step in the form: -->
 <div class="tab">Band info:
-  <%= f.text_field :name, placeholder: "Name", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_area :bio, placeholder: "Bio", class: "form-item full-width", oninput: "this.className += ''"  %>
-    <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-item form-item-drop", oninput: "this.className += ''"})%>
-  <%= f.text_field :website, placeholder: "Website", class: "form-item full-width", oninput: "this.className += ''"  %>
+  <%= f.text_field :name, placeholder: "Name", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_area :bio, placeholder: "Bio", class: "form-control", oninput: "this.className += ''"  %>
+    <%= f.select(:genre_id, @genres.collect { |genre| [genre.name, genre.id] }, {}, { class: "form-control", oninput: "this.className += ''"})%>
+  <%= f.text_field :website, placeholder: "Website", class: "form-control", oninput: "this.className += ''"  %>
 </div>
 
 <div class="tab">Music Links:
-  <%= f.text_field :spotify, placeholder: "Spotify", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :bandcamp, placeholder: "Bandcamp", class: "form-item full-width", oninput: "this.className += ''"  %>
+  <%= f.text_field :spotify, placeholder: "Spotify", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :bandcamp, placeholder: "Bandcamp", class: "form-control", oninput: "this.className += ''"  %>
 </div>
 
 <div class="tab">Social Media:
-  <%= f.text_field :facebook, placeholder: "Facebook", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :instagram, placeholder: "Instagram", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :youtube, placeholder: "Youtube", class: "form-item full-width", oninput: "this.className += ''"  %>
+  <%= f.text_field :facebook, placeholder: "Facebook", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :instagram, placeholder: "Instagram", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :youtube, placeholder: "Youtube", class: "form-control", oninput: "this.className += ''"  %>
 </div>
 
 <div style="overflow:auto;">

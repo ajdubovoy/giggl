@@ -1,45 +1,131 @@
-<div class="card-band">
-  <div class="row-band">
-    <div class="band-text">
-      <div class="band-info">
-      <h1 class="band band-name"><%= @band.name %></h1>
-      <p class="band band-bio"><%= @band.bio %></p>
-      <p class="band band-genre"><%= @band.genre.name.capitalize %></p>
-      </div>
-      <div class="band-music-links">
-        <p class="band band-website">
-          <a <%= link_to @band.website do %>
-            <i class="far fa-envelope"></i> - <%= @band.website %></a>
-          <% end %>
-        </p>
-        <p class="band band-spotify">
-          <a <%= link_to @band.spotify do %>
-            <i class="fab fa-spotify"></i> - <%= @band.spotify %></a>
-          <% end %>
-        </p>
-        <p class="band band-bandcamp">
-          <a <%= link_to @band.bandcamp do %>
-            <i class="fab fa-bandcamp"></i> - <%= @band.bandcamp %></a>
-          <% end %>
-        </p>
-        <p class="band band-facebook">
-          <a <%= link_to @band.facebook do %>
-            <i class="fab fa-facebook"></i> - <%= @band.facebook %></a>
-          <% end %>
-        </p>
-        <p class="band band-instagram">
-          <a <%= link_to @band.instagram do %>
-            <i class="fab fa-instagram"></i> - <%= @band.instagram %></a>
-          <% end %>
-        </p>
-        <p class="band band-youtube">
-          <a <%= link_to @band.youtube do %>
-            <i class="fab fa-youtube"></i> - <%= @band.youtube %></a>
-          <% end %>
-        </p>
+</div>
+<div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @band.photos.first.photo if @band.photos.present? %>');">
+  <div class="container">
+    <div class="row">
+      <div class="banner-content">
+        <p class="category-text">Band</p>
+        <h1><%= @band.name %></h1>
+        <p><%= @band.bio %></p>
       </div>
     </div>
-    <div class="band-photos">
+    <div class="row">
+        <div class="col-sm-12 col-md-3 col-md-offset-3">
+          <p><i class="fas fa-map-marker-alt"></i> <%= @band.address %></p>
+        </div>
+        <div class="col-sm-12 col-md-3">
+          <p><i class="fas fa-music"></i> <%= @band.genre.name %></p>
+        </div>
     </div>
+    <div class="row social-links">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="col-sm-12 col-md-4">
+          <a <%= link_to @band.website, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <i class="fas fa-desktop"></i></a>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <a <%= link_to @band.instagram, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <i class="fab fa-instagram"></i></a>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <a <%= link_to @band.facebook, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <i class="fab fa-facebook"></i></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Explore their sound</p>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-4">
+    <div class="spotify-player">
+      <iframe src="https://open.spotify.com/embed/album/3uiBBPrTU4r7UgKBb0sQon" width="100%" height="475" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <div class="soundcloud-player" style="margin-left: 0; margin-right: 0;">
+      <iframe width="100%" height="475" style="margin-left: 0; margin-right: 0;" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/346982601&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <div class="bandcamp-player">
+      <iframe style="border: 0; width: 350px; height: 475px;" src="https://bandcamp.com/EmbeddedPlayer/album=1176487269/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://lunglunglung.bandcamp.com/album/bottom-of-the-barrel">Bottom of the Barrel by Lung</a></iframe>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<!-- Gigs -->
+
+<div class="container">
+  <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized (<%= @gigs.length %>)</p>
+  </div>
+  <div class="row">
+  <% @gigs.each do |gig| %>
+
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+        <div class="card-category">
+          <p><%= gig.date.strftime('%b %d, %Y') %></p>
+          <p><%= gig.organizer.name %><p>
+          </div>
+        <div class="card-description">
+          <h2><%= gig.name %></h2>
+          <p><%= gig.description[0,40] + '...' %></p>
+        </div>
+        <%= link_to '', gig_path(gig), class: "card-link" %>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>
+
+<!-- Reviews -->
+
+<div class="container">
+  <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews (<%= @reviews.length %>)</p>
+  </div>
+  <% @reviews.each do |review| %>
+  <div class="row">
+
+    <div class="col-sm-12">
+      <div class="card card-review" style="background: white; color: black;">
+          <div class="row review-line">
+            <div class="col-sm-12 col-md-6">
+              <h3>Reviewed by</h3>
+              <h2><%= review.sender.name %></h2>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Professionalism</h3>
+                <p><%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Quality</h3> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Turnout</h3> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
+            </div>
+          </div>
+          <div class="row review-content">
+            <div class="col-sm-12">
+            <h2><%= review.subject %></h2>
+            <p><%= review.content %><p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
   </div>
 </div>

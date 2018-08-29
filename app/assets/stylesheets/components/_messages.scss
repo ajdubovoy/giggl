@@ -1,0 +1,50 @@
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.booking-status{
+  font-weight: 700;
+}
+.booking-status-pending{
+ color: $orange;
+}
+.booking-status-confirmed{
+  color: $green;
+}
+.text-white{
+  color: white;
+  text-shadow: 1px, 1px, 1px, rgba(0,0,0,0.05)
+}
+.list-group-item{
+  background-color: rgba(255,255,255,0.75);
+  border: none;
+}
+.list-group-item{
+  color: black;
+}
+.text-muted{
+  color: #333;
+}
+.nav-pills a{
+  color: #aaa
+}
+.nav > li > a:hover{
+  background-color: rgba(255,255,255,0.75);
+  color: black;
+}
+.panel{
+  background-color: rgba(255,255,255,0.75) !important;
+  border:none !important;
+}
+.panel-heading{
+  background-color: rgba(255,255,255,0.75) !important;
+}
+.message-header{
+  color: white;
+  opacity: 0.8;
+  font-size: 21px;
+  padding-top: 40px;
+  padding-bottom: 5px;
+}

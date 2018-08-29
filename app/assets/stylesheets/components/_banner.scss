@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+
+.banner-home h1{
+  font-family: "Shrikhand";
+  opacity: 0.8;
+}
+
+.banner-home p{
+  font-size: 23px;
+}
+
+.banner-link{
+  z-index: 3 !important;
+  width: 100%;
+  border-radius: 4px;
+  padding: 11px;
+  font-weight: lighter;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Roboto";
+}
+
+.banner {
+  color: #fcfcfc;
+  text-align: center;
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+}
+
+.website-icon {
+   .website-text {
+    display: none;
+  }
+}
+
+.website-icon:hover {
+   .website-text {
+    display: initial;
+  }
+}
+
+
+.banner-small {
+  height: 100%;
+  min-height: 60vh;
+  top: -70px;
+  position: relative;
+  margin-bottom: -10px;
+  box-shadow: -1px 6px 14px 0px #00000078;
+  padding-top: 100px;
+  // z-index: -1;
+  h1{
+    font-size: 75px !important;
+    font-family: "Shrikhand";
+  }
+  p{
+    font-size: 20px !important;
+    opacity: 0.9;
+  }
+  .social-links{
+    font-size: 50px;
+    a{
+      color: white;
+      &:hover{
+        color: #ccc;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-small{
+    height: 100vh;
+  }
+  .banner-small h1{
+    font-size: 45px !important;
+  }
+}
+
+.banner h1 {
+  font-size: 100px;
+  font-weight: 500;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.7;
+  margin-bottom: 30px;
+}
+
+.show-text{
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.02);
+  margin-top: -40px;
+  p{
+    font-size: 21px;
+  }
+  h2{
+    font-size: 17px;
+    opacity: 0.8;
+    font-weight: 200;
+  }
+}
+
+.category-text{
+  font-weight: 100;
+  opacity: 0.7;
+  letter-spacing: 5px;
+  font-family: "Roboto";
+  text-transform: uppercase;
+}

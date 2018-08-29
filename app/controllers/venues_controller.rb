@@ -1,4 +1,6 @@
 class VenuesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+  
   def index
     @venues = Venue.all
     @markers = generate_map(@venues)
@@ -6,6 +8,9 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @gigs = @venue.gigs
+    @reviews = @venue.reviews
+    @markers = generate_map([@venue])
   end
 
   def new

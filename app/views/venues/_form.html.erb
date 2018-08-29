@@ -6,14 +6,14 @@
 
 <!-- One "tab" for each step in the form: -->
 <div class="tab">Contact info:
-  <%= f.text_field :name, placeholder: "Name", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :address, placeholder: "Address", class: "form-item full-width", oninput: "this.className += ''" %>
-  <%= f.text_field :telephone, placeholder: "Telephone", class: "form-item full-width", oninput: "this.className += ''" %>
+  <%= f.text_field :name, placeholder: "Name", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :address, placeholder: "Address", class: "form-control", oninput: "this.className += ''" %>
+  <%= f.text_field :telephone, placeholder: "Telephone", class: "form-control", oninput: "this.className += ''" %>
 </div>
 
 <div class="tab">Description:
-  <%= f.text_area :description, placeholder: "Enter a description", class: "form-item full-width", oninput: "this.className += ''"  %>
-  <%= f.text_field :website, placeholder: "Website", class: "form-item full-width", oninput: "this.className += ''"  %>
+  <%= f.text_area :description, placeholder: "Enter a description", class: "form-control", oninput: "this.className += ''"  %>
+  <%= f.text_field :website, placeholder: "Website", class: "form-control", oninput: "this.className += ''"  %>
 </div>
 
 <div style="overflow:auto;">

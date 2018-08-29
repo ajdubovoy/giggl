@@ -1,34 +1,36 @@
-  <div
-    id="map"
-    style="width: 100%;
-    height: 300px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
-<div class="card-band-index" id="gig-search">
-  <%= render "search/search_box" %>
+<!-- Map -->
+<div class="row">
+  <div class="col-sm-12">
+    <div
+      id="map"
+      style="width: 100%;
+      height: 380px;
+      margin-bottom: 60px;"
+      data-markers="<%= @markers.to_json %>"
+      style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);"
+    ></div>
+  </div>
+</div>
+
+<!-- Gig Cards -->
+
+<div class="row">
+  <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Your Results</p>
   <% @gigs.each do |gig| %>
-      <div class="row-gig-index gig-card">
-      <div class="gig-text-index">
-         <div class="gig-info-index gig-card">
-        <h1 class="gig gig-name"><%= gig.name %></h1>
-        <p class="gig gig-bio-index"><%= gig.description %></p>
-        <p class="gig gig-genre-index"><%= gig.address %></p>
-
-
-        <div class="gig-icons">
-          <a href="http://<%=gig.url%>"><i class="fab fa-facebook"></i></a>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" data-aos="fade-up" data-aos-duration="150" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+        <div class="card-category">
+          <p><%= gig.date.strftime('%b %d, %Y') %></p>
+          </div>
+        <div class="card-description">
+          <h3><%= gig.organizer.name %></h3>
+          <h2><%= gig.name %></h2>
+          <p><%= gig.description[0,40] + '...' %></p>
         </div>
-        </div>
-      <% booking = Booking.new %>
-      <%= form_for(booking, url: gig_bookings_path(gig), method: :post) do |f| %>
-        <%= f.select(:band_id, @bands.collect { |band| [band.name, band.id] }) %>
-        <%= f.submit "Book now", class: "button-book" %>
-      <% end %>
+        <%= link_to '', gig_path(gig), class: "card-link" %>
       </div>
+    </div>
 
-      <div class="gig-photos gig-card">
-        <%= cl_image_tag gig.photos.first.photo %>
-      </div>
-      </div>
   <% end %>
 </div>

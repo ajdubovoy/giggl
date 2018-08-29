@@ -1,59 +1,46 @@
-.btn-treehouse {
-  color: white;
-  padding: 11px 15px;
-  border-radius: 3px;
-  background: #a0f;
-  transition: background 0.3s ease;
-  width: 100px;
-  border: none;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  font-family: "Open Sans";
-}
-.btn-treehouse:hover {
-  opacity: 1;
-  background: #5400ac;
-  text-decoration: none;
-  color: white;
-}
 .search-enter {
-  width: 15vw;
-  border-radius: 3px;
-  font-family: "Open Sans";
-  border: none;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  opacity: 0.8;
-  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8 ;
+  transition: width 0.3s ease, opacity 0.3s ease !important;
   &:focus{
-    width: 40vw;
-    opacity: 1;
+    opacity: 1 !important;
   }
 }
-.search-box {
-  margin: 20px;
-  border-radius: 3px;
-}
 
-.home-banner-content {
+.search-box{
   text-align: center;
 }
-.home-banner-content h1 {
-  text-transform: uppercase;
+
+#map{
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.home-banner{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px;
-  height: 75vh;
 
-  .home-banner-content{
-  }
+// Algolia
 
-  h1{
-    color: white;
-    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-    font-size: 75px;
-    text-transform: uppercase;
-    font-display: 'Lato';
-  }
+.algolia-places{
+  white-space:nowrap;
+  width: 100%;
+  padding: 0;
+  display: inline !important;
+  font-family: $body-font;
+  color: black;
+}
+
+.ap-input{
+  white-space:nowrap;
+}
+.ap-icon-pin{
+  color: $purple;
+}
+
+.ap-icon-clear{
+  color: $purple;
+}
+
+.ap-dropdown-menu{
+  text-align: left;
+}
+
+.ap-cursor{
+  background-color: $light-purple;
 }

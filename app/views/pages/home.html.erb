@@ -3,9 +3,16 @@ Automatic side scrolling banner with clickable sections
 Side bar with navigation
 Links?  %>
 
-<div class="home-banner">
-  <div class="home-banner-content">
-    <h1>Find a gig</h1>
-    <%= render "search/search_box" %>
+<div class="banner banner-home">
+  <div class="banner-content">
+    <h1 data-aos="zoom-in">Find a gig</h1>
+    <p>Got a band & travel plans? Plug into the local scene</p>
+    <br>
+    <%= render "search/search_box", big: 'form-control-lg input-lg', big2: 'btn-lg' %>
+  </div>
+  
+  <video autoplay loop id="Video" muted plays-inline>
+    <source src='<%= video_url 'background.mov' %>' type="video/mp4">
+  </video>
   </div>
 </div>
