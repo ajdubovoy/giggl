@@ -27,7 +27,7 @@
   <% @gigs.each do |gig| %>
     
     <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+      <div class="card" data-aos="fade-up" data-aos-duration="150" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
         <div class="card-category">
           <p><%= gig.date.strftime('%b %d, %Y') %></p>
           </div>
