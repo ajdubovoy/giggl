@@ -188,7 +188,7 @@ gigs = Gig.all
 
 puts 'Seedings reviews'
 25.times do
-  review = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(5))
+  review = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
   review.professionalism = (5 * rand + 1).to_i
   review.quality = (5 * rand + 1).to_i
   review.turnout = (5 * rand + 1).to_i
