@@ -36,7 +36,7 @@ puts 'Creating users...'
 
 user1 = User.create!(email: "emily@emily.com", password: "123456789", name: "Emily Rhodes")
 user2 = User.create!(email: "thewalrus@music.com", password: "123456789", name: "The Walrus")
-user3 = User.create!(email: "oriane@oriane.com", password: "123456789", name: "Oriane Millet")
+user3 = User.create!(email: "rich@lewagon.com", password: "123456789", name: "Rich @ LeWagon")
 user4 = User.create!(email: "alex@alex.com", password: "123456789", name: "Alexander Dubovoy")
 users = User.all
 
@@ -93,7 +93,7 @@ venue_photo2.remote_photo_url = venueurls.sample
 venue_photo2.profile = venue2
 venue_photo2.save!
 venue2.save!
-venue3 = Venue.new(name: "Le Wagon Bar", address: "Donaustraße 200, 12043 Berlin", telephone: "+33 1 45 62 50 23", email: "richsucks@rich.com", description: "Your neighborhood spot to code & drink", website: "http://www.letittytwister.com", user: User.all.sample)
+venue3 = Venue.new(name: "Le Wagon Bar", address: "Rudi-Dutschke-Straße 26, 10969 Berlin", telephone: "+33 1 45 62 50 23", email: "richsucks@rich.com", description: "Your neighborhood spot to code & drink", website: "http://www.letittytwister.com", user: User.all.sample)
 venue_photo3 = Photo.new
 venue_photo3.remote_photo_url = venueurls.sample
 venue_photo3.profile = venue3
@@ -109,9 +109,9 @@ venues = Venue.all
 puts 'Creating gigs...'
 
 
-gigurls = ["https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/36860774_209579706281108_8083553296352018432_n.jpg?_nc_cat=0&oh=ff9ac773d300da538cf7499a300be14d&oe=5C051BB9", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/28950869_2007931586162226_3688205910200549376_o.jpg?_nc_cat=0&oh=a6df60beb4ef1c678590e279069e0a92&oe=5BF24462", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/38119965_10157689465484447_4285375586056011776_n.png?_nc_cat=0&oh=8b0a1b989e3e351c608a00baa53c4c77&oe=5BF58442", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/13124900_1034401809987532_683886661362216387_n.jpg?_nc_cat=0&oh=83567e54cbd8bdab8b7a1a5e222ee78f&oe=5C33E0DA", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/40101637_318722568879151_2696784603376517120_o.jpg?_nc_cat=0&oh=4b62b9f9199d1d1157a5fbf48ff165e1&oe=5C39135B", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/33042196_646337229035756_125914121697755136_n.jpg?_nc_cat=0&oh=ee294d674c68b9b099de6fbee1ecd29a&oe=5C0015E6", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/38789165_10150993411979986_3806125298169151488_n.png?_nc_cat=0&oh=da915a4301fe9d9b850ddc87bc5a11d7&oe=5C375F77", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/30581855_10156490837809301_5013406743552589824_n.jpg?_nc_cat=0&oh=1eb60cf959f7748279b46475954c74fa&oe=5C308B5E", "https://ksassets.timeincuk.net/wp/uploads/sites/55/2012/11/LedZeppelinCelebrationDay600Gb130912_0.jpg"]
+gigurls = ["https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/36860774_209579706281108_8083553296352018432_n.jpg?_nc_cat=0&oh=ff9ac773d300da538cf7499a300be14d&oe=5C051BB9", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/28950869_2007931586162226_3688205910200549376_o.jpg?_nc_cat=0&oh=a6df60beb4ef1c678590e279069e0a92&oe=5BF24462", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/37203630_10156036878987851_1422590582588440576_n.jpg?_nc_cat=0&oh=0b0b823ce213415fffd286061d7d495c&oe=5BEED70A", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/13124900_1034401809987532_683886661362216387_n.jpg?_nc_cat=0&oh=83567e54cbd8bdab8b7a1a5e222ee78f&oe=5C33E0DA", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/40101637_318722568879151_2696784603376517120_o.jpg?_nc_cat=0&oh=4b62b9f9199d1d1157a5fbf48ff165e1&oe=5C39135B", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/33042196_646337229035756_125914121697755136_n.jpg?_nc_cat=0&oh=ee294d674c68b9b099de6fbee1ecd29a&oe=5C0015E6", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/38789165_10150993411979986_3806125298169151488_n.png?_nc_cat=0&oh=da915a4301fe9d9b850ddc87bc5a11d7&oe=5C375F77", "https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/30581855_10156490837809301_5013406743552589824_n.jpg?_nc_cat=0&oh=1eb60cf959f7748279b46475954c74fa&oe=5C308B5E", "https://ksassets.timeincuk.net/wp/uploads/sites/55/2012/11/LedZeppelinCelebrationDay600Gb130912_0.jpg"]
 
-gig1 = Gig.new(address: "Friedrichshain, Berlin", paid: true, description: "Bringing you live music to our new Side Stage", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Thursdays @ The Walrus", date: '2019-09-09', time: '20:30')
+gig1 = Gig.new(address: "Friedrichshain, Berlin", paid: false, description: "Bringing you live music to our new Side Stage. Groovy band wanted to spike our drink sales, unpaid though. Bringing you live music to our new Side Stage. Groovy band wanted to spike our drink sales, unpaid though. Bringing you live music to our new Side Stage. Groovy band wanted to spike our drink sales, unpaid though.", other_bands: "Mistar Anderson, Josh Hill", url: "https://www.facebook.com/events/1109582902525113/", name: "Thursdays @ The Walrus", date: '2019-09-09', time: '20:30')
 gig1.genre = genres.sample
 gig1.organizer = venue1
 gig_photo1 = Photo.new
@@ -127,9 +127,9 @@ gig_photo2.remote_photo_url = gigurls[0]
 gig_photo2.profile = gig2
 gig_photo2.save!
 gig2.save!
-gig3 = Gig.new(address: "Donaustraße 115, 12043 Berlin", paid: true, description: "Live music act wanted saturday pm", other_bands: "MoJoFlo", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Baiz", date: '2019-09-09', time: '20:00')
+gig3 = Gig.new(address: "Rudi-Dutschke-Straße 26, 10969 Berlin", paid: true, description: "Live music act wanted saturday pm, this will be a rager, as we are celebrating our demo day. Band must be funky and upbeat. Good vibes only. Cheers! Live music act wanted saturday pm, this will be a rager, as we are celebrating our demo day. Band must be funky and upbeat. Good vibes only. Cheers! Live music act wanted saturday pm, this will be a rager, as we are celebrating our demo day. Band must be funky and upbeat. Good vibes only. Cheers!", other_bands: "MoJoFlo", url: "https://www.facebook.com/events/1109582902525113/", name: "RAGER @ Le Wagon", date: '2019-09-09', time: '20:00')
 gig3.genre = genres.sample
-gig3.organizer = band3
+gig3.organizer = venue3
 gig_photo3 = Photo.new
 gig_photo3.remote_photo_url = gigurls[2]
 gig_photo3.profile = gig3
@@ -145,7 +145,7 @@ gig_photo4.save!
 gig4.save!
 gig4 = Gig.new(address: "Gneisenaustraße 63, Berlin", paid: false, description: "Open spot for sunday at Funk and Beer fest in Berlin", other_bands: "Tauk", url: "https://www.facebook.com/events/1109582902525113/", name: "Funk and Beer fest", date: '2019-09-09', time: '21:30')
 gig4.genre = genres.sample
-gig4.organizer = band3
+gig4.organizer = venue1
 gig_photo4 = Photo.new
 gig_photo4.remote_photo_url = gigurls[4]
 gig_photo4.profile = gig4
@@ -169,13 +169,12 @@ gig_photo5.save!
 gig5.save!
 gig6 = Gig.new(address: "San Francisco, California", paid: false, description: "DJ Bassnectar debut in san francisco warehouse", other_bands: "Tauk, Phuturprimitive", url: "https://www.facebook.com/events/1109582902525113/", name: "Bassnectar debut ft. Tauk", date: '2019-06-21', time: '21:30')
 gig6.genre = genres.sample
-gig6.organizer = band4
+gig6.organizer = venue2
 gig_photo6 = Photo.new
 gig_photo6.remote_photo_url = gigurls[7]
 gig_photo6.profile = gig6
 gig_photo6.save!
 gig6.save!
-gigs = Gig.all
 gig7 = Gig.new(address: "Brooklyn, NY", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-12-21', time: '21:30')
 gig7.genre = genres.sample
 gig7.organizer = venue1
@@ -184,9 +183,25 @@ gig_photo7.remote_photo_url = gigurls[8]
 gig_photo7.profile = gig7
 gig_photo7.save!
 gig7.save!
+gig8 = Gig.new(address: "Rudi-Dutschke-Straße 26, 10969 Berlin", paid: false, description: "DJ Bassnectar debut in san francisco warehouse", other_bands: "Tauk, Phuturprimitive", url: "https://www.facebook.com/events/1109582902525113/", name: "Rich singing opera", date: '2019-07-10', time: '21:30')
+gig8.genre = genres.sample
+gig8.organizer = venue3
+gig_photo8 = Photo.new
+gig_photo8.remote_photo_url = gigurls.sample
+gig_photo8.profile = gig8
+gig_photo8.save!
+gig8.save!
+gig9 = Gig.new(address: "Rudi-Dutschke-Straße 26, 10969 Berlin", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Concert w/ no music", date: '2018-05-10', time: '21:30')
+gig9.genre = genres.sample
+gig9.organizer = venue3
+gig_photo9 = Photo.new
+gig_photo9.remote_photo_url = gigurls.sample
+gig_photo9.profile = gig9
+gig_photo9.save!
+gig9.save!
 gigs = Gig.all
 
-puts 'Seedings reviews'
+puts 'Seeding reviews...'
 13.times do
   review = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentence)
   review.professionalism = (5 * rand + 1).to_i
@@ -203,6 +218,7 @@ puts 'Seedings reviews'
   review.save!
 end
 
+puts 'Seeding bookings...'
 booking1 = Booking.new(status:"confirmed")
 booking1.band = band1
 booking1.gig = gig5
