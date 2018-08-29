@@ -1,18 +1,16 @@
-<div class="text-white">
-  <h1>Conversation</h1>
-  <p>Chatting with
+<div class="text-white text-center" style="margin-bottom: 50px;">
+  <h1>Chatting with
     <%= Booking.find(@conversation.booking_id).gig.organizer.user.name %>
-  </p>
+  </h1>
 
-  <p>
+  <p><em style="font-weight: 200;">
     Your booking is <span class="booking-status <%= Booking.find(@conversation.booking_id).status=="confirmed" ? 'booking-status-confirmed' : 'booking-status-pending' %>"><%= Booking.find(@conversation.booking_id).status %></span> for: <%= link_to Booking.find(@conversation.booking_id).gig.name, gig_path(Booking.find(@conversation.booking_id).gig) %>
-  </p>
-
-  <p><%= link_to "View booking", booking_path(Booking.find(@conversation.booking_id)), class: "btn btn-primary" %></p>
+  </em></p>
 </div>
 
+<div class="col-md-8 col-md-offset-2">
   <div class="panel panel-default">
-    <div class="panel-heading"><%= @conversation.subject %></div>
+    <div class="panel-heading" style="font-weight: 500;"><%= @conversation.subject %></div>
 
     <div class="panel-body">
       <div class="messages">
@@ -21,8 +19,8 @@
             <% message = receipt.message %>
 
             <div class="media-body">
-              <h6 class="media-heading"><strong><%= message.sender.name %></strong>
-                says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></h6>
+              <h6 class="media-heading" style="font-weight: 300;"><em><strong><%= message.sender.name %></strong>
+                says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></em></h6>
               <%= message.body %>
             </div>
           </div>
@@ -35,5 +33,8 @@
     <div class="form-group">
       <%= text_area_tag 'body', nil, cols: 3, class: 'form-control', placeholder: 'Type something...', required: true %>
     </div>
-    <%= submit_tag "Send Message", class: 'btn btn-primary' %> <%= link_to "All conversations", conversations_path, class: "btn btn-info" %>
+    <%= submit_tag "Send Message", class: 'btn btn-primary' %>
+    <%= link_to "View booking", booking_path(Booking.find(@conversation.booking_id)), class: "btn btn-primary" %>
+     <%= link_to "All conversations", conversations_path, class: "btn btn-default" %>
   <% end %>
+</div>
