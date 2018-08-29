@@ -10,6 +10,7 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
     @gigs = @venue.gigs
     @reviews = @venue.reviews
+    @markers = generate_map([@venue])
   end
 
   def new
