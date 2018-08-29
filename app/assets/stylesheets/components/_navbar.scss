@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: -1px 6px 14px 0px #00000078;
+  z-index: 5;
+  position: relative;
 }
 
 /* Logo */

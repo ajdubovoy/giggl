@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+
+.banner-home h1{
+  font-family: "Shrikhand";
+  opacity: 0.8;
+}
+
+.banner-home p{
+  font-size: 23px;
+}
+
+.banner-link{
+  z-index: 3 !important;
+  width: 100%;
+}
+
 .banner {
   color: #fcfcfc;
   text-align: center;
@@ -9,16 +25,29 @@
   top: 0;
 }
 .banner-small {
-  min-height: 65vh;
+  height: 100%;
+  min-height: 60vh;
   top: -70px;
-  z-index: -1;
   position: relative;
   margin-bottom: -10px;
+  padding-top: 100px;
+  // z-index: -1;
   h1{
     font-size: 75px !important;
+    font-family: "Shrikhand";
   }
   p{
     font-size: 20px !important;
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .banner-small{
+    height: 100vh;
+  }
+  .banner-small h1{
+    font-size: 45px !important;
   }
 }
 
@@ -31,6 +60,6 @@
   font-size: 25px;
   font-weight: lighter;
   color: rgb(255, 255, 255);
-  opacity: 0.6;
+  opacity: 0.7;
   margin-bottom: 30px;
 }
