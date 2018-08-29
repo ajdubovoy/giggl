@@ -121,7 +121,7 @@ gig_photo1.save!
 gig1.save!
 gig2 = Gig.new(address: "Kreuzberg, Berlin", paid: true, description: "We need an opener for our EP release show", other_bands: "TATTAT", url: "https://www.facebook.com/events/1109582902525113/", name: "Island party at brothers", date: '2019-09-09', time: '21:00')
 gig2.genre = genres.sample
-gig2.organizer = band4
+gig2.organizer = venue1
 gig_photo2 = Photo.new
 gig_photo2.remote_photo_url = gigurls[0]
 gig_photo2.profile = gig2
@@ -129,7 +129,7 @@ gig_photo2.save!
 gig2.save!
 gig3 = Gig.new(address: "Donaustraße 115, 12043 Berlin", paid: true, description: "Live music act wanted saturday pm", other_bands: "MoJoFlo", url: "https://www.facebook.com/events/1109582902525113/", name: "Tuesdays @ Baiz", date: '2019-09-09', time: '20:00')
 gig3.genre = genres.sample
-gig3.organizer = venue4
+gig3.organizer = band3
 gig_photo3 = Photo.new
 gig_photo3.remote_photo_url = gigurls[2]
 gig_photo3.profile = gig3
@@ -145,7 +145,7 @@ gig_photo4.save!
 gig4.save!
 gig4 = Gig.new(address: "Gneisenaustraße 63, Berlin", paid: false, description: "Open spot for sunday at Funk and Beer fest in Berlin", other_bands: "Tauk", url: "https://www.facebook.com/events/1109582902525113/", name: "Funk and Beer fest", date: '2019-09-09', time: '21:30')
 gig4.genre = genres.sample
-gig4.organizer = band2
+gig4.organizer = band3
 gig_photo4 = Photo.new
 gig_photo4.remote_photo_url = gigurls[4]
 gig_photo4.profile = gig4
@@ -178,7 +178,7 @@ gig6.save!
 gigs = Gig.all
 gig7 = Gig.new(address: "Brooklyn, NY", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-12-21', time: '21:30')
 gig7.genre = genres.sample
-gig7.organizer = band4
+gig7.organizer = venue1
 gig_photo7 = Photo.new
 gig_photo7.remote_photo_url = gigurls[8]
 gig_photo7.profile = gig7
