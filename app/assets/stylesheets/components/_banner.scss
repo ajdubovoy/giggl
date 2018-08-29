@@ -19,7 +19,6 @@
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0px 3px 14px 0px rgba(0,0,0,0.2);
   font-family: "Roboto";
 }
 
@@ -32,7 +31,6 @@
   align-items: center;
   justify-content: center;
   top: 0;
-  box-shadow: -1px 6px 14px 0px #00000078;
 }
 .banner-small {
   height: 100%;
@@ -40,6 +38,7 @@
   top: -70px;
   position: relative;
   margin-bottom: -10px;
+  box-shadow: -1px 6px 14px 0px #00000078;
   padding-top: 100px;
   // z-index: -1;
   h1{
