@@ -17,7 +17,8 @@
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path booking.gig.photos.first.photo if booking.gig.photos.present? %>');">
         <div class="card-category">
           <p><%= booking.gig.address %><p>
-            <p><%= booking.gig.date.strftime('%b %d, %Y') %><p>
+          <p><%= booking.gig.date.strftime('%b %d, %Y') %></p>
+        </div>
         <div class="card-description">
           <h2><%= booking.gig.name %></h2>
           <p><%= booking.gig.description[0,40] + '...' %></p>
