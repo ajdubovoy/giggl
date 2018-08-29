@@ -8,10 +8,10 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-3 col-md-offset-3">
           <p><i class="fas fa-map-marker-alt"></i> <%= @band.address %></p>
         </div>
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-12 col-md-3">
           <p><i class="fas fa-music"></i> <%= @band.genre.name %></p>
         </div>
     </div>
@@ -39,14 +39,17 @@
 
 <div class="container">
   <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Explore their sound</p>
+  </div>
+  <div class="row">
     <div class="col-sm-12 col-md-4">
     <div class="spotify-player">
-      <iframe src="https://open.spotify.com/embed/album/3uiBBPrTU4r7UgKBb0sQon" width="300" height="475" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <iframe src="https://open.spotify.com/embed/album/3uiBBPrTU4r7UgKBb0sQon" width="100%" height="475" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
   </div>
   <div class="col-sm-12 col-md-4">
-    <div class="soundcloud-player">
-      <iframe width="100%" height="475" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/346982601&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    <div class="soundcloud-player" style="margin-left: 0; margin-right: 0;">
+      <iframe width="100%" height="475" style="margin-left: 0; margin-right: 0;" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/346982601&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
     </div>
   </div>
   <div class="col-sm-12 col-md-4">
@@ -61,6 +64,9 @@
 <!-- Gigs -->
 
 <div class="container">
+  <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized (<%= @gigs.length %>)</p>
+  </div>
   <div class="row">
   <% @gigs.each do |gig| %>
 
@@ -86,11 +92,15 @@
 
 <div class="container">
   <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews (<%= @reviews.length %>)</p>
+  </div>
+  <div class="row">
   <% @reviews.each do |review| %>
 
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); color: black; height: 200px;">
+    <div class="col-sm-12">
+      <div class="card" style="background: white; color: black; height: 300px;">
         <div class="card-description">
+          <h3><%= review.sender.name %></h3>
           <h3><%= review.subject %></h3>
           <p><strong>Professionalism:</strong> <%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
           <p><strong>Quality:</strong> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
