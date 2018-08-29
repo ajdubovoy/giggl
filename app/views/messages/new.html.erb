@@ -1,14 +1,14 @@
-<div class="message-card" style="min-height: 80vh;">
-  <h1 class="text-center">New Message to: <%= @chosen_recipient.name %></h1>
+
+  <h1 class="text-center" style="color: white;">New Message to: <%= @chosen_recipient.name %></h1>
   <div class="col-sm-12">
     <%= form_tag messages_path, method: :post do %>
       <div class="form-group">
-        <%= label_tag 'message[subject]', 'Subject' %>
+        <%= label_tag 'message[subject]', 'Subject', style: "color: white;" %>
         <%= text_field_tag 'message[subject]', nil, class: 'form-control chosen-it', required: true %>
       </div>
 
       <div class="form-group">
-        <%= label_tag 'message[body]', 'Message' %>
+        <%= label_tag 'message[body]', 'Message', style: "color: white;" %>
         <%= text_area_tag 'message[body]', nil, cols: 3, class: 'form-control chosen-it', required: true %>
       </div>
 

@@ -6,7 +6,6 @@ class MessagesController < ApplicationController
   end
 
   def create
-    raise
     recipients = User.where(id: params[:recipients])
     @conversation = current_user.send_message(recipients, params[:message][:body], params[:message][:subject]).conversation
     @gig = Gig.find(params[:gig_id])
