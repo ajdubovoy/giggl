@@ -1,77 +1,69 @@
 </div>
 <div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @band.photos.first.photo if @band.photos.present? %>');">
-  <div class="banner-content">
-    <h1><%= @band.name %></h1>
-    <p> <%= @band.bio %>
-    </p>
+  <div class="container">
+    <div class="row">
+      <div class="banner-content">
+        <h1><%= @band.name %></h1>
+        <p><%= @band.bio %></p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <p><i class="fas fa-map-marker-alt"></i> <%= @band.address %></p>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <p><i class="fas fa-music"></i> <%= @band.genre.name %></p>
+        </div>
+    </div>
+    <div class="row social-links">
+      <div class="col-md-4 col-md-offset-4">
+        <div class="col-sm-12 col-md-4">
+          <a <%= link_to @band.website, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <i class="far fa-envelope"></i></a>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <a <%= link_to @band.instagram, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <i class="fab fa-instagram"></i></a>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <a <%= link_to @band.facebook, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <i class="fab fa-facebook"></i></a>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <div class="show-card">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-          </div>
-          <div class="col-sm-12 col-md-9">
-            <div class="show-card-description">
-              <h2><%= @band.name %></h2>
-              <p><%= @band.genre.name %></p>
-              <p><strong>Based in:</strong> <%= @band.address %></p>
-              <p><strong>Bio:</strong> <%= @band.bio %></p>
-              <p><strong>CONNECT:</strong> </p>
-            <div class="band-music-links">
-              <p class="band-website">
-                <a <%= link_to @band.website do %>
-              <i class="far fa-envelope"></i></a>
-              <% end %>
-              </p>
-              <p class="band-spotify">
-                <a <%= link_to @band.spotify do %>
-                  <i class="fab fa-spotify"></i></a>
-                <% end %>
-              </p>
-              <p class="band band-bandcamp">
-                <a <%= link_to @band.bandcamp do %>
-                  <i class="fab fa-bandcamp"></i></a>
-                <% end %>
-              </p>
-              <p class="band band-facebook">
-                <a <%= link_to @band.facebook do %>
-                  <i class="fab fa-facebook"></i></a>
-                <% end %>
-              </p>
-              <p class="band band-instagram">
-                <a <%= link_to @band.instagram do %>
-                  <i class="fab fa-instagram"></i></a>
-                <% end %>
-              </p>
-              <p class="band band-youtube">
-                <a <%= link_to @band.youtube do %>
-                  <i class="fab fa-youtube"></i></a>
-                <% end %>
-              </p>
-            </div>
-            </div>
-          </div>
-          <div class="spotify-player">
-            <iframe src="https://open.spotify.com/album/59AeaIeAx6S2igYJFjltRE?si=f54UpmuNTOuyxdBuEx_OJw"width="250" height="330" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-          </div>
-          <div class="soundcloud-player">
-            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/158897554&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
-          </div>
-      </div>
+    <div class="col-sm-12 col-md-4">
+    <div class="spotify-player">
+      <iframe src="https://open.spotify.com/embed/album/3uiBBPrTU4r7UgKBb0sQon" width="300" height="475" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
     </div>
   </div>
+  <div class="col-sm-12 col-md-4">
+    <div class="soundcloud-player">
+      <iframe width="100%" height="475" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/346982601&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <div class="bandcamp-player">
+      <iframe style="border: 0; width: 350px; height: 475px;" src="https://bandcamp.com/EmbeddedPlayer/album=1176487269/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://lunglunglung.bandcamp.com/album/bottom-of-the-barrel">Bottom of the Barrel by Lung</a></iframe>
+    </div>
+  </div>
+  </div>
 </div>
+
 
 <!-- Gigs -->
 
 <div class="container">
   <div class="row">
   <% @gigs.each do |gig| %>
-    
+
     <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
         <div class="card-category">
@@ -95,7 +87,7 @@
 <div class="container">
   <div class="row">
   <% @reviews.each do |review| %>
-    
+
     <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); color: black; height: 200px;">
         <div class="card-description">
