@@ -1,43 +1,36 @@
 </div>
 <div class="banner banner-small" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @venue.photos.first.photo if @venue.photos.present? %>');">
-  <div class="banner-content">
-    <h1><%= @venue.name %></h1>
-    <h2><%= @venue.description %></h2>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="show-card">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-          </div>
-          <div class="col-sm-12 col-md-9">
-            <div class="show-card-description">
-              <h2><%= @venue.name %></h2>
-              <p><strong>Address:</strong> <%= @venue.address %></p>
-              <p><strong>Website:</strong> <%= @venue.website %></p>
-              <p><strong>Phone:</strong> <%= @venue.telephone %></p>
-              <p><strong>Email:</strong> <%= @venue.email %></p>
-            </div>
-          </div>
-        <div class="col-sm-12 col-md-3">
-          <div class="show-card-links text-right">
-            <%= link_to @venue.website, class: "btn btn-primary", target: "_blank" do %>
-              <i class="fab fa-facebook"></i></a>
-            <% end %>
-          </div>
-        </div>
-        <div class="col-sm-12">
-          <div
-            id="map"
-            style="width: 100%;
-            height: 300px;"
-            data-markers="<%= @markers.to_json %>"
-            style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);"
-          ></div>
+  <div class="container">
+    <div class="row">
+      <div class="banner-content">
+        <h1><%= @venue.name %></h1>
+        <h2><%= @venue.description %></h2>
+        <p><%= @venue.address %></p>
       </div>
+    </div>
+    <div class="row social-links">
+      <div class="col-sm-12 col-md-12">
+        <div class="col-sm-12 col-md-4">
+          <%= link_to @venue.website, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+            <div class="website-icon">
+              <i class="fas fa-desktop"></i>
+            </div>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <%= link_to @venue.telephone, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+          <div class="website-icon">
+            <i class="fas fa-phone"></i><p class="website-text"><%= @venue.telephone %></p>
+          </div>
+          <% end %>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <%= link_to @venue.email, 'data-aos': "zoom-in", 'data-aos-duration': 200 do %>
+          <div class="website-icon">
+            <i class="far fa-envelope"></i><p class="website-text"><%= @venue.email %></p>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
@@ -47,7 +40,7 @@
 <div class="container">
   <div class="row">
   <% @gigs.each do |gig| %>
-    
+
     <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
         <div class="card-category">
@@ -70,7 +63,6 @@
 <div class="container">
   <div class="row">
   <% @reviews.each do |review| %>
-    
     <div class="col-sm-12 col-md-6 col-lg-4">
       <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); color: black; height: 200px;">
         <div class="card-description">
@@ -82,7 +74,15 @@
         </div>
       </div>
     </div>
-
   <% end %>
   </div>
 </div>
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 500px;
+  box-shadow: -1px -6px 14px 0px #00000078;"
+  data-markers="<%= @markers.to_json %>"
+  style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1); margin-bottom: 0; margin-top: 20px; padding-bottom: 0;"
+></div>

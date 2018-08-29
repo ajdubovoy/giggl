@@ -32,6 +32,20 @@
   justify-content: center;
   top: 0;
 }
+
+.website-icon {
+   .website-text {
+    display: none;
+  }
+}
+
+.website-icon:hover {
+   .website-text {
+    display: initial;
+  }
+}
+
+
 .banner-small {
   height: 100%;
   min-height: 60vh;

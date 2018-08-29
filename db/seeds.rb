@@ -81,7 +81,7 @@ puts 'Creating venues...'
 
 venueurls = ["https://images.pexels.com/photos/1267265/pexels-photo-1267265.jpeg?cs=srgb&dl=adult-bar-beer-1267265.jpg&fm=jpg", "https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?cs=srgb&dl=alcohol-architecture-bar-260922.jpg&fm=jpg", "https://images.pexels.com/photos/769153/pexels-photo-769153.jpeg?cs=srgb&dl=business-chairs-city-769153.jpg&fm=jpg", "https://images.pexels.com/photos/1154189/pexels-photo-1154189.jpeg?cs=srgb&dl=celebration-concert-crowd-1154189.jpg&fm=jpg"]
 
-venue1 = Venue.new(name: "The Walrus", address: "Friedrichshain, Berlin", telephone: "+44 20 7283 5888", email: "thewalrus@music.com", description: "Live-music performances on 2 stages, plus draft beer, cocktails, eclectic pub food", website: "http://www.thewalruscolumbus.com/", user: User.all.sample)
+venue1 = Venue.new(name: "The Walrus", address: "Gneisenaustraße 63, 10961 Berlin", telephone: "+44 20 7283 5888", email: "thewalrus@music.com", description: "Live-music performances on 2 stages, plus draft beer, cocktails, eclectic pub food", website: "http://www.thewalruscolumbus.com/", user: User.all.sample)
 venue_photo1 = Photo.new
 venue_photo1.remote_photo_url = venueurls.sample
 venue_photo1.profile = venue1
