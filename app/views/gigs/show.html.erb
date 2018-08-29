@@ -25,6 +25,7 @@
       </div>
     </div>
     <div class="row">
+    <div class="col-md-8 col-md-offset-2">
       <div class="col-sm-12 col-md-4">
         <%= link_to @gig.url, class: "btn btn-primary banner-link", target: "_blank" do %>
           <i class="fab fa-facebook"></i> Facebook event</a>
@@ -38,15 +39,16 @@
       </div>
       <div class="col-sm-12 col-md-4">
         <% if current_user.nil? %>
-          <%= link_to t(".sign_in", default: "Login to book"), new_user_session_path, class: "btn btn-primary" %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary" %>
         <% elsif current_user.bands == [] %>
-          <%= link_to "List your band to book", new_band_path, class: "btn btn-primary banner-link" %>
+          <%= link_to "List your band", new_band_path, class: "btn btn-primary banner-link" %>
         <% else %>
-        <%= link_to "Message organizer to book", new_message_path(to: @gig.organizer.user.id, gig_id: @gig.id), class: "btn btn-primary banner-link" %>
+        <%= link_to "Message organizer", new_message_path(to: @gig.organizer.user.id, gig_id: @gig.id), class: "btn btn-primary banner-link" %>
         <% end %>
       <% end %>
     </div>
   </div>
+</div>
 </div>
 </div>
 

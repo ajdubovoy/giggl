@@ -11,6 +11,7 @@
 
 .banner-link{
   z-index: 100;
+  width: 100%;
 }
 
 .banner {
@@ -30,6 +31,7 @@
   position: relative;
   margin-bottom: -10px;
   padding-top: 100px;
+  z-index: -1;
   h1{
     font-size: 75px !important;
     font-family: "Shrikhand";
