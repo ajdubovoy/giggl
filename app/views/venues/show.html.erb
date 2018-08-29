@@ -39,6 +39,9 @@
 <!-- Gigs -->
 <div class="container">
   <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized (<%= @gigs.length %>)</p>
+  </div>
+  <div class="row">
   <% @gigs.each do |gig| %>
 
     <div class="col-sm-12 col-md-6 col-lg-4">
@@ -62,8 +65,11 @@
 <!-- Reviews -->
 <div class="container">
   <div class="row">
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews (<%= @reviews.length %>)</p>
+  </div>
+  <div class="row">
   <% @reviews.each do |review| %>
-    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="col-sm-12">
       <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); color: black; height: 200px;">
         <div class="card-description">
           <h3><%= review.subject %></h3>
