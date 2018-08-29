@@ -1,6 +1,6 @@
 </div>
 
-<% if current_user.bookings.nil? %>
+<% if current_user.bookings.nil? || current_user.bands.empty? %>
   <h1 style="color: white;" class="text-center">No bookings yet</h1>
 <% else %>
 
