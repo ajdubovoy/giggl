@@ -1,4 +1,4 @@
-<div class="message-card">
+<div class="text-white" style="margin-top: 100px;">
 
   <div class="row">
     <div class="col-sm-3">
@@ -22,11 +22,6 @@
         <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
                        data: {confirm: 'Are you sure?'} %></p>
       <% end %>
-      <ul class="list-group">
-        <%= render partial: 'conversations/conversation', collection: @conversations %>
-      </ul>
-
-      <%= will_paginate %>
     </div>
   </div>
 </div>

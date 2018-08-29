@@ -1,4 +1,4 @@
-<div class="message-card">
+<div class="text-white">
   <h1>Conversation</h1>
   <p>Chatting with
     <%= Booking.find(@conversation.booking_id).gig.organizer.user.name %>
@@ -9,6 +9,7 @@
   </p>
 
   <p><%= link_to "View booking", booking_path(Booking.find(@conversation.booking_id)), class: "btn btn-primary" %></p>
+</div>
 
   <div class="panel panel-default">
     <div class="panel-heading"><%= @conversation.subject %></div>
@@ -36,4 +37,3 @@
     </div>
     <%= submit_tag "Send Message", class: 'btn btn-primary' %> <%= link_to "All conversations", conversations_path, class: "btn btn-info" %>
   <% end %>
-</div>
