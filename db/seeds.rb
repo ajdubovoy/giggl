@@ -36,7 +36,7 @@ puts 'Creating users...'
 
 user1 = User.create!(email: "emily@emily.com", password: "123456789", name: "Emily Rhodes")
 user2 = User.create!(email: "thewalrus@music.com", password: "123456789", name: "The Walrus")
-user3 = User.create!(email: "oriane@oriane.com", password: "123456789", name: "Oriane Millet")
+user3 = User.create!(email: "rich@lewagon.com", password: "123456789", name: "Rich @ LeWagon")
 user4 = User.create!(email: "alex@alex.com", password: "123456789", name: "Alexander Dubovoy")
 users = User.all
 
