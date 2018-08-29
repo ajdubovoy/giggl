@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
     @gig = @booking.gig
     @band = @booking.band
     @organizer = @gig.organizer
+    @markers = generate_map([@gig])
   end
 
   def create
@@ -19,6 +20,18 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  private
+
+  def generate_map(gigs)
+    gigs.map do |gig|
+      {
+        lat: gig.latitude,
+        lng: gig.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/gigs/map_box", locals: { gig: gig }) }
+      }
+    end
+  end
 
   def booking_params
     params.require(:booking).permit(:band_id)

@@ -22,7 +22,7 @@
           <h2><%= booking.gig.name %></h2>
           <p><%= booking.gig.description[0,40] + '...' %></p>
         </div>
-        <%= link_to '', gig_path(booking.gig), class: "card-link" %>
+        <%= link_to '', booking_path(booking), class: "card-link" %>
       </div>
     </div>
 </div>
