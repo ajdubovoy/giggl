@@ -69,17 +69,35 @@
   </div>
   <div class="row">
   <% @reviews.each do |review| %>
+
     <div class="col-sm-12">
-      <div class="card" style="background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.75)); color: black; height: 200px;">
-        <div class="card-description">
-          <h3><%= review.subject %></h3>
-          <p><strong>Professionalism:</strong> <%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
-          <p><strong>Quality:</strong> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
-          <p><strong>Turnout:</strong> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
-          <p><%= review.content %><p>
+      <div class="card card-review" style="background: white; color: black;">
+          <div class="row review-line">
+            <div class="col-sm-12 col-md-6">
+              <h3>Reviewed by</h3>
+              <h2><%= review.sender.name %></h2>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Professionalism</h3>
+                <p><%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Quality</h3> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Turnout</h3> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
+            </div>
+          </div>
+          <div class="row review-content">
+            <div class="col-sm-12">
+            <h2><%= review.subject %></h2>
+            <p><%= review.content %><p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
   <% end %>
   </div>
 </div>
