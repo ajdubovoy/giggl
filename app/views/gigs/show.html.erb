@@ -39,7 +39,7 @@
       </div>
       <div class="col-sm-12 col-md-4">
         <% if current_user.nil? %>
-          <%= link_to t(".sign_in", default: "Login banner-link"), new_user_session_path, class: "btn btn-primary" %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary banner-link" %>
         <% elsif current_user.bands == [] %>
           <%= link_to "List your band", new_band_path, class: "btn btn-primary banner-link" %>
         <% else %>
