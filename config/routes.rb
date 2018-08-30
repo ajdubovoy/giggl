@@ -41,4 +41,7 @@ Rails.application.routes.draw do
 
   # Messages
   resources :messages, only: [:new, :create]
+
+  # Fake confirmation
+  post '/confirm-for-demo', to: 'fake_confirmations#create', as: "fake_confirmation"
 end

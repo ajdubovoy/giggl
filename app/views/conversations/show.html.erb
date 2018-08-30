@@ -42,6 +42,9 @@
       <div class="col-sm-12 col-md-6 col-md-offset-3 text-center" style="margin-top: 40px;">
         <%= link_to "View booking", booking_path(Booking.find(@conversation.booking_id)), class: "btn btn-default" %>
          <%= link_to "All conversations", conversations_path, class: "btn btn-default" %>
+        <% if current_user == User.where(email: 'rich@lewagon.com').first %>
+          <%= link_to 'Confirm booking for demo purposes', fake_confirmation_path(booking_id: @conversation.booking_id), class: 'btn btn-success', method: "post" %>
+        <% end %>
      </div>
    </div>
   <% end %>
