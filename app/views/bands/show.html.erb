@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-sm-12 col-md-2 back-button">
             <% if params[:gig_id].present? %>
-              <%= link_to "Back to gig", gig_path(Gig.find(params[:gig_id])), class: "btn btn-default banner-link" %>
+              <%= link_to "Back to gig", gig_path(Gig.find(params[:gig_id]), location: params[:location]), class: "btn btn-default banner-link" %>
             <% end %>
           </div>
         </div>
