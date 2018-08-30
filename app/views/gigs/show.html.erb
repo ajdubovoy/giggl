@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-sm-12 col-md-2 back-button">
           <% if params[:location].present? %>
-            <%= link_to "Back to search", search_path(location: params[:location]), class: "btn btn-default banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+            <%= link_to "Back to search", search_path(location: params[:location]), class: "btn btn-default banner-link" %>
           <% end %>
         </div>
       </div>
