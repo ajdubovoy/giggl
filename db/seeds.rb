@@ -93,7 +93,7 @@ venue_photo2.remote_photo_url = venueurls.sample
 venue_photo2.profile = venue2
 venue_photo2.save!
 venue2.save!
-venue3 = Venue.new(name: "Le Wagon Bar", address: "Rudi-Dutschke-Straße 26, 10969 Berlin", telephone: "+33 1 45 62 50 23", email: "richsucks@rich.com", description: "Your neighborhood spot to code & drink", website: "http://www.letittytwister.com", user: User.all.sample)
+venue3 = Venue.new(name: "Le Wagon Bar", address: "Rudi-Dutschke-Straße 26, 10969 Berlin", telephone: "+33 1 45 62 50 23", email: "richsucks@rich.com", description: "Your neighborhood spot to code & drink", website: "http://www.letittytwister.com", user: user3)
 venue_photo3 = Photo.new
 venue_photo3.remote_photo_url = venueurls.sample
 venue_photo3.profile = venue3
