@@ -32,22 +32,22 @@
           Facebook event</a>
       </div>
       <div class="col-sm-12 col-md-4">
+        <% if current_user.nil? %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+        <% elsif current_user.bands == [] %>
+          <%= link_to "List your band", new_band_path, class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+        <% else %>
+        <%= link_to "Message organizer", new_message_path(to: @gig.organizer.user.id, gig_id: @gig.id), class: "btn btn-success banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+        <% end %>
+      <% end %>
+    </div>
+      <div class="col-sm-12 col-md-4">
         <% if @gig.organizer.class == Venue %>
           <%= link_to "View organizer", venue_path(@gig.organizer), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% else %>
           <%= link_to "View organizer", band_path(@gig.organizer), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% end %>
       </div>
-      <div class="col-sm-12 col-md-4">
-        <% if current_user.nil? %>
-          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
-        <% elsif current_user.bands == [] %>
-          <%= link_to "List your band", new_band_path, class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
-        <% else %>
-        <%= link_to "Message organizer", new_message_path(to: @gig.organizer.user.id, gig_id: @gig.id), class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
-        <% end %>
-      <% end %>
-    </div>
   </div>
 </div>
 </div>
