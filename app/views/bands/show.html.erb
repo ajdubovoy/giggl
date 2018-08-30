@@ -3,6 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="banner-content">
+        <p class="category-text">Band</p>
         <h1><%= @band.name %></h1>
         <p><%= @band.bio %></p>
       </div>
@@ -65,7 +66,7 @@
 
 <div class="container">
   <div class="row">
-    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized (<%= @gigs.length %>)</p>
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized</p>
   </div>
   <div class="row">
   <% @gigs.each do |gig| %>
@@ -92,20 +93,35 @@
 
 <div class="container">
   <div class="row">
-    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews (<%= @reviews.length %>)</p>
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews</p>
   </div>
-  <div class="row">
   <% @reviews.each do |review| %>
+  <div class="row">
 
     <div class="col-sm-12">
-      <div class="card" style="background: white; color: black; height: 300px;">
-        <div class="card-description">
-          <h3><%= review.sender.name %></h3>
-          <h3><%= review.subject %></h3>
-          <p><strong>Professionalism:</strong> <%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
-          <p><strong>Quality:</strong> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
-          <p><strong>Turnout:</strong> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
-          <p><%= review.content %><p>
+      <div class="card card-review" style="background: white; color: black;">
+          <div class="row review-line">
+            <div class="col-sm-12 col-md-6">
+              <h3>Reviewed by</h3>
+              <h2><%= review.sender.name %></h2>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Professionalism</h3>
+                <p><%= raw('<i class="fas fa-star"></i>' * review.professionalism) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Quality</h3> <%= raw('<i class="fas fa-star"></i>' * review.quality) %></p>
+            </div>
+            <div class="col-sm-12 col-md-2">
+              <h3>Turnout</h3> <%= raw('<i class="fas fa-star"></i>' * review.turnout) %></p>
+            </div>
+          </div>
+          <div class="row review-content">
+            <div class="col-sm-12">
+            <h2><%= review.subject %></h2>
+            <p><%= review.content %><p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

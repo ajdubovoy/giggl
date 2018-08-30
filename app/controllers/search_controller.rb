@@ -5,8 +5,10 @@ class SearchController < ApplicationController
     # Location filter
     if params[:location].present?
       @gigs = Gig.near(params[:location])
+      @location = params[:location]
     else
       @gigs = Gig.all
+      @location = "All"
     end
 
     @markers = generate_map(@gigs)
