@@ -17,6 +17,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    @booking = Booking.find(@conversation.booking_id)
   end
 
   def reply

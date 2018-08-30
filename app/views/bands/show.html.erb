@@ -73,7 +73,7 @@
 
 <div class="container">
   <div class="row">
-    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Gigs organized</p>
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;"><%= 'Gigs organized' unless @gigs.empty? %></p>
   </div>
   <div class="row">
   <% @gigs.each do |gig| %>
@@ -100,7 +100,7 @@
 
 <div class="container">
   <div class="row">
-    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;">Reviews</p>
+    <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 40px;"><%= "What people are saying about #{@band.name}" unless @reviews.empty? %></p>
   </div>
   <% @reviews.each do |review| %>
   <div class="row">

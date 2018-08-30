@@ -3,7 +3,7 @@
   <div class="container">
   <div class="row">
     <div class="banner-content">
-      <p><%= @gig.date.strftime('%A, %d %b %Y') + ' @ ' + @gig.time.strftime('%l:%M %p') %></p>
+      <h2><%= @gig.date.strftime('%A, %d %b %Y') + ' @ ' + @gig.time.strftime('%l:%M %p') %></h2>
       <h1> <span class="<%= @booking.status=="confirmed" ? 'booking-status-confirmed' : 'booking-status-pending' %>"><%= @booking.status.capitalize + ' Booking:' %></span> <%=  @gig.name %> </h1>
       <h2>Organized by <%= @gig.organizer.name %>
       </h2>
