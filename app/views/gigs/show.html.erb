@@ -25,7 +25,8 @@
         <p><i class="fas fa-music"></i> <%= @gig.genre.name %></p>
       </div>
       <div class="col-sm-12 col-md-4">
-        <p><i class="fas fa-dollar-sign"></i> <% if @gig.paid %>
+        <p><i class="fas fa-dollar-sign"></i>
+        <% if @gig.paid %>
           Yes
         <% else %>
           No
@@ -33,28 +34,16 @@
       </div>
     </div>
     <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="col-sm-12 col-md-4">
-        <%= link_to @gig.url, class: "btn btn-primary banner-link", target: "_blank", 'data-aos': "zoom-in", 'data-aos-duration': 100 do %>
-          Facebook event</a>
-      </div>
-      <div class="col-sm-12 col-md-4">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+      <div class="col-sm-12 col-md-12">
         <% if current_user.nil? %>
           <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% elsif current_user.bands == [] %>
           <%= link_to "List your band", new_band_path, class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% else %>
-        <%= link_to "Message organizer", new_message_path(to: @gig.organizer.user.id, gig_id: @gig.id), class: "btn btn-success banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <%= link_to "Message organizer", new_message_path(to: @gig.organizer.user.id, gig_id: @gig.id), class: "btn btn-success banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% end %>
-      <% end %>
     </div>
-      <div class="col-sm-12 col-md-4">
-        <% if @gig.organizer.class == Venue %>
-          <%= link_to "View organizer", venue_path(@gig.organizer, gig_id: @gig.id, location: params[:location]), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
-        <% else %>
-          <%= link_to "View organizer", band_path(@gig.organizer, gig_id: @gig.id, location: params[:location]), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
-        <% end %>
-      </div>
   </div>
 </div>
 </div>
@@ -67,6 +56,20 @@
       <p><%= @gig.description %></p>
     </div>
     </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-md-offset-2" style="margin-top: 20px; margin-bottom: 20px;">
+      <div class="col-sm-12 col-md-6">
+        <%= link_to "Facebook event", @gig.url, class: "btn btn-primary banner-link", target: "_blank", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+      </div>
+      <div class="col-sm-12 col-md-6">
+          <% if @gig.organizer.class == Venue %>
+            <%= link_to "View organizer", venue_path(@gig.organizer, gig_id: @gig.id, location: params[:location]), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <% else %>
+            <%= link_to "View organizer", band_path(@gig.organizer, gig_id: @gig.id, location: params[:location]), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <% end %>
+        </div>
+      </div>
+  </div>
   </div>
 </div>
 
