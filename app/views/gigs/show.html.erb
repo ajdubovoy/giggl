@@ -10,7 +10,7 @@
           <% end %>
         </div>
       </div>
-      <p><%= @gig.date.strftime('%A, %d %b %Y') + ' @ ' + @gig.time.strftime('%l:%M %p') %></p>
+      <h2><%= @gig.date.strftime('%A, %d %b %Y') + ' @ ' + @gig.time.strftime('%l:%M %p') %></h2>
       <h1><%= @gig.name %></h1>
       <h2>Organized by <%= @gig.organizer.name %>
       </h2>
