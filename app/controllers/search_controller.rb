@@ -8,7 +8,7 @@ class SearchController < ApplicationController
       @location = params[:location]
     else
       @gigs = Gig.all
-      @location = "All"
+      @location = 'All'
     end
 
     @markers = generate_map(@gigs)

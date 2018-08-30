@@ -31,7 +31,7 @@
           <h2><%= gig.name %></h2>
           <p><%= gig.description[0,40] + '...' %></p>
         </div>
-        <%= link_to '', gig_path(gig, location: @location), class: "card-link" %>
+        <%= link_to '', gig_path(gig, location: params[:location]), class: "card-link" %>
       </div>
     </div>
 

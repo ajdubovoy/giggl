@@ -50,9 +50,9 @@
     </div>
       <div class="col-sm-12 col-md-4">
         <% if @gig.organizer.class == Venue %>
-          <%= link_to "View organizer", venue_path(@gig.organizer, gig_id: @gig.id), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <%= link_to "View organizer", venue_path(@gig.organizer, gig_id: @gig.id, location: params[:location]), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% else %>
-          <%= link_to "View organizer", band_path(@gig.organizer, gig_id: @gig.id), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <%= link_to "View organizer", band_path(@gig.organizer, gig_id: @gig.id, location: params[:location]), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% end %>
       </div>
   </div>
