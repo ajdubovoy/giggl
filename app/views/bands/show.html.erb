@@ -3,6 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="banner-content">
+        <div class="row">
+          <div class="col-sm-12 col-md-2 back-button">
+            <% if params[:gig_id].present? %>
+              <%= link_to "Back to gig", gig_path(Gig.find(params[:gig_id])), class: "btn btn-default banner-link" %>
+            <% end %>
+          </div>
+        </div>
         <p class="category-text">Band</p>
         <h1><%= @band.name %></h1>
         <p><%= @band.bio %></p>

@@ -3,6 +3,13 @@
   <div class="container">
   <div class="row">
     <div class="banner-content">
+      <div class="row">
+        <div class="col-sm-12 col-md-2 back-button">
+          <% if params[:location].present? %>
+            <%= link_to "Back to search", search_path(location: params[:location]), class: "btn btn-default banner-link" %>
+          <% end %>
+        </div>
+      </div>
       <p><%= @gig.date.strftime('%A, %d %b %Y') + ' @ ' + @gig.time.strftime('%l:%M %p') %></p>
       <h1><%= @gig.name %></h1>
       <h2>Organized by <%= @gig.organizer.name %>
@@ -43,9 +50,9 @@
     </div>
       <div class="col-sm-12 col-md-4">
         <% if @gig.organizer.class == Venue %>
-          <%= link_to "View organizer", venue_path(@gig.organizer), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <%= link_to "View organizer", venue_path(@gig.organizer, gig_id: @gig.id), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% else %>
-          <%= link_to "View organizer", band_path(@gig.organizer), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+          <%= link_to "View organizer", band_path(@gig.organizer, gig_id: @gig.id), class: 'btn btn-primary banner-link', 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
         <% end %>
       </div>
   </div>

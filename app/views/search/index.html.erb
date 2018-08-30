@@ -1,27 +1,9 @@
 <!-- Gig Cards -->
 
 <div class="row">
-  <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 30px; margin-top: 30px; font-weight: 500;">Your results for "<%= @location %>"</p>
-  <% @gigs.each do |gig| %>
-    
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="card" data-aos="fade-up" data-aos-duration="150" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
-        <div class="card-category">
-          <p><%= gig.date.strftime('%b %d, %Y') %></p>
-          </div>
-        <div class="card-description">
-          <h3><%= gig.organizer.name %></h3>
-          <h2><%= gig.name %></h2>
-          <p><%= gig.description[0,40] + '...' %></p>
-        </div>
-        <%= link_to '', gig_path(gig), class: "card-link" %>
-      </div>
-    </div>
-
-  <% end %>
+  <p class="text-center" style="color: white; opacity: 0.8; font-size: 21px; margin-bottom: 30px; margin-top: 30px; font-weight: 500;">Gigs for you in "<%= @location %>"</p>
 </div>
 </div>
-
 <!-- Map -->
 <div class="row">
   <div class="col-sm-12">
@@ -34,4 +16,27 @@
       style="border-radius: 3px; box-shadow: 1px 1px 1px rgba(0,0,0,0.1);"
     ></div>
   </div>
+</div>
+<div class="container">
+  <div class="row">
+  <% @gigs.each do |gig| %>
+    
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card" data-aos="fade-up" data-aos-duration="150" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('<%= cl_image_path gig.photos.first.photo if gig.photos.present? %>');">
+        <div class="card-category">
+          <p><%= gig.date.strftime('%b %d, %Y') %></p>
+          </div>
+        <div class="card-description">
+          <h3><%= gig.organizer.name %></h3>
+          <h2><%= gig.name %></h2>
+          <p><%= gig.description[0,40] + '...' %></p>
+        </div>
+        <%= link_to '', gig_path(gig, location: @location), class: "card-link" %>
+      </div>
+    </div>
+
+  <% end %>
+  </div>
+</div>
+</div>
 </div>

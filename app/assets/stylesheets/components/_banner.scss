@@ -80,6 +80,9 @@
   .banner-small h1{
     font-size: 45px !important;
   }
+  .back-button{
+    top: 0;
+  }
 }
 
 .banner h1 {
@@ -115,4 +118,7 @@
   letter-spacing: 5px;
   font-family: "Roboto";
   text-transform: uppercase;
+}
+.back-button{
+  top: -5vh;
 }
