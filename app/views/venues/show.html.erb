@@ -3,6 +3,13 @@
   <div class="container">
     <div class="row">
       <div class="banner-content">
+        <div class="row">
+          <div class="col-sm-12 col-md-2 back-button">
+            <% if params[:gig_id].present? %>
+              <%= link_to "Back to gig", gig_path(Gig.find(params[:gig_id])), class: "btn btn-default banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
+            <% end %>
+          </div>
+        </div>
         <p class="category-text">Venue</p>
         <h1><%= @venue.name %></h1>
         <p><%= @venue.description %></p>
@@ -30,11 +37,6 @@
           <div class="website-icon">
             <i class="far fa-envelope"></i><p class="website-text"><%= @venue.email %></p>
           </div>
-          <% end %>
-        </div>
-        <div class="col-sm-12 col-md-2 col-md-offset-5 text-center">
-          <% if params[:gig_id].present? %>
-            <%= link_to "Back to gig", gig_path(Gig.find(params[:gig_id])), class: "btn btn-primary banner-link", 'data-aos': "zoom-in", 'data-aos-duration': 100 %>
           <% end %>
         </div>
       </div>
