@@ -175,7 +175,7 @@ gig_photo6.remote_photo_url = gigurls[7]
 gig_photo6.profile = gig6
 gig_photo6.save!
 gig6.save!
-gig7 = Gig.new(address: "Brooklyn, NY", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-12-21', time: '21:30')
+gig7 = Gig.new(address: "Mitte, Berlin", paid: false, description: "Open for Led Zeppelin", other_bands: "Zoso", url: "https://www.facebook.com/events/1109582902525113/", name: "Led Zeppelin resurrection show", date: '2018-12-21', time: '21:30')
 gig7.genre = genres.sample
 gig7.organizer = venue2
 gig_photo7 = Photo.new
