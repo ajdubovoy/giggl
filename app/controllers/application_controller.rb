@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   def redirect_back_or(path)
     redirect_to request.referer || path
   end
+
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 end

@@ -1,0 +1,5 @@
+meta_product_name: "Giggl"
+meta_title: "Giggl - Find gigs anywhere"
+meta_description: "Got a band & travel plans? Plug into the local scene"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@dubovoymusic"   # required for Twitter Cards
