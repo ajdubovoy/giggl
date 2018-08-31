@@ -202,6 +202,7 @@ gig9.save!
 gigs = Gig.all
 
 puts 'Seeding reviews...'
+# misc reviews
 8.times do
   review = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
   review.professionalism = (5 * rand + 1).to_i
@@ -217,36 +218,68 @@ puts 'Seeding reviews...'
   end
   review.save!
 end
-
-4.times do
-review1 = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
+# tattat reviews
+review1 = Review.new(subject: "Great energy, decadent and nougaty delicious music", content: "Great live. They’ve got a groovy soul sound. You just can’t stand still when they play. Their passion for their music and eachother really shows.")
   review1.professionalism = 5
   review1.quality = 5
   review1.turnout = 5
     review1.sender = [venue2,venue4,band2,band3].sample
     review1.receiver = band1
     review1.save!
-end
-
-4.times do
-review2 = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
+review2 = Review.new(subject: "Incredible musicians and people", content: "Overheard them in band practice and a brother fell in love... True Story. Also the crew kills it at karaoke.")
   review2.professionalism = 5
   review2.quality = 5
   review2.turnout = 5
-    review2.sender = [band2, band3, band4].sample
-    review2.receiver = venue3
+    review2.sender = [venue2,venue4,band2,band3].sample
+    review2.receiver = band1
     review2.save!
-end
-
-4.times do
-review3 = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
-  review3.professionalism = (3 * rand + 1).to_i
-  review3.quality = (3 * rand + 1).to_i
-  review3.turnout = (3 * rand + 1).to_i
-    review3.sender = [band2, band3, band4].sample
-    review3.receiver = venue1
+review3 = Review.new(subject: "Professional, fun, impressive", content: "I never miss a TATTAT show. They're amazing songwriters and even better performers")
+  review3.professionalism = 5
+  review3.quality = 5
+  review3.turnout = 5
+    review3.sender = [venue2,venue4,band2,band3].sample
+    review3.receiver = band1
     review3.save!
-end
+review4 = Review.new(subject: "Best band I've ever hosted", content: "Super easy to coordinate with, they're extremely professional and always bring a wicked high turnout.")
+review4.professionalism = 5
+  review4.quality = 5
+  review4.turnout = 5
+    review4.sender = [venue2,venue4].sample
+    review4.receiver = band1
+    review4.save!
+# walrus reviews
+reviewx = Review.new(subject: "Dirty and Weird", content: "I played at the Walrus with my band. Having heard about it from a friend, we thought it would be a great experience. Nothing prepared me for what was the single worst gigging experience of my life as a professional musician. It seemed like they hadn’t even swept the floor after last night’s rager. And, at the end of the night, they refused to pay us the agreed amount. Unprofessional!")
+  reviewx.professionalism = (3 * rand + 1).to_i
+  reviewx.quality = (3 * rand + 1).to_i
+  reviewx.turnout = (3 * rand + 1).to_i
+    reviewx.sender = [band2, band3, band4].sample
+    reviewx.receiver = venue1
+    reviewx.save!
+reviewz = Review.new(subject: "They never paid me...", content: "
+Musicians often joke that when venues say “the check’s in the mail” it’ll never come. Well, with the Walrus it doesn’t. My band played here, and it was a total scam. They never paid us. Still trying to recoup our losses from that tour…")
+  reviewz.professionalism = (3 * rand + 1).to_i
+  reviewz.quality = (3 * rand + 1).to_i
+  reviewz.turnout = (3 * rand + 1).to_i
+    reviewz.sender = [band2, band3, band4].sample
+    reviewz.receiver = venue1
+    reviewz.save!
+reviewy = Review.new(subject: "Ugly hellhole", content: "
+The Walrus is to venues what Donald Trump’s toupee is to hair. Sad! And strangely, the walls seem to be painted a similar color. It’s an orange hellhole where bands go to die. I would highly discourage anyone else from playing there.")
+  reviewy.professionalism = (3 * rand + 1).to_i
+  reviewy.quality = (3 * rand + 1).to_i
+  reviewy.turnout = (3 * rand + 1).to_i
+    reviewy.sender = [band2, band3, band4].sample
+    reviewy.receiver = venue1
+    reviewy.save!
+revieww = Review.new(subject: "Full of mouth breathers", content: "If the Death Star had a bar, it would probably be the Walrus. Everyone who attends seems to be a mouth-breather, much like Darth Vader. It is a gross and horrible space, and playing there will shave years off your life.")
+  revieww.professionalism = (3 * rand + 1).to_i
+  revieww.quality = (3 * rand + 1).to_i
+  revieww.turnout = (3 * rand + 1).to_i
+    revieww.sender = [band2, band3, band4].sample
+    revieww.receiver = venue1
+    revieww.save!
+
+
 
 puts 'Seeding bookings...'
 booking1 = Booking.new(status:"confirmed")
