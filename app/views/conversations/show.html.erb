@@ -10,7 +10,7 @@
   </h1>
 
   <p><em style="font-weight: 200;">
-    Your booking is <span class="booking-status <%= Booking.find(@conversation.booking_id).status=="confirmed" ? 'booking-status-confirmed' : 'booking-status-pending' %>"><%= Booking.find(@conversation.booking_id).status %></span> for: <%= link_to Booking.find(@conversation.booking_id).gig.name, gig_path(Booking.find(@conversation.booking_id).gig) %>
+    Your booking is <span class="booking-status <%= Booking.find(@conversation.booking_id).status=="confirmed" ? 'booking-status-confirmed' : 'booking-status-pending' %>"><%= Booking.find(@conversation.booking_id).status %></span> for: <%= link_to Booking.find(@conversation.booking_id).gig.name, booking_path(Booking.find(@conversation.booking_id)) %>
   </em></p>
 </div>
 
