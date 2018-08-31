@@ -202,7 +202,7 @@ gig9.save!
 gigs = Gig.all
 
 puts 'Seeding reviews...'
-25.times do
+8.times do
   review = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
   review.professionalism = (5 * rand + 1).to_i
   review.quality = (5 * rand + 1).to_i
@@ -210,12 +210,42 @@ puts 'Seeding reviews...'
   coin = (2 * rand + 1).to_i
   if coin == 2
     review.sender = Band.all.sample
-    review.receiver = Venue.all.sample
+    review.receiver = [venue2, venue4].sample
   else
     review.sender = Venue.all.sample
-    review.receiver = Band.all.sample
+    review.receiver = [band2, band3, band4].sample
   end
   review.save!
+end
+
+4.times do
+review1 = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
+  review1.professionalism = 5
+  review1.quality = 5
+  review1.turnout = 5
+    review1.sender = [venue2,venue4,band2,band3].sample
+    review1.receiver = band1
+    review1.save!
+end
+
+4.times do
+review2 = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
+  review2.professionalism = 5
+  review2.quality = 5
+  review2.turnout = 5
+    review2.sender = [band2, band3, band4].sample
+    review2.receiver = venue3
+    review2.save!
+end
+
+4.times do
+review3 = Review.new(subject: Faker::Job.key_skill, content: Faker::Lorem.sentences(10).join(' '))
+  review3.professionalism = (3 * rand + 1).to_i
+  review3.quality = (3 * rand + 1).to_i
+  review3.turnout = (3 * rand + 1).to_i
+    review3.sender = [band2, band3, band4].sample
+    review3.receiver = venue1
+    review3.save!
 end
 
 puts 'Seeding bookings...'
